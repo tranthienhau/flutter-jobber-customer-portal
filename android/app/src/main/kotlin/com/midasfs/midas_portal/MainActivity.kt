@@ -1,0 +1,5 @@
+package com.midasfs.midas_portal
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity : FlutterActivity()
