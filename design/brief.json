@@ -1,0 +1,403 @@
+{
+  "title": "Midas Client Portal",
+  "slug": "midas-customer-portal",
+  "domain": "productivity",
+  "style": "bright",
+  "allow3D": false,
+  "bannedTerms": [
+    "Telehealth",
+    "Crypto",
+    "Wallet",
+    "Pay now with crypto"
+  ],
+  "features": [
+    "One-stop customer portal for commercial facility services clients",
+    "View properties (sites) and the recurring services at each",
+    "Submit a new service request with photos",
+    "Request a change to an existing service (frequency, scope, pause)",
+    "Track job status: Requested, Scheduled, In progress, Completed",
+    "View completed work with before/after photo gallery",
+    "Read-only invoices synced from QuickBooks",
+    "Support chat and contact the Midas team",
+    "Notifications for visit scheduled, crew on site, job completed, invoice issued",
+    "Jobber-backed jobs, visits and requests (GraphQL integration layer)",
+    "GoHighLevel lead intake for new service requests",
+    "Web, iOS and Android from one codebase"
+  ],
+  "screenCount": 15,
+  "sharedComponents": {
+    "bottomTabBar": {
+      "tabs": [
+        "Home",
+        "Requests",
+        "Invoices",
+        "Support"
+      ],
+      "note": "Home = house icon, Requests = clipboard-list icon, Invoices = receipt icon, Support = message-circle icon. Rounded outline 24px icons. Active tab: ink #1F1C0C icon + label with a small lemon #FFD60A pill indicator behind the icon; inactive tabs in #6B6650. Flat white bar, hairline top border #ECE6D2, safe-area bottom inset."
+    },
+    "statusBar": "Top app header: screen title in Unbounded 20/600 on the left; on Home a round customer avatar (Northgate Office Park facilities manager) on the right plus a bell icon with a lemon unread dot. Pushed screens show a left back chevron.",
+    "controls": "Primary button: pill, lemon #FFD60A fill with ink #1F1C0C label (pressed #E6C000, disabled 40% opacity). Secondary button: white with 1px #8F8A72 border and ink label. Text input: 12px radius, white, border #8F8A72, focus ring #FFD60A 2px, error #DC2626. Card: 20px radius, white, soft shadow. Chip: pill, #FFF6C7 fill, ink #1F1C0C text. Status chips: Requested = sky tint #E3F0FF with #1F4F8A text; Scheduled = lemon tint #FFF6C7 with #6B5600 text; In progress = amber tint #FDEBD3 with #8A4B00 text; Completed = green tint #DDF3E4 with #166534 text."
+  },
+  "screens": [
+    {
+      "name": "login",
+      "purpose": "Customer signs in to the Midas client portal",
+      "content": "Top half: real photo of a bright clean modern office lobby with polished floor, soft lemon-to-sky gradient overlay at the bottom edge only (no text on photo). Midas monogram mark. Heading 'Welcome back' and caption 'Manage your sites, requests and invoices in one place'. Email input (ops@northgateoffice.com), password input, 'Sign in' lemon pill, 'Forgot password?' link, 'Use a magic link instead' secondary button. Footer caption 'Your portal account is linked to your Midas service agreement'.",
+      "group": "onboarding",
+      "nav": "none",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "home",
+      "purpose": "Customer sees their sites, next visit and open requests at a glance",
+      "content": "Greeting 'Good morning, Dana' with avatar. Hero focal card with ink #1F1C0C background and white text: 'Next visit' Tue, Nov 4, 6:00 PM, 'Nightly janitorial - Northgate Office Park, Building A', crew 'Crew 3 - Luis M.', status chip Scheduled. Row of 3 stat tiles: Open requests 2, Visits this month 18, Balance due $4,280.00. Section 'Your sites': 3 property cards with real building photos - Northgate Office Park (2 buildings, 4 services), Riverside Medical Plaza (3 services), Eastgate Distribution Center (2 services). Section 'Recent activity': 'Carpet extraction completed - Riverside Medical Plaza, 8 photos', 'Invoice INV-10482 issued $1,920.00'. Floating 'New request' lemon pill above tab bar.",
+      "group": "core",
+      "nav": "Home",
+      "states": [
+        "default",
+        "empty"
+      ]
+    },
+    {
+      "name": "home-empty",
+      "purpose": "First-run home before any site is linked",
+      "content": "Greeting 'Welcome, Dana'. Real photo of an empty clean conference room with chairs neatly pushed in. Heading 'Your sites will appear here', body 'Once Midas links your service agreement, you will see each site, upcoming visits and invoices.' Primary 'Request a quote' lemon pill, secondary 'Contact Midas'.",
+      "group": "core",
+      "nav": "Home",
+      "states": [
+        "empty"
+      ]
+    },
+    {
+      "name": "property-detail",
+      "purpose": "See one site and the recurring services Midas performs there",
+      "content": "Hero real photo of Northgate Office Park glass office building exterior, back chevron. Title 'Northgate Office Park', address '2400 Northgate Blvd, Building A and B, Austin, TX'. Site contact Dana Whitfield. Segmented control Services / Visits / Photos with Services active. Service cards: 'Nightly janitorial' Mon-Fri 6:00 PM, chip Active; 'Window cleaning (exterior)' Quarterly, next Nov 18; 'Carpet extraction' Every 6 months, next Jan 12; 'Day porter' Mon-Fri 8 AM - 4 PM. Each card has 'Request change' text button. Bottom 'New request for this site' lemon pill.",
+      "group": "detail",
+      "nav": "Home",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "job-status",
+      "purpose": "Track a request or job through its status timeline",
+      "content": "Header 'Restroom deep clean' job #J-2187, Riverside Medical Plaza, status chip In progress (focal). Vertical timeline with 4 steps: Requested Oct 28 9:12 AM (done, check), Scheduled Oct 30 for Nov 3 7:00 AM (done), In progress Nov 3 7:04 AM 'Crew 2 checked in on site' (current, lemon ring pulsing), Completed (pending, grey). Crew card with real photo avatar of crew lead Maria Gonzalez, 'Crew lead', call and message icons. Request details card: 'Second floor restrooms, grout and fixture deep clean', 2 attached photo thumbnails. Footer 'Synced with Jobber 2 min ago' caption with refresh icon.",
+      "group": "detail",
+      "nav": "Requests",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "requests",
+      "purpose": "List all service requests and jobs with filters",
+      "content": "Title 'Requests'. Filter chips: All, Open, Scheduled, In progress, Completed. Cards list: 'Restroom deep clean' Riverside Medical Plaza chip In progress; 'Lobby floor strip and wax' Northgate Office Park chip Scheduled Nov 9; 'Spill cleanup loading dock' Eastgate Distribution chip Requested; 'Carpet extraction 3rd floor' Riverside Medical chip Completed Oct 24, '8 photos'; 'Window cleaning' Northgate chip Completed Oct 15. Each card shows date and a small photo thumbnail when photos exist. Lemon 'New request' pill floating bottom right.",
+      "group": "core",
+      "nav": "Requests",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "new-request",
+      "purpose": "Submit a new service request with photos",
+      "content": "Title 'New request', close X. Site dropdown 'Northgate Office Park - Building A'. Service type chips: Janitorial, Floor care, Windows, Restroom, Spill / urgent, Other (Floor care selected). Description textarea 'Coffee stain near elevator bank, 2nd floor carpet, about 3 ft wide.' Photos row: 2 real photo thumbnails of a stained office carpet with remove x, plus '+ Add photo' tile with camera icon (focal). Preferred timing chips: ASAP, This week, Next visit (This week selected). Contact preference toggle. Primary 'Submit request' lemon pill. Caption 'Goes straight to the Midas scheduling team'.",
+      "group": "core",
+      "nav": "none",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "request-submitted",
+      "purpose": "Confirmation after a request is submitted",
+      "content": "Large green check circle focal. Heading 'Request received'. Body 'Request #R-3304 for Northgate Office Park. Our team will confirm a time within 2 business hours.' Summary card: Floor care, 2 photos, This week. Mini timeline showing Requested (done) -> Scheduled -> In progress -> Completed. Buttons 'Track request' lemon pill and 'Back to home' secondary.",
+      "group": "detail",
+      "nav": "none",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "request-change",
+      "purpose": "Ask to change an existing recurring service",
+      "content": "Title 'Request a change', back chevron. Service summary card 'Nightly janitorial - Northgate Office Park, Mon-Fri 6:00 PM'. 'What would you like to change?' radio cards: Change frequency, Change time window, Add or remove areas, Pause service, Cancel service. 'Change frequency' selected, revealing day chips Mon Tue Wed Thu Fri Sat with Mon/Wed/Fri selected and caption 'From Mon-Fri to Mon, Wed, Fri'. Effective date input 'Dec 1, 2026'. Notes textarea. Primary 'Send change request' lemon pill. Caption 'Changes may affect your contract price. Your account manager will confirm.'",
+      "group": "detail",
+      "nav": "none",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "completed-work",
+      "purpose": "View completed work with before and after photos",
+      "content": "Header 'Carpet extraction - 3rd floor', Riverside Medical Plaza, Completed Oct 24, chip Completed. Focal before/after comparison card with a real photo of a stained office carpet on the left labeled 'Before' and the same carpet clean on the right labeled 'After', with a vertical slider handle. Grid of 6 real photo thumbnails of cleaned office spaces (carpet, hallway, waiting room). Crew notes card: 'Extracted 4,200 sq ft, pre-treated 6 high-traffic spots. Dry in 4 hours.' Signed off by Maria Gonzalez. Buttons 'Rate this visit' with 5 stars and 'Report an issue'.",
+      "group": "detail",
+      "nav": "Requests",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "invoices",
+      "purpose": "See invoices and balance, read-only from accounting",
+      "content": "Title 'Invoices'. Focal balance card on ink #1F1C0C: 'Balance due' $4,280.00 in large numerals, '2 open invoices', small badge 'Synced from QuickBooks' with refresh icon. Filter chips All, Open, Paid. Invoice rows: INV-10482 Oct 31 $1,920.00 chip Open due Nov 30; INV-10471 Oct 15 $2,360.00 chip Open due Nov 14; INV-10455 Sep 30 $2,360.00 chip Paid; INV-10431 Sep 15 $1,880.00 chip Paid. Each row shows site name. Caption 'Invoices are view-only. Contact billing for questions.'",
+      "group": "core",
+      "nav": "Invoices",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "invoice-detail",
+      "purpose": "Read one invoice with line items",
+      "content": "Header 'INV-10482', back chevron, chip Open. Bill to Northgate Office Park LLC. Issue Oct 31, Due Nov 30, Terms Net 30. Line items table: Nightly janitorial October (22 visits) $1,540.00; Day porter add-on Oct 20-24 $280.00; Supplies restock $100.00. Subtotal $1,920.00, Tax $0.00, Total $1,920.00 focal large. Badge 'Synced from QuickBooks Online, Nov 1'. Buttons 'Download PDF' secondary and 'Question about this invoice' lemon pill.",
+      "group": "detail",
+      "nav": "Invoices",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "support-chat",
+      "purpose": "Chat with the Midas support team",
+      "content": "Header with real photo avatar of account manager Jordan Ellis, 'Your account manager', online dot, phone icon. Chat bubbles: Jordan 'Hi Dana, crew 2 is on site at Riverside now for the restroom deep clean.' Dana (lemon bubble, ink text) 'Great, can they also check the 1st floor lobby restroom?' Jordan 'Added to the job. I will send photos when done.' with attached job card 'Restroom deep clean #J-2187 In progress'. Quick reply chips: 'Request a quote', 'Billing question', 'Report an issue'. Composer with attach photo icon and send button. Contact strip at top: Call (512) 555-0148, Email support@midasfs.com.",
+      "group": "core",
+      "nav": "Support",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "notifications",
+      "purpose": "See updates about visits, jobs and invoices",
+      "content": "Title 'Notifications', 'Mark all read' link. Sections Today / Earlier. Rows with icon tiles: 'Crew on site - Restroom deep clean at Riverside Medical Plaza' 7:04 AM unread lemon dot; 'Visit scheduled - Lobby floor strip and wax, Sun Nov 9 8:00 AM'; 'Job completed - Carpet extraction 3rd floor, 8 photos added' with photo thumbnail; 'Invoice issued - INV-10482 $1,920.00'; 'Change request approved - Window cleaning moved to monthly'. Settings gear top right.",
+      "group": "settings",
+      "nav": "none",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "account",
+      "purpose": "Account, sites, team and notification preferences",
+      "content": "Profile header with real photo avatar of Dana Whitfield, 'Facilities Manager, Northgate Holdings', email. Cards: Linked sites (3), Team members (Dana, Kevin Ortiz - View only), Notification preferences toggles (Push, Email, SMS) with Push and Email on, Connected systems card listing 'Jobs and visits - Jobber', 'Invoices - QuickBooks Online', 'Messages - GoHighLevel' each with a green 'Connected' chip, Security (Face ID login toggle), Sign out text button in red.",
+      "group": "settings",
+      "nav": "none",
+      "states": [
+        "default"
+      ]
+    }
+  ],
+  "designSystem": {
+    "variant": "P16",
+    "theme": "light",
+    "frame": "393x852 mobile (iPhone 16/17). Safe areas: top ~59px, bottom ~34px kept clear.",
+    "color": {
+      "background": "#FCFAF4",
+      "surface": "#FFFFFF",
+      "surfaceAlt": "#F6F2E4",
+      "accent": "#FFD60A",
+      "accentFill": "#826D05",
+      "accentTint": "#FFF6C7",
+      "accentPressed": "#E6C000",
+      "support": "#7DB8FF",
+      "text": {
+        "primary": "#1F1C0C",
+        "secondary": "#575238",
+        "tertiary": "#6B6650"
+      },
+      "border": "#ECE6D2",
+      "success": "#16A34A",
+      "warning": "#D97706",
+      "danger": "#DC2626",
+      "gradient": [
+        "#826D05",
+        "#877400"
+      ],
+      "statusOn": {
+        "warning": {
+          "fg": "#A75906",
+          "tint": "#FAEFE1"
+        },
+        "success": {
+          "fg": "#0E7C3A",
+          "tint": "#E3F4E9"
+        },
+        "danger": {
+          "fg": "#CE2020",
+          "tint": "#FBE5E5"
+        },
+        "info": {
+          "fg": "#7D6905",
+          "tint": "#F0EDE1"
+        }
+      },
+      "supportStrong": "#4194FF",
+      "borderStrong": "#9B9556"
+    },
+    "type": {
+      "fontFamily": "Plus Jakarta Sans",
+      "displayFamily": "Unbounded",
+      "numeralFamily": "Plus Jakarta Sans (tabular) - amounts, invoice numbers, counts",
+      "display": "32 / 700 / -0.02em",
+      "title": "20 / 600",
+      "body": "16 / 400",
+      "label": "14 / 500",
+      "caption": "13 / 500",
+      "minSize": "12px (13px chips and tags, 14px safety or legal text)",
+      "scaleRule": "Use only the 5 declared sizes (display, title, body, label, caption)."
+    },
+    "radius": {
+      "card": 20,
+      "control": 14,
+      "input": 12,
+      "pill": 999
+    },
+    "spacing": "8pt scale (4, 8, 12, 16, 24, 32); screen edge padding 20px",
+    "elevation": "soft only: card = 0 1px 2px rgba(0,0,0,.04) + 0 8px 24px rgba(0,0,0,.06)",
+    "icons": "Rounded outline (Lucide style), 24px, ~1.75 stroke, one set everywhere",
+    "a11y": "Lemon #FFD60A carries ink #1F1C0C labels only (never white). White labels only on ink #1F1C0C or accentFill #877105. Status chips always icon + text. Tap targets >=44x44pt."
+  },
+  "tokenCheck": {
+    "results": [
+      {
+        "pair": "text.primary on background",
+        "ratio": 16.36,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "text.primary on surface",
+        "ratio": 17.08,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "text.secondary on background",
+        "ratio": 7.54,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "text.secondary on surface",
+        "ratio": 7.87,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "text.tertiary on background",
+        "ratio": 5.53,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "text.tertiary on surface",
+        "ratio": 5.77,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "white label on accentFill (buttons)",
+        "ratio": 4.78,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "accentFill text on accentTint (chips, selected)",
+        "ratio": 4.38,
+        "target": 4.5,
+        "pass": false,
+        "fixedTo": "#826D05",
+        "after": 4.65
+      },
+      {
+        "pair": "accentFill as link text on background",
+        "ratio": 4.86,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "white on hero gradient (both stops)",
+        "ratio": 4.64,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "warning text on its tint and on surface",
+        "ratio": 2.81,
+        "target": 4.5,
+        "pass": false,
+        "fixedTo": "#A75906",
+        "after": 4.54
+      },
+      {
+        "pair": "success text on its tint and on surface",
+        "ratio": 2.89,
+        "target": 4.5,
+        "pass": false,
+        "fixedTo": "#0E7C3A",
+        "after": 4.64
+      },
+      {
+        "pair": "danger text on its tint and on surface",
+        "ratio": 4.01,
+        "target": 4.5,
+        "pass": false,
+        "fixedTo": "#CE2020",
+        "after": 4.53
+      },
+      {
+        "pair": "info text on its tint and on surface",
+        "ratio": 4.33,
+        "target": 4.5,
+        "pass": false,
+        "fixedTo": "#7D6905",
+        "after": 4.6
+      },
+      {
+        "pair": "support as chart line / icon on surface (non-text 3:1)",
+        "ratio": 2.06,
+        "target": 3.0,
+        "pass": false,
+        "fixedTo": "#4194FF",
+        "after": 3.04
+      },
+      {
+        "pair": "input / control border on surface (non-text 3:1)",
+        "ratio": 1.25,
+        "target": 3.0,
+        "pass": false,
+        "fixedTo": "#9B9556",
+        "after": 3.08
+      }
+    ],
+    "changed": {
+      "accentFill": {
+        "from": "#877105",
+        "to": "#826D05"
+      }
+    },
+    "passed": true
+  }
+}

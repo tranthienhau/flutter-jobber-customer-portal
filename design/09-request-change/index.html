@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Midas Client Portal - Request a Change</title>
+<!-- Google Fonts: Plus Jakarta Sans & Unbounded -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Unbounded:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with custom theme config -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed": "#002022",
+            "on-primary": "#ffffff",
+            "danger-bg": "#FBE5E5",
+            "on-secondary-fixed-variant": "#00487f",
+            "surface-tint": "#705d00",
+            "background": "#FCFAF4",
+            "hairline": "#ECE6D2",
+            "text-tertiary": "#6B6650",
+            "secondary-fixed-dim": "#a1c9ff",
+            "accent-fill": "#826D05",
+            "secondary": "#1661a2",
+            "ink": "#1F1C0C",
+            "on-background": "#1f1c0c",
+            "warning": "#A75906",
+            "surface-container-low": "#fbf4d9",
+            "on-tertiary": "#ffffff",
+            "on-secondary": "#ffffff",
+            "text-secondary": "#575238",
+            "primary-fixed-dim": "#e9c400",
+            "on-secondary-container": "#00477d",
+            "on-primary-container": "#705d00",
+            "on-surface": "#1f1c0c",
+            "info-bg": "#E3F0FF",
+            "support-data": "#4194FF",
+            "tertiary": "#00696f",
+            "accent-tint": "#FFF6C7",
+            "primary-fixed": "#ffe171",
+            "inverse-surface": "#34311f",
+            "error": "#ba1a1a",
+            "tertiary-container": "#00f0fc",
+            "on-tertiary-fixed-variant": "#004f53",
+            "surface-container-high": "#f0e8ce",
+            "success": "#0E7C3A",
+            "on-error": "#ffffff",
+            "error-container": "#ffdad6",
+            "surface-container-lowest": "#ffffff",
+            "surface-alt": "#F6F2E4",
+            "inverse-on-surface": "#f9f1d6",
+            "secondary-fixed": "#d2e4ff",
+            "on-error-container": "#93000a",
+            "danger": "#CE2020",
+            "primary-container": "#ffd60a",
+            "accent-pressed": "#E6C000",
+            "on-secondary-fixed": "#001c37",
+            "surface-variant": "#eae2c8",
+            "control-border": "#9B9556",
+            "tertiary-fixed-dim": "#00dce7",
+            "outline": "#7f775f",
+            "surface-bright": "#fff9eb",
+            "surface": "#FFFFFF",
+            "on-surface-variant": "#4d4632",
+            "surface-container-highest": "#eae2c8",
+            "tertiary-fixed": "#70f6ff",
+            "success-bg": "#E3F4E9",
+            "primary": "#705d00",
+            "on-primary-fixed": "#221b00",
+            "inverse-primary": "#e9c400",
+            "surface-container": "#f6eed3",
+            "on-primary-fixed-variant": "#554600",
+            "secondary-container": "#7cb7fe",
+            "surface-dim": "#e1dac0",
+            "outline-variant": "#d0c6ab",
+            "warning-bg": "#FAEFE1",
+            "on-tertiary-container": "#00696f",
+            "info": "#1F4F8A"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "1.5rem",
+            "space-2xl": "2rem",
+            "space-xs": "0.25rem",
+            "margin": "1.25rem",
+            "gutter": "1rem",
+            "space-lg": "1rem",
+            "space-sm": "0.5rem",
+            "space-md": "0.75rem"
+          },
+          "fontFamily": {
+            "display-32": ["Unbounded", "sans-serif"],
+            "caption-13": ["Plus Jakarta Sans", "sans-serif"],
+            "body-16": ["Plus Jakarta Sans", "sans-serif"],
+            "label-14": ["Plus Jakarta Sans", "sans-serif"],
+            "title-20": ["Plus Jakarta Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "display-32": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "caption-13": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "body-16": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-14": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "title-20": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+          },
+          "boxShadow": {
+            "card-soft": "0 1px 2px rgba(31,28,12,0.04), 0 8px 24px rgba(31,28,12,0.06)",
+            "elevated": "0 4px 16px rgba(31,28,12,0.08)"
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .font-unbounded-title {
+      font-family: 'Unbounded', sans-serif;
+      font-size: 20px;
+      line-height: 28px;
+      font-weight: 600;
+    }
+    /* Safe layout frame strictly at 393px width */
+    body {
+      background-color: #EFECE6;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      margin: 0;
+      padding: 16px 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #1F1C0C;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased">
+<!-- Mobile Screen Container (393px width fixed frame) -->
+<main class="w-[393px] min-h-[852px] bg-background flex flex-col relative shadow-2xl rounded-[36px] overflow-hidden border border-hairline pb-10">
+<!-- Top Status Bar Area -->
+<header class="w-full bg-background pt-3 pb-2 px-margin z-20">
+<div class="flex justify-between items-center text-ink text-[12px] font-semibold tracking-tight mb-2 px-1">
+<span>9:41</span>
+<div class="flex items-center gap-1.5 text-ink">
+<span class="material-symbols-outlined text-[15px]" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[15px]" data-icon="wifi">wifi</span>
+<span class="material-symbols-outlined text-[17px]" data-icon="battery_full">battery_full</span>
+</div>
+</div>
+<!-- Navigation Bar (Subpage / Modal Header) -->
+<div class="flex items-center justify-between h-12">
+<button aria-label="Go back" class="w-10 h-10 -ml-1 rounded-full flex items-center justify-center text-ink hover:bg-surface-alt active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-2xl" data-icon="arrow_back_ios_new">arrow_back_ios_new</span>
+</button>
+<h1 class="font-unbounded-title text-ink tracking-tight text-center flex-1 pr-2">
+          Request a change
+        </h1>
+<button aria-label="Help" class="w-10 h-10 rounded-full flex items-center justify-center text-text-secondary hover:bg-surface-alt active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-2xl" data-icon="help_outline">help_outline</span>
+</button>
+</div>
+</header>
+<!-- Main Scrollable Content Canvas -->
+<div class="flex-1 px-margin pt-1 space-y-5 overflow-y-auto">
+<!-- Current Service Summary Card -->
+<section class="bg-surface rounded-2xl p-4 shadow-card-soft border border-hairline relative overflow-hidden">
+<div class="flex items-center justify-between mb-2">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-surface-alt text-text-secondary font-caption-13 text-caption-13 font-semibold">
+            Current service
+          </span>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-success-bg text-success font-caption-13 text-caption-13 font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-success"></span>
+<span>Active agreement</span>
+</div>
+</div>
+<div class="space-y-1">
+<h2 class="font-title-20 text-title-20 text-ink tracking-tight flex items-center gap-1.5">
+<span>Nightly janitorial</span>
+</h2>
+<p class="font-label-14 text-label-14 text-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-text-tertiary" data-icon="apartment">apartment</span>
+<span>Northgate Office Park • Building B</span>
+</p>
+</div>
+<div class="mt-3 pt-3 border-t border-hairline flex items-center justify-between text-text-secondary">
+<div class="flex items-center gap-1.5 font-label-14 text-label-14">
+<span class="material-symbols-outlined text-[18px] text-accent-fill" data-icon="schedule">schedule</span>
+<span class="font-medium text-ink">Mon–Fri, 6:00 PM</span>
+</div>
+<span class="font-caption-13 text-caption-13 text-text-tertiary">#AGR-8821</span>
+</div>
+</section>
+<!-- Change Options Section -->
+<section class="space-y-3">
+<h3 class="font-label-14 text-label-14 text-ink font-semibold tracking-tight">
+          What would you like to change?
+        </h3>
+<!-- Option 1: Selected (Change frequency) -->
+<div class="bg-[#FFFDF0] rounded-2xl p-4 border-2 border-primary-container shadow-sm space-y-3.5 transition-all">
+<div class="flex items-start justify-between cursor-pointer">
+<div class="flex items-start gap-3">
+<!-- Custom Checked Radio -->
+<div class="w-5 h-5 rounded-full border-2 border-primary-container bg-primary-container flex items-center justify-center mt-0.5 flex-shrink-0">
+<div class="w-2 h-2 rounded-full bg-ink"></div>
+</div>
+<div>
+<p class="font-label-14 text-label-14 font-semibold text-ink leading-tight">Change frequency</p>
+<p class="font-caption-13 text-caption-13 text-text-secondary mt-0.5">Adjust recurring days of commercial service</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-accent-fill text-[20px]" data-icon="tune">tune</span>
+</div>
+<!-- Nested Day Selector -->
+<div class="pt-3 border-t border-hairline/80 space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-caption-13 text-caption-13 font-semibold text-ink">Select active service days</span>
+<span class="font-caption-13 text-caption-13 text-text-secondary font-medium">3 days selected</span>
+</div>
+<!-- Focal Day Selector Chips -->
+<div class="grid grid-cols-6 gap-1.5 pt-1">
+<!-- Mon - Selected -->
+<button class="py-2 rounded-full bg-primary-container text-ink font-caption-13 text-caption-13 font-semibold shadow-xs text-center active:scale-95 transition-all" type="button">
+                Mon
+              </button>
+<!-- Tue - Unselected -->
+<button class="py-2 rounded-full bg-surface border border-hairline text-text-secondary font-caption-13 text-caption-13 font-medium text-center hover:bg-surface-alt active:scale-95 transition-all" type="button">
+                Tue
+              </button>
+<!-- Wed - Selected -->
+<button class="py-2 rounded-full bg-primary-container text-ink font-caption-13 text-caption-13 font-semibold shadow-xs text-center active:scale-95 transition-all" type="button">
+                Wed
+              </button>
+<!-- Thu - Unselected -->
+<button class="py-2 rounded-full bg-surface border border-hairline text-text-secondary font-caption-13 text-caption-13 font-medium text-center hover:bg-surface-alt active:scale-95 transition-all" type="button">
+                Thu
+              </button>
+<!-- Fri - Selected -->
+<button class="py-2 rounded-full bg-primary-container text-ink font-caption-13 text-caption-13 font-semibold shadow-xs text-center active:scale-95 transition-all" type="button">
+                Fri
+              </button>
+<!-- Sat - Unselected -->
+<button class="py-2 rounded-full bg-surface border border-hairline text-text-secondary font-caption-13 text-caption-13 font-medium text-center hover:bg-surface-alt active:scale-95 transition-all" type="button">
+                Sat
+              </button>
+</div>
+<div class="flex items-center gap-1.5 pt-1 text-text-secondary font-caption-13 text-caption-13">
+<span class="material-symbols-outlined text-[16px] text-accent-fill" data-icon="sync_alt">sync_alt</span>
+<span>From Mon–Fri to <span class="font-semibold text-ink">Mon, Wed, Fri</span></span>
+</div>
+</div>
+</div>
+<!-- Option 2: Change time window (Unselected) -->
+<label class="block bg-surface rounded-2xl p-4 border border-hairline shadow-card-soft cursor-pointer hover:bg-surface-alt transition-colors">
+<div class="flex items-start justify-between">
+<div class="flex items-start gap-3">
+<div class="w-5 h-5 rounded-full border border-control-border bg-surface flex items-center justify-center mt-0.5 flex-shrink-0"></div>
+<div>
+<p class="font-label-14 text-label-14 font-semibold text-ink leading-tight">Change time window</p>
+<p class="font-caption-13 text-caption-13 text-text-secondary mt-0.5">Shift start time or shift window</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-tertiary text-[20px]" data-icon="pace">pace</span>
+</div>
+</label>
+<!-- Option 3: Add or remove areas (Unselected) -->
+<label class="block bg-surface rounded-2xl p-4 border border-hairline shadow-card-soft cursor-pointer hover:bg-surface-alt transition-colors">
+<div class="flex items-start justify-between">
+<div class="flex items-start gap-3">
+<div class="w-5 h-5 rounded-full border border-control-border bg-surface flex items-center justify-center mt-0.5 flex-shrink-0"></div>
+<div>
+<p class="font-label-14 text-label-14 font-semibold text-ink leading-tight">Add or remove areas</p>
+<p class="font-caption-13 text-caption-13 text-text-secondary mt-0.5">Include floor suites, kitchens, or restrooms</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-tertiary text-[20px]" data-icon="domain_add">domain_add</span>
+</div>
+</label>
+<!-- Option 4: Pause service (Unselected) -->
+<label class="block bg-surface rounded-2xl p-4 border border-hairline shadow-card-soft cursor-pointer hover:bg-surface-alt transition-colors">
+<div class="flex items-start justify-between">
+<div class="flex items-start gap-3">
+<div class="w-5 h-5 rounded-full border border-control-border bg-surface flex items-center justify-center mt-0.5 flex-shrink-0"></div>
+<div>
+<p class="font-label-14 text-label-14 font-semibold text-ink leading-tight">Pause service</p>
+<p class="font-caption-13 text-caption-13 text-text-secondary mt-0.5">Temporary hold during office renovations or holiday closures</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-tertiary text-[20px]" data-icon="pause_circle">pause_circle</span>
+</div>
+</label>
+<!-- Option 5: Cancel service (Unselected, warning hint) -->
+<label class="block bg-surface rounded-2xl p-4 border border-hairline shadow-card-soft cursor-pointer hover:bg-surface-alt transition-colors">
+<div class="flex items-start justify-between">
+<div class="flex items-start gap-3">
+<div class="w-5 h-5 rounded-full border border-control-border bg-surface flex items-center justify-center mt-0.5 flex-shrink-0"></div>
+<div>
+<p class="font-label-14 text-label-14 font-semibold text-ink leading-tight">Cancel service</p>
+<p class="font-caption-13 text-caption-13 text-text-secondary mt-0.5">Initiate account closing review &amp; 30-day notice</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-danger text-[20px]" data-icon="cancel">cancel</span>
+</div>
+</label>
+</section>
+<!-- Effective Date Field -->
+<section class="space-y-1.5">
+<label class="block font-label-14 text-label-14 font-semibold text-ink" for="effective-date">
+          Requested effective date
+        </label>
+<div class="relative flex items-center">
+<div class="absolute left-3.5 flex items-center pointer-events-none text-text-secondary">
+<span class="material-symbols-outlined text-[20px]" data-icon="calendar_today">calendar_today</span>
+</div>
+<input class="w-full bg-surface rounded-xl border border-control-border pl-11 pr-10 py-3 font-body-16 text-body-16 text-ink font-medium focus:outline-none focus:ring-2 focus:ring-primary-container cursor-pointer shadow-xs tabular-nums" id="effective-date" readonly="" type="text" value="Dec 1, 2026"/>
+<div class="absolute right-3.5 flex items-center pointer-events-none text-text-tertiary">
+<span class="material-symbols-outlined text-[20px]" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<p class="font-caption-13 text-caption-13 text-text-secondary">Minimum 5 business days recommended for staffing adjustments.</p>
+</section>
+<!-- Notes Field -->
+<section class="space-y-1.5">
+<label class="block font-label-14 text-label-14 font-semibold text-ink" for="request-notes">
+          Notes or instructions for account manager
+        </label>
+<textarea class="w-full bg-surface rounded-xl border border-control-border p-3 font-body-16 text-body-16 text-ink font-medium focus:outline-none focus:ring-2 focus:ring-primary-container resize-none shadow-xs" id="request-notes" rows="3">Office moving to hybrid schedule.</textarea>
+</section>
+<!-- Submit CTA Area -->
+<section class="pt-2 pb-6 space-y-3">
+<!-- Primary Action CTA (Lemon fill #FFD60A with ink text, strictly no white text) -->
+<button class="w-full py-4 px-6 rounded-full bg-primary-container hover:bg-accent-pressed text-ink font-label-14 text-label-14 font-bold flex items-center justify-center gap-2 shadow-card-soft active:scale-[0.98] transition-all cursor-pointer" type="button">
+<span>Send change request</span>
+<span class="material-symbols-outlined text-[20px] font-bold" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<!-- Informative Caption Notice -->
+<div class="flex items-start justify-center gap-2 px-3 text-center">
+<span class="material-symbols-outlined text-info text-[18px] flex-shrink-0 mt-0.5" data-icon="info">info</span>
+<p class="font-caption-13 text-caption-13 text-text-secondary leading-normal text-left">
+            Changes may affect your contract price. Your account manager will confirm details within 24 hours.
+          </p>
+</div>
+</section>
+</div>
+</main>
+</body></html>

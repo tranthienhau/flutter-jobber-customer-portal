@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Midas Client Portal - Invoices</title>
+<!-- Google Fonts: Plus Jakarta Sans & Unbounded -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Unbounded:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-high": "#f0e8ce",
+            "info-bg": "#E3F0FF",
+            "ink": "#1F1C0C",
+            "surface-container-highest": "#eae2c8",
+            "accent-pressed": "#E6C000",
+            "accent-tint": "#FFF6C7",
+            "on-tertiary-fixed": "#002022",
+            "surface-alt": "#F6F2E4",
+            "tertiary-fixed-dim": "#00dce7",
+            "background": "#FCFAF4",
+            "surface": "#FFFFFF",
+            "text-secondary": "#575238",
+            "primary-fixed-dim": "#e9c400",
+            "tertiary-fixed": "#70f6ff",
+            "error": "#ba1a1a",
+            "control-border": "#9B9556",
+            "primary-fixed": "#ffe171",
+            "danger": "#CE2020",
+            "on-error": "#ffffff",
+            "primary": "#705d00",
+            "on-secondary": "#ffffff",
+            "warning-bg": "#FAEFE1",
+            "on-primary-container": "#705d00",
+            "on-tertiary": "#ffffff",
+            "inverse-primary": "#e9c400",
+            "outline": "#7f775f",
+            "support-data": "#4194FF",
+            "on-tertiary-container": "#00696f",
+            "tertiary-container": "#00f0fc",
+            "success": "#0E7C3A",
+            "secondary": "#1661a2",
+            "error-container": "#ffdad6",
+            "surface-variant": "#eae2c8",
+            "hairline": "#ECE6D2",
+            "surface-container-lowest": "#ffffff",
+            "inverse-surface": "#34311f",
+            "surface-container-low": "#fbf4d9",
+            "on-secondary-fixed-variant": "#00487f",
+            "secondary-fixed-dim": "#a1c9ff",
+            "tertiary": "#00696f",
+            "secondary-container": "#7cb7fe",
+            "on-primary-fixed": "#221b00",
+            "on-primary": "#ffffff",
+            "on-tertiary-fixed-variant": "#004f53",
+            "on-error-container": "#93000a",
+            "warning": "#A75906",
+            "success-bg": "#E3F4E9",
+            "on-secondary-container": "#00477d",
+            "secondary-fixed": "#d2e4ff",
+            "on-surface-variant": "#4d4632",
+            "inverse-on-surface": "#f9f1d6",
+            "on-secondary-fixed": "#001c37",
+            "surface-dim": "#e1dac0",
+            "primary-container": "#ffd60a",
+            "on-primary-fixed-variant": "#554600",
+            "surface-bright": "#fff9eb",
+            "accent-fill": "#826D05",
+            "surface-tint": "#705d00",
+            "text-tertiary": "#6B6650",
+            "on-background": "#1f1c0c",
+            "on-surface": "#1f1c0c",
+            "danger-bg": "#FBE5E5",
+            "info": "#1F4F8A",
+            "surface-container": "#f6eed3",
+            "outline-variant": "#d0c6ab"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1.25rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "0.75rem",
+            "space-xs": "0.25rem",
+            "space-2xl": "2rem",
+            "space-lg": "1rem",
+            "margin": "1.25rem",
+            "space-xl": "1.5rem",
+            "space-sm": "0.5rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "title-20": ["Plus Jakarta Sans"],
+            "body-16": ["Plus Jakarta Sans"],
+            "label-14": ["Plus Jakarta Sans"],
+            "caption-13": ["Plus Jakarta Sans"],
+            "display-32": ["Unbounded"]
+          },
+          "fontSize": {
+            "title-20": [
+              "20px",
+              {
+                "lineHeight": "28px",
+                "fontWeight": "600"
+              }
+            ],
+            "body-16": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "400"
+              }
+            ],
+            "label-14": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "fontWeight": "500"
+              }
+            ],
+            "caption-13": [
+              "13px",
+              {
+                "lineHeight": "18px",
+                "fontWeight": "500"
+              }
+            ],
+            "display-32": [
+              "32px",
+              {
+                "lineHeight": "40px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "700"
+              }
+            ]
+          },
+          "boxShadow": {
+            "soft": "0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06)",
+            "elevated": "0 2px 4px rgba(0,0,0,0.04), 0 12px 32px rgba(0,0,0,0.08)"
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .tabular-nums {
+      font-variant-numeric: tabular-nums;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-ink antialiased min-h-screen flex justify-center selection:bg-primary-container selection:text-ink">
+<!-- Mobile Frame Container (393px × 852px) -->
+<div class="w-full max-w-[393px] min-h-[852px] bg-background flex flex-col relative pb-24 shadow-2xl">
+<!-- Top Safe Area Placeholder -->
+<div class="h-11 w-full flex items-center justify-between px-7 pt-2 text-[14px] font-semibold text-ink select-none tracking-tight">
+<span class="tabular-nums">9:41</span>
+<div class="flex items-center gap-1.5 text-ink">
+<span class="material-symbols-outlined text-[16px]">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[16px]">wifi</span>
+<span class="material-symbols-outlined text-[18px]">battery_full</span>
+</div>
+</div>
+<!-- Header (Pushed Screen / Section Title in Unbounded 20/600) -->
+<header class="px-5 pt-3 pb-3 flex items-center justify-between">
+<h1 class="font-display-32 text-title-20 font-semibold text-ink tracking-tight">Invoices</h1>
+<!-- Trailing Action: Statement Download / Summary -->
+<div class="flex items-center gap-2">
+<button aria-label="Download statement summary" class="w-10 h-10 rounded-full bg-surface border border-hairline flex items-center justify-center text-ink hover:bg-surface-alt active:scale-95 transition-transform duration-100 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="file_download">file_download</span>
+</button>
+<button aria-label="Search invoices" class="w-10 h-10 rounded-full bg-surface border border-hairline flex items-center justify-center text-ink hover:bg-surface-alt active:scale-95 transition-transform duration-100 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="search">search</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-5 flex flex-col gap-5 pt-1">
+<!-- Hero Balance Due Card -->
+<section class="bg-ink text-white rounded-[20px] p-5 shadow-elevated relative overflow-hidden">
+<!-- Top Row Inside Card -->
+<div class="flex items-center justify-between gap-2 mb-3">
+<span class="text-white/70 font-label-14 text-label-14 font-medium">Balance due</span>
+<!-- Pill Badge: Synced from QuickBooks -->
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-container text-ink font-caption-13 text-[12px] font-semibold leading-none shadow-xs">
+<span class="material-symbols-outlined text-[14px] animate-spin-reverse" data-icon="sync">sync</span>
+<span>Synced from QuickBooks</span>
+</div>
+</div>
+<!-- Big Hero Amount -->
+<div class="font-display-32 text-[34px] leading-tight font-bold tracking-tight text-white tabular-nums my-1">
+          $4,280.00
+        </div>
+<!-- Card Footer Metadata -->
+<div class="pt-3 mt-3 border-t border-white/10 flex items-center justify-between text-white/80 font-caption-13 text-caption-13">
+<span class="font-semibold text-white/90">2 open invoices</span>
+<span class="text-[12px] text-white/60 tracking-tight">Net 30 terms • Auto-draft off</span>
+</div>
+</section>
+<!-- Filter Chips -->
+<section class="flex items-center gap-2 overflow-x-auto py-0.5 no-scrollbar">
+<!-- All (Active) -->
+<button class="px-4 py-1.5 rounded-full bg-primary-container text-ink font-label-14 text-label-14 font-semibold shadow-xs active:scale-95 transition-transform" type="button">
+          All
+        </button>
+<!-- Open -->
+<button class="px-4 py-1.5 rounded-full bg-surface border border-hairline text-ink font-label-14 text-label-14 hover:bg-surface-alt active:scale-95 transition-all" type="button">
+          Open
+        </button>
+<!-- Paid -->
+<button class="px-4 py-1.5 rounded-full bg-surface border border-hairline text-ink font-label-14 text-label-14 hover:bg-surface-alt active:scale-95 transition-all" type="button">
+          Paid
+        </button>
+</section>
+<!-- Invoices List -->
+<section class="flex flex-col gap-3">
+<!-- Row 1: INV-10482 -->
+<article class="bg-surface rounded-[20px] p-4 border border-hairline shadow-soft hover:border-outline-variant transition-colors flex flex-col gap-2.5">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-title-20 text-[15px] font-bold text-ink tabular-nums tracking-tight">INV-10482</span>
+<span class="text-text-tertiary text-[12px]">•</span>
+<span class="font-caption-13 text-[13px] text-text-secondary">Oct 31, 2026</span>
+</div>
+<p class="font-label-14 text-label-14 text-text-secondary mt-0.5">Northgate Office Park</p>
+</div>
+<div class="text-right">
+<span class="font-title-20 text-[16px] font-bold text-ink tabular-nums">$1,920.00</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-hairline/70">
+<!-- Warning Status Chip -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-warning-bg text-warning font-caption-13 text-[12px] font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-warning"></span>
+              Open • Due Nov 30
+            </span>
+<button aria-label="View Invoice PDF" class="text-text-tertiary hover:text-ink active:scale-90 transition-transform p-1 -mr-1" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="picture_as_pdf">picture_as_pdf</span>
+</button>
+</div>
+</article>
+<!-- Row 2: INV-10471 -->
+<article class="bg-surface rounded-[20px] p-4 border border-hairline shadow-soft hover:border-outline-variant transition-colors flex flex-col gap-2.5">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-title-20 text-[15px] font-bold text-ink tabular-nums tracking-tight">INV-10471</span>
+<span class="text-text-tertiary text-[12px]">•</span>
+<span class="font-caption-13 text-[13px] text-text-secondary">Oct 15, 2026</span>
+</div>
+<p class="font-label-14 text-label-14 text-text-secondary mt-0.5">Riverside Medical Plaza</p>
+</div>
+<div class="text-right">
+<span class="font-title-20 text-[16px] font-bold text-ink tabular-nums">$2,360.00</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-hairline/70">
+<!-- Warning Status Chip -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-warning-bg text-warning font-caption-13 text-[12px] font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-warning"></span>
+              Open • Due Nov 14
+            </span>
+<button aria-label="View Invoice PDF" class="text-text-tertiary hover:text-ink active:scale-90 transition-transform p-1 -mr-1" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="picture_as_pdf">picture_as_pdf</span>
+</button>
+</div>
+</article>
+<!-- Row 3: INV-10455 -->
+<article class="bg-surface rounded-[20px] p-4 border border-hairline shadow-soft hover:border-outline-variant transition-colors flex flex-col gap-2.5">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-title-20 text-[15px] font-bold text-ink tabular-nums tracking-tight">INV-10455</span>
+<span class="text-text-tertiary text-[12px]">•</span>
+<span class="font-caption-13 text-[13px] text-text-secondary">Sep 30, 2026</span>
+</div>
+<p class="font-label-14 text-label-14 text-text-secondary mt-0.5">Riverside Medical Plaza</p>
+</div>
+<div class="text-right">
+<span class="font-title-20 text-[16px] font-bold text-ink tabular-nums">$2,360.00</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-hairline/70">
+<!-- Success Status Chip -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-success-bg text-success font-caption-13 text-[12px] font-medium">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+              Paid
+            </span>
+<button aria-label="View Receipt" class="text-text-tertiary hover:text-ink active:scale-90 transition-transform p-1 -mr-1" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="receipt">receipt</span>
+</button>
+</div>
+</article>
+<!-- Row 4: INV-10431 -->
+<article class="bg-surface rounded-[20px] p-4 border border-hairline shadow-soft hover:border-outline-variant transition-colors flex flex-col gap-2.5">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-title-20 text-[15px] font-bold text-ink tabular-nums tracking-tight">INV-10431</span>
+<span class="text-text-tertiary text-[12px]">•</span>
+<span class="font-caption-13 text-[13px] text-text-secondary">Sep 15, 2026</span>
+</div>
+<p class="font-label-14 text-label-14 text-text-secondary mt-0.5">Eastgate Distribution</p>
+</div>
+<div class="text-right">
+<span class="font-title-20 text-[16px] font-bold text-ink tabular-nums">$1,880.00</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-hairline/70">
+<!-- Success Status Chip -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-success-bg text-success font-caption-13 text-[12px] font-medium">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+              Paid
+            </span>
+<button aria-label="View Receipt" class="text-text-tertiary hover:text-ink active:scale-90 transition-transform p-1 -mr-1" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="receipt">receipt</span>
+</button>
+</div>
+</article>
+</section>
+<!-- View-Only Disclaimer Notice Card -->
+<section class="bg-surface-alt border border-hairline rounded-[16px] p-3.5 flex items-start gap-3 mt-1">
+<span class="material-symbols-outlined text-text-secondary text-[20px] mt-0.5 flex-shrink-0" data-icon="info">info</span>
+<div class="flex-1">
+<p class="font-caption-13 text-[13px] text-ink font-medium leading-snug">
+            Invoices are view-only. Contact billing with questions.
+          </p>
+<div class="mt-1 flex items-center gap-3">
+<a class="font-caption-13 text-[12px] font-semibold text-ink underline decoration-control-border hover:text-accent-fill transition-colors" href="mailto:billing@midasfacility.com">
+              billing@midasfacility.com
+            </a>
+<span class="text-text-tertiary text-[12px]">•</span>
+<a class="font-caption-13 text-[12px] font-semibold text-ink hover:text-accent-fill transition-colors" href="tel:18005550199">
+              (800) 555-0199
+            </a>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Shared Component Anchor) -->
+<!-- Destination count: 4 | Invoices tab is ACTIVE -->
+<nav aria-label="Bottom Navigation" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter pt-space-xs pb-6 h-16 bg-surface border-t border-hairline max-w-[393px] left-1/2 -translate-x-1/2">
+<!-- Tab 1: Home -->
+<button class="flex flex-col items-center justify-center gap-1 text-text-tertiary font-medium hover:text-ink transition-colors duration-150 active:scale-95 transition-transform duration-100 flex-1" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="home">home</span>
+<span class="font-caption-13 text-caption-13">Home</span>
+</button>
+<!-- Tab 2: Requests -->
+<button class="flex flex-col items-center justify-center gap-1 text-text-tertiary font-medium hover:text-ink transition-colors duration-150 active:scale-95 transition-transform duration-100 flex-1" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="assignment">assignment</span>
+<span class="font-caption-13 text-caption-13">Requests</span>
+</button>
+<!-- Tab 3: Invoices (ACTIVE TAB) -->
+<button class="flex flex-col items-center justify-center gap-1 text-ink font-semibold active:scale-95 transition-transform duration-100 flex-1" type="button">
+<!-- Lemon Pill backdrop behind icon per exact style_active_navigation instructions -->
+<span class="bg-primary-container text-ink px-3 py-0.5 rounded-full inline-flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" data-icon="receipt_long">receipt_long</span>
+</span>
+<span class="font-caption-13 text-caption-13">Invoices</span>
+</button>
+<!-- Tab 4: Support -->
+<button class="flex flex-col items-center justify-center gap-1 text-text-tertiary font-medium hover:text-ink transition-colors duration-150 active:scale-95 transition-transform duration-100 flex-1" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-caption-13 text-caption-13">Support</span>
+</button>
+</nav>
+</div>
+</body></html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>New Service Request - Midas</title>
+<!-- Google Fonts: Plus Jakarta Sans & Unbounded -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Unbounded:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-fixed": "#001c37",
+            "ink": "#1F1C0C",
+            "info": "#1F4F8A",
+            "on-secondary-fixed-variant": "#00487f",
+            "error": "#ba1a1a",
+            "primary": "#705d00",
+            "on-primary-container": "#705d00",
+            "secondary": "#1661a2",
+            "on-surface": "#1f1c0c",
+            "secondary-container": "#7cb7fe",
+            "inverse-on-surface": "#f9f1d6",
+            "on-primary-fixed-variant": "#554600",
+            "on-primary": "#ffffff",
+            "danger-bg": "#FBE5E5",
+            "surface-variant": "#eae2c8",
+            "on-secondary-container": "#00477d",
+            "surface-container-high": "#f0e8ce",
+            "warning": "#A75906",
+            "tertiary-container": "#00f0fc",
+            "surface-container-highest": "#eae2c8",
+            "surface-container-lowest": "#ffffff",
+            "inverse-primary": "#e9c400",
+            "accent-tint": "#FFF6C7",
+            "surface-bright": "#fff9eb",
+            "outline-variant": "#d0c6ab",
+            "primary-fixed": "#ffe171",
+            "surface": "#FFFFFF",
+            "outline": "#7f775f",
+            "on-tertiary-fixed": "#002022",
+            "on-surface-variant": "#4d4632",
+            "success-bg": "#E3F4E9",
+            "on-tertiary-container": "#00696f",
+            "control-border": "#9B9556",
+            "on-background": "#1f1c0c",
+            "primary-fixed-dim": "#e9c400",
+            "surface-container": "#f6eed3",
+            "primary-container": "#ffd60a",
+            "secondary-fixed": "#d2e4ff",
+            "warning-bg": "#FAEFE1",
+            "surface-tint": "#705d00",
+            "background": "#FCFAF4",
+            "text-secondary": "#575238",
+            "text-tertiary": "#6B6650",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+            "surface-alt": "#F6F2E4",
+            "hairline": "#ECE6D2",
+            "surface-container-low": "#fbf4d9",
+            "on-primary-fixed": "#221b00",
+            "on-tertiary": "#ffffff",
+            "tertiary": "#00696f",
+            "success": "#0E7C3A",
+            "on-tertiary-fixed-variant": "#004f53",
+            "tertiary-fixed-dim": "#00dce7",
+            "secondary-fixed-dim": "#a1c9ff",
+            "inverse-surface": "#34311f",
+            "accent-pressed": "#E6C000",
+            "danger": "#CE2020",
+            "on-secondary": "#ffffff",
+            "surface-dim": "#e1dac0",
+            "support-data": "#4194FF",
+            "on-error": "#ffffff",
+            "info-bg": "#E3F0FF",
+            "accent-fill": "#826D05",
+            "tertiary-fixed": "#70f6ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "1.5rem",
+            "space-2xl": "2rem",
+            "margin": "1.25rem",
+            "space-md": "0.75rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "title-20": ["Plus Jakarta Sans"],
+            "label-14": ["Plus Jakarta Sans"],
+            "display-32": ["Unbounded"],
+            "caption-13": ["Plus Jakarta Sans"],
+            "body-16": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "title-20": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-14": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "display-32": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "caption-13": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "body-16": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      display: none;
+    }
+    .custom-scroll {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-background text-ink font-body-16 text-body-16 min-h-screen flex justify-center selection:bg-primary-container selection:text-ink">
+<!-- Mobile Screen Container (393px width standard frame) -->
+<main class="w-full max-w-[393px] min-h-screen bg-background flex flex-col relative pb-10 shadow-sm border-x border-hairline/40">
+<!-- Top Sticky Header -->
+<header class="sticky top-0 z-30 bg-background/95 backdrop-blur-md px-margin pt-4 pb-3 flex items-center justify-between border-b border-hairline">
+<div class="flex items-center gap-2">
+<h1 class="font-display-32 text-title-20 font-bold text-ink tracking-tight">New request</h1>
+</div>
+<button aria-label="Close" class="w-9 h-9 rounded-full flex items-center justify-center text-ink hover:bg-surface-alt active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[22px]">close</span>
+</button>
+</header>
+<!-- Scrollable Form Body -->
+<div class="flex-1 px-margin pt-5 space-y-6">
+<!-- Section: Site Selector -->
+<section class="space-y-1.5">
+<label class="block font-label-14 text-label-14 font-semibold text-ink" for="facility-site">
+          Facility / Site
+        </label>
+<div class="relative">
+<button class="w-full bg-surface text-ink text-left px-3.5 py-3 rounded-xl border border-control-border flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-primary-container active:scale-[0.99] transition-all" id="facility-site" type="button">
+<span class="font-body-16 text-label-14 font-medium text-ink truncate">Northgate Office Park - Building A</span>
+<span class="material-symbols-outlined text-text-tertiary flex-shrink-0 ml-2">expand_more</span>
+</button>
+</div>
+</section>
+<!-- Section: Service Type Selection -->
+<section class="space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-14 text-label-14 font-semibold text-ink">Service type</span>
+<span class="font-caption-13 text-caption-13 text-text-secondary">Required</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<!-- Janitorial -->
+<button class="px-3.5 py-2 rounded-full border border-hairline bg-surface text-ink font-label-14 text-caption-13 font-medium hover:border-control-border active:scale-95 transition-all" type="button">
+            Janitorial
+          </button>
+<!-- Floor care (SELECTED) -->
+<button class="px-4 py-2 rounded-full bg-primary-container text-ink font-label-14 text-caption-13 font-semibold shadow-xs flex items-center gap-1.5 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-base">check</span>
+            Floor care
+          </button>
+<!-- Windows -->
+<button class="px-3.5 py-2 rounded-full border border-hairline bg-surface text-ink font-label-14 text-caption-13 font-medium hover:border-control-border active:scale-95 transition-all" type="button">
+            Windows
+          </button>
+<!-- Restroom -->
+<button class="px-3.5 py-2 rounded-full border border-hairline bg-surface text-ink font-label-14 text-caption-13 font-medium hover:border-control-border active:scale-95 transition-all" type="button">
+            Restroom
+          </button>
+<!-- Spill / urgent -->
+<button class="px-3.5 py-2 rounded-full border border-hairline bg-surface text-ink font-label-14 text-caption-13 font-medium hover:border-control-border active:scale-95 transition-all" type="button">
+            Spill / urgent
+          </button>
+<!-- Other -->
+<button class="px-3.5 py-2 rounded-full border border-hairline bg-surface text-ink font-label-14 text-caption-13 font-medium hover:border-control-border active:scale-95 transition-all" type="button">
+            Other
+          </button>
+</div>
+</section>
+<!-- Section: Description Textarea -->
+<section class="space-y-1.5">
+<label class="block font-label-14 text-label-14 font-semibold text-ink" for="request-description">
+          Description
+        </label>
+<div class="relative">
+<textarea class="w-full bg-surface text-ink text-label-14 font-body-16 p-3.5 rounded-xl border border-control-border focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-control-border resize-none leading-relaxed" id="request-description" placeholder="Describe the service needed in detail..." rows="3">Coffee stain near elevator bank, 2nd floor carpet, about 3 ft wide.</textarea>
+</div>
+</section>
+<!-- Section: Focal Photos & Attachments -->
+<section class="space-y-2">
+<div class="flex items-center justify-between">
+<label class="font-label-14 text-label-14 font-semibold text-ink">
+            Photos &amp; attachments
+          </label>
+<span class="font-caption-13 text-caption-13 text-text-secondary">(2 attached)</span>
+</div>
+<div class="flex items-center gap-3 overflow-x-auto pb-1 custom-scroll">
+<!-- Thumbnail 1 -->
+<div class="relative flex-shrink-0 w-24 h-24 rounded-xl overflow-hidden bg-surface-alt border border-hairline shadow-xs">
+<img alt="Coffee spill detail on carpet" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIUV0m_rlGhgRPk5E9uBnNC6PdaNped3BMkIV-7EoCg9FeLJcfgqkJ0OmnVnyiA_K-TLO4X4ZuBGysaet1SXDnWOuCeDj6WB8ymo2gTpNQKvz8A6Ra7UuCwzYQ3PZqtkllMbUACu1CiXCDQOPh209J5eYEEIH_JSRTi-2ulLNnvlZ2sRJYdgghiBEUV9gYSPB8J_x1IeRCFPaUzv8v95oPQFliWX0Fgz97nUi-mY9OKWac2Cczl6PqbZvHhIi4nEJmc1Hh00NPAvg"/>
+<button aria-label="Remove image 1" class="absolute top-1.5 right-1.5 w-6 h-6 rounded-full bg-ink/80 hover:bg-ink text-surface flex items-center justify-center transition-all active:scale-90" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</div>
+<!-- Thumbnail 2 -->
+<div class="relative flex-shrink-0 w-24 h-24 rounded-xl overflow-hidden bg-surface-alt border border-hairline shadow-xs">
+<img alt="Elevator floor overview with stain" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFof7OBsKhNSB0xJeEA1XNNIWo1w3e6ItEt4iFYuo14XlB_GxzzUm-lwbNlYPfyFAxM96mD7AH_jNESdnIVBQAIN1nB8vwieufFxUzN39o6NCjxnKthnMyXzMmbzfyOTsDssi8tVd41Ra3ll8AIadm_vL2XSlrf6L5TJsIo-V5ikhFouX6VwAODUFYOEkuRixJ4sL4vKs13grDhb-IH1mwv50lgu1eTvG7nX0xRaYk0gtrlrWg-h9K0ACcS_Q7QMqh-utpf3B_dA8"/>
+<button aria-label="Remove image 2" class="absolute top-1.5 right-1.5 w-6 h-6 rounded-full bg-ink/80 hover:bg-ink text-surface flex items-center justify-center transition-all active:scale-90" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</div>
+<!-- Add Photo Tile -->
+<button class="flex-shrink-0 w-24 h-24 rounded-xl border-[1.5px] border-dashed border-control-border bg-accent-tint/30 flex flex-col items-center justify-center gap-1 text-ink hover:bg-accent-tint/60 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-ink text-[22px]">photo_camera</span>
+<span class="font-caption-13 text-[12px] font-semibold text-ink leading-tight">+ Add photo</span>
+</button>
+</div>
+</section>
+<!-- Section: Preferred Timing Chips -->
+<section class="space-y-2">
+<label class="block font-label-14 text-label-14 font-semibold text-ink">
+          Preferred timing
+        </label>
+<div class="grid grid-cols-3 gap-2">
+<!-- ASAP -->
+<button class="py-2.5 px-3 rounded-full border border-hairline bg-surface text-ink font-label-14 text-caption-13 font-medium text-center hover:border-control-border active:scale-95 transition-all" type="button">
+            ASAP
+          </button>
+<!-- This week (SELECTED) -->
+<button class="py-2.5 px-3 rounded-full bg-primary-container text-ink font-label-14 text-caption-13 font-semibold text-center shadow-xs active:scale-95 transition-all" type="button">
+            This week
+          </button>
+<!-- Next visit -->
+<button class="py-2.5 px-3 rounded-full border border-hairline bg-surface text-ink font-label-14 text-caption-13 font-medium text-center hover:border-control-border active:scale-95 transition-all" type="button">
+            Next visit
+          </button>
+</div>
+</section>
+<!-- Section: Notification Toggle -->
+<section class="bg-surface rounded-2xl p-4 border border-hairline flex items-center justify-between shadow-xs">
+<div class="space-y-0.5 pr-3">
+<p class="font-label-14 text-label-14 font-semibold text-ink">Text me when scheduled</p>
+<p class="font-caption-13 text-caption-13 text-text-secondary">SMS updates to (512) 555-0192</p>
+</div>
+<!-- Switch Toggle ON -->
+<button aria-checked="true" class="w-12 h-7 bg-primary-container rounded-full p-1 flex items-center transition-colors focus:outline-none flex-shrink-0 cursor-pointer" role="switch" type="button">
+<div class="w-5 h-5 bg-ink rounded-full shadow-sm transform translate-x-5 transition-transform"></div>
+</button>
+</section>
+<!-- Submit CTA Area -->
+<section class="pt-2 space-y-2.5">
+<button class="w-full bg-primary-container hover:bg-accent-pressed active:scale-[0.98] text-ink font-label-14 text-body-16 font-semibold py-3.5 px-6 rounded-full transition-all shadow-sm flex items-center justify-center gap-2" type="button">
+<span>Submit request</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+<p class="text-center font-caption-13 text-caption-13 text-text-secondary">
+          Goes straight to the Midas scheduling team
+        </p>
+</section>
+</div>
+</main>
+</body></html>

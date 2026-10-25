@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Midas Client Portal - Sign In</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Unbounded:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-fixed": "#001c37",
+            "on-secondary-fixed-variant": "#00487f",
+            "accent-tint": "#FFF6C7",
+            "ink": "#1F1C0C",
+            "danger-bg": "#FBE5E5",
+            "inverse-primary": "#e9c400",
+            "control-border": "#9B9556",
+            "secondary": "#1661a2",
+            "primary-fixed-dim": "#e9c400",
+            "secondary-container": "#7cb7fe",
+            "secondary-fixed-dim": "#a1c9ff",
+            "on-primary-fixed-variant": "#554600",
+            "tertiary": "#00696f",
+            "warning": "#A75906",
+            "tertiary-fixed-dim": "#00dce7",
+            "inverse-on-surface": "#f9f1d6",
+            "accent-fill": "#826D05",
+            "success": "#0E7C3A",
+            "surface-container-lowest": "#ffffff",
+            "primary-container": "#ffd60a",
+            "on-surface": "#1f1c0c",
+            "success-bg": "#E3F4E9",
+            "background": "#FCFAF4",
+            "on-primary": "#ffffff",
+            "surface-dim": "#e1dac0",
+            "surface-container-highest": "#eae2c8",
+            "primary": "#705d00",
+            "on-secondary": "#ffffff",
+            "secondary-fixed": "#d2e4ff",
+            "text-tertiary": "#6B6650",
+            "on-error-container": "#93000a",
+            "hairline": "#ECE6D2",
+            "text-secondary": "#575238",
+            "surface-container-high": "#f0e8ce",
+            "error-container": "#ffdad6",
+            "on-secondary-container": "#00477d",
+            "surface-tint": "#705d00",
+            "on-tertiary-fixed": "#002022",
+            "primary-fixed": "#ffe171",
+            "on-background": "#1f1c0c",
+            "surface-alt": "#F6F2E4",
+            "outline": "#7f775f",
+            "warning-bg": "#FAEFE1",
+            "on-primary-fixed": "#221b00",
+            "on-primary-container": "#705d00",
+            "info": "#1F4F8A",
+            "tertiary-fixed": "#70f6ff",
+            "on-surface-variant": "#4d4632",
+            "inverse-surface": "#34311f",
+            "info-bg": "#E3F0FF",
+            "surface-container": "#f6eed3",
+            "surface-bright": "#fff9eb",
+            "tertiary-container": "#00f0fc",
+            "surface-container-low": "#fbf4d9",
+            "error": "#ba1a1a",
+            "on-error": "#ffffff",
+            "surface-variant": "#eae2c8",
+            "accent-pressed": "#E6C000",
+            "support-data": "#4194FF",
+            "on-tertiary-container": "#00696f",
+            "on-tertiary-fixed-variant": "#004f53",
+            "on-tertiary": "#ffffff",
+            "surface": "#FFFFFF",
+            "danger": "#CE2020",
+            "outline-variant": "#d0c6ab"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1.25rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "1.25rem",
+            "gutter": "1rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1rem",
+            "space-xl": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-md": "0.75rem",
+            "space-2xl": "2rem"
+          },
+          "fontFamily": {
+            "label-14": ["Plus Jakarta Sans", "sans-serif"],
+            "body-16": ["Plus Jakarta Sans", "sans-serif"],
+            "caption-13": ["Plus Jakarta Sans", "sans-serif"],
+            "title-20": ["Plus Jakarta Sans", "sans-serif"],
+            "display-32": ["Unbounded", "sans-serif"]
+          },
+          "fontSize": {
+            "caption-12": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "caption-13": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "label-14": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "body-16": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "title-20": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "display-32": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .soft-card-shadow {
+      box-shadow: 0 1px 2px rgba(31, 28, 12, 0.04), 0 8px 24px rgba(31, 28, 12, 0.06);
+    }
+  </style>
+</head>
+<body class="bg-background text-ink antialiased min-h-screen flex items-center justify-center p-0 sm:p-4">
+<!-- Mobile Frame Container (393px width constraint) -->
+<main class="w-full max-w-[393px] min-h-[852px] bg-background relative flex flex-col justify-between overflow-x-hidden shadow-2xl sm:rounded-[36px] sm:border sm:border-hairline">
+<!-- Top Content Area -->
+<div class="w-full flex flex-col">
+<!-- 1. Top Section / Hero (No Text Overlay) -->
+<div class="relative w-full h-[228px] overflow-hidden bg-surface-alt">
+<img alt="" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7KaHxREVuPHbnAGfu2UVXBSjgVOSBco4IBylR0-PgTz6mYA-_C-NrLwoIyCJKIUq3p2qAgv-tCLbJIDXY6AG-DaVI5gPN_fEx_B7z8Tx96lZfzNcxlL_MKfx5bbojxBP1tMQ-ELZKRKhqCIvtDMO9sa26WFxcCCbgj9SDfwBraTWPJ7OkkTS8RwjwKXrbzAvrlVzydNuhgvyjK5qM9dQiUHNhRQ2uZ9XrxmuvNRtdGF8fxIyw1DKSqFUjhoaBcAkQxiThxwpNR9M"/>
+<!-- Subtle soft gradient fade blending lemon (#FFD60A) and sky blue (#7DB8FF) into warm background (#FCFAF4) -->
+<div class="absolute inset-x-0 bottom-0 h-24 pointer-events-none bg-gradient-to-t from-background via-background/80 to-transparent"></div>
+<div class="absolute inset-x-0 bottom-0 h-14 pointer-events-none opacity-40 bg-gradient-to-r from-primary-container/20 via-transparent to-secondary-container/25 mix-blend-multiply"></div>
+</div>
+<!-- 2. Brand Identity & Header Section -->
+<div class="px-margin -mt-7 relative z-10 flex flex-col items-start">
+<!-- Midas Monogram Tile -->
+<div class="w-11 h-11 rounded-xl bg-ink flex items-center justify-center p-1.5 shadow-md border border-hairline overflow-hidden mb-3.5">
+<img alt="Midas Monogram" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WhBpPXGUyDT9sxHZEHD0gvHJjq_Zwnty-sOn0cEpEWxIoJCGxkEG7fSi4UvR7ey3oD8XXcTxG5uM-bvNy1EVVvO7zfOwHqGN6k54134mvhBgwMPF_WRKHpJN34uy8xCM2E3LqEHTfmFVP34grm2yOF2Ac83CtZi6afxBb1oAoeL3j7v_FOSVoZ8Wic-6g1vf0Rpc2Iw6J1etIAHbOZSDQy52pYac_Cj6_bVjxuy2xRzhCBGomrJb3pix0"/>
+</div>
+<!-- Typography Header -->
+<h1 class="font-display-32 text-title-20 text-ink tracking-tight font-semibold">
+          Welcome back
+        </h1>
+<p class="font-label-14 text-label-14 text-text-secondary mt-1">
+          Manage your sites, requests and invoices in one place
+        </p>
+</div>
+<!-- 3. Form Card -->
+<div class="px-margin mt-5">
+<div class="bg-surface rounded-2xl p-space-xl soft-card-shadow border border-hairline flex flex-col gap-4">
+<!-- Email Input -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-14 text-label-14 text-ink font-medium" for="work-email">
+              Work email
+            </label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined text-text-tertiary absolute left-3 pointer-events-none text-[20px]" data-icon="mail">mail</span>
+<input class="w-full h-12 pl-10 pr-3 rounded-xl bg-surface border border-control-border text-ink font-body-16 text-body-16 focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-transparent transition-all" id="work-email" type="email" value="ops@northgateoffice.com"/>
+</div>
+</div>
+<!-- Password Input -->
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-center">
+<label class="font-label-14 text-label-14 text-ink font-medium" for="password">
+                Password
+              </label>
+</div>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined text-text-tertiary absolute left-3 pointer-events-none text-[20px]" data-icon="lock">lock</span>
+<input class="w-full h-12 pl-10 pr-10 rounded-xl bg-surface border border-control-border text-ink font-body-16 text-body-16 tracking-widest focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-transparent transition-all" id="password" type="password" value="secretPassword123"/>
+<button aria-label="Toggle password visibility" class="absolute right-3 text-text-tertiary hover:text-ink transition-colors flex items-center justify-center p-1" onclick="const pwd = document.getElementById('password'); const icon = this.querySelector('span'); if (pwd.type === 'password') { pwd.type = 'text'; pwd.classList.remove('tracking-widest'); icon.textContent = 'visibility_off'; } else { pwd.type = 'password'; pwd.classList.add('tracking-widest'); icon.textContent = 'visibility'; }" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<!-- Forgot Password Link -->
+<div class="flex justify-end -mt-1">
+<a class="font-caption-13 text-caption-13 text-accent-fill font-semibold hover:underline" href="#">
+              Forgot password?
+            </a>
+</div>
+<!-- Primary CTA Button -->
+<div class="mt-2 flex flex-col gap-3">
+<button class="w-full h-12 rounded-full bg-primary-container hover:bg-accent-pressed active:scale-[0.99] transition-all flex items-center justify-center font-label-14 text-label-14 font-bold text-ink shadow-sm" type="button">
+              Sign in
+            </button>
+<!-- Secondary CTA Button -->
+<button class="w-full h-12 rounded-full bg-surface border border-control-border hover:bg-surface-alt active:scale-[0.99] transition-all flex items-center justify-center font-label-14 text-label-14 font-semibold text-ink" type="button">
+              Use a magic link instead
+            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- 4. Footer Note & Safe Area Indicator -->
+<footer class="px-margin pt-6 pb-8 flex flex-col items-center justify-center text-center">
+<div class="flex items-center justify-center gap-1.5 text-text-tertiary">
+<span class="material-symbols-outlined text-[16px] text-text-tertiary" data-icon="verified_user">verified_user</span>
+<span class="font-caption-13 text-caption-13">
+          Your portal account is linked to your Midas service agreement
+        </span>
+</div>
+<div class="mt-2 text-caption-12 text-text-secondary opacity-75">
+        Commercial Facility Operations &amp; Infrastructure Management
+      </div>
+</footer>
+</main>
+</body></html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Midas Client Portal - Home</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Unbounded:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-fixed": "#001c37",
+            "on-primary-fixed": "#221b00",
+            "on-secondary-fixed-variant": "#00487f",
+            "warning": "#A75906",
+            "tertiary-container": "#00f0fc",
+            "accent-tint": "#FFF6C7",
+            "on-tertiary-fixed": "#002022",
+            "tertiary": "#00696f",
+            "on-error": "#ffffff",
+            "primary": "#705d00",
+            "primary-fixed": "#ffe171",
+            "surface-dim": "#e1dac0",
+            "background": "#FCFAF4",
+            "control-border": "#9B9556",
+            "surface-variant": "#eae2c8",
+            "surface": "#FFFFFF",
+            "on-primary-container": "#705d00",
+            "primary-container": "#ffd60a",
+            "inverse-surface": "#34311f",
+            "danger": "#CE2020",
+            "surface-container-high": "#f0e8ce",
+            "on-error-container": "#93000a",
+            "secondary-container": "#7cb7fe",
+            "on-tertiary": "#ffffff",
+            "inverse-primary": "#e9c400",
+            "inverse-on-surface": "#f9f1d6",
+            "primary-fixed-dim": "#e9c400",
+            "on-tertiary-container": "#00696f",
+            "ink": "#1F1C0C",
+            "error-container": "#ffdad6",
+            "accent-pressed": "#E6C000",
+            "on-surface-variant": "#4d4632",
+            "on-surface": "#1f1c0c",
+            "tertiary-fixed": "#70f6ff",
+            "on-primary-fixed-variant": "#554600",
+            "surface-alt": "#F6F2E4",
+            "outline": "#7f775f",
+            "outline-variant": "#d0c6ab",
+            "on-secondary": "#ffffff",
+            "secondary-fixed": "#d2e4ff",
+            "text-secondary": "#575238",
+            "support-data": "#4194FF",
+            "success": "#0E7C3A",
+            "accent-fill": "#826D05",
+            "text-tertiary": "#6B6650",
+            "on-secondary-container": "#00477d",
+            "info-bg": "#E3F0FF",
+            "info": "#1F4F8A",
+            "surface-tint": "#705d00",
+            "surface-container": "#f6eed3",
+            "surface-container-highest": "#eae2c8",
+            "secondary-fixed-dim": "#a1c9ff",
+            "danger-bg": "#FBE5E5",
+            "success-bg": "#E3F4E9",
+            "tertiary-fixed-dim": "#00dce7",
+            "surface-container-low": "#fbf4d9",
+            "hairline": "#ECE6D2",
+            "error": "#ba1a1a",
+            "surface-bright": "#fff9eb",
+            "secondary": "#1661a2",
+            "surface-container-lowest": "#ffffff",
+            "on-primary": "#ffffff",
+            "warning-bg": "#FAEFE1",
+            "on-tertiary-fixed-variant": "#004f53",
+            "on-background": "#1f1c0c"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1.25rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "1.25rem",
+            "space-xl": "1.5rem",
+            "space-sm": "0.5rem",
+            "gutter": "1rem",
+            "space-xs": "0.25rem",
+            "space-md": "0.75rem",
+            "space-2xl": "2rem",
+            "space-lg": "1rem",
+            "safe": "2rem"
+          },
+          "fontFamily": {
+            "display-32": ["Unbounded", "sans-serif"],
+            "caption-13": ["Plus Jakarta Sans", "sans-serif"],
+            "body-16": ["Plus Jakarta Sans", "sans-serif"],
+            "title-20": ["Plus Jakarta Sans", "sans-serif"],
+            "label-14": ["Plus Jakarta Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "display-32": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "caption-13": ["13px", { lineHeight: "18px", fontWeight: "500" }],
+            "body-16": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "title-20": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+            "label-14": ["14px", { lineHeight: "20px", fontWeight: "500" }]
+          },
+          "boxShadow": {
+            "soft": "0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06)"
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+    }
+    .font-num-tabular {
+      font-variant-numeric: tabular-nums;
+    }
+  </style>
+</head>
+<body class="bg-background text-ink min-h-screen flex justify-center items-start selection:bg-primary-container selection:text-ink">
+<!-- Mobile Viewport Container (Standard 393px width frame simulation) -->
+<div class="w-full max-w-[393px] min-h-screen flex flex-col bg-background relative pb-28 shadow-xl overflow-x-hidden">
+<!-- Top System Safe Area Bar (Mobile iOS Style) -->
+<div class="w-full h-11 px-6 pt-3 flex justify-between items-center text-ink text-xs font-semibold select-none font-num-tabular z-30">
+<span>9:41</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px]" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[15px]" data-icon="wifi">wifi</span>
+<span class="material-symbols-outlined text-[17px]" data-icon="battery_full">battery_full</span>
+</div>
+</div>
+<!-- Top App Header Section -->
+<header class="w-full px-5 pt-3 pb-4 flex justify-between items-center bg-background border-b border-hairline/60">
+<div class="flex flex-col">
+<h1 class="font-['Unbounded'] font-bold text-ink text-[22px] leading-tight tracking-tight">
+          Welcome, Dana
+        </h1>
+<p class="font-label-14 text-label-14 text-text-secondary mt-0.5 font-num-tabular">
+          Wednesday, Oct 24 • Commercial Facilities
+        </p>
+</div>
+<!-- Trailing Action Cluster: Profile Avatar & Notifications -->
+<div class="flex items-center space-x-3">
+<!-- Notification Bell with Lemon Badge -->
+<button aria-label="Notifications" class="relative p-2 rounded-full hover:bg-surface-alt transition-colors duration-150 active:scale-95 text-ink flex items-center justify-center focus:outline-none">
+<span class="material-symbols-outlined text-[23px]" data-icon="notifications">notifications</span>
+<!-- Lemon indicator dot -->
+<span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 rounded-full bg-primary-container ring-2 ring-background"></span>
+</button>
+<!-- Customer Profile Photo -->
+<div class="relative w-10 h-10 rounded-full overflow-hidden border border-hairline ring-1 ring-control-border/20 shadow-sm active:scale-95 transition-transform duration-100 cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="A warm, professional portrait photograph of Dana Whitfield, an executive property director in her late thirties, smiling confidently in bright studio light wearing contemporary minimal beige business attire with a warm neutral background that echoes high-end corporate hospitality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALqQk41eDOlGQgyJT7ttflNIF7KJkpZguC3w0FT_khHoRmoWkI9dXIceZ9U3pgPmEEK_PfdNFAYeis4iPwa6cZgnaFXipLyPOGTVjQYuO3sDD9EWhxmNXU1ZH2-ckgdegLfnvI6BDG5uwdR28rDSMyw45dNzY1XwXEBJQM6RPgAHls557w3evGIKGB3OZg1KvmsRwiAqVUhXGi8mO5H-PzOTxmIrKHYWqtq1sr-vMWNI2qUYSG8dEveghW8XYYibIcxjs8KD_XqNc"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas (Empty First-Run State) -->
+<main class="flex-1 px-5 pt-5 pb-6 flex flex-col space-y-4">
+<!-- Primary Empty State Card -->
+<section class="bg-surface rounded-2xl p-4 shadow-soft border border-hairline flex flex-col">
+<!-- Photographic Asset: Conference Room Reference -->
+<div class="w-full h-52 rounded-[16px] overflow-hidden bg-surface-alt relative">
+<img alt="Midas Managed Facilities - Clean Conference Suite" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_9l44hx1fABHCOvTQdvy32NdXK9L4gxBho4SaXXqPbLGLGES8XwYQUL6eEPxfTocVR8w99rvLAoIsTjrU-Kp6mU6DOyf7rP_GFboZArMyaOVeMLx9XrCIPsBjc9B8X1_l7OpDzB3dU_vZgj4L7lVceOsaH8kyufRNBUQkqD2bHrXCcuh4Xs0HwPM5Qh1okEheDV960xSSlI3maDaevA1IiGcaF220bEKBqy9ZYMAYIcc9srcINEvTMJqJn5CPpvzXWf43B7lg1kY"/>
+<div class="absolute top-3 left-3 bg-surface/90 backdrop-blur-sm px-2.5 py-1 rounded-full border border-hairline/80 flex items-center gap-1.5 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-caption-13 text-caption-13 text-ink font-semibold">New Account Setup</span>
+</div>
+</div>
+<!-- Copy Details -->
+<div class="pt-5 px-1 flex flex-col">
+<h2 class="font-['Unbounded'] font-semibold text-ink text-[19px] leading-snug tracking-tight">
+            Your sites will appear here
+          </h2>
+<p class="font-body-16 text-body-16 text-text-secondary mt-2.5 leading-relaxed text-[14px]">
+            Once Midas links your service agreement, you will see each site, upcoming visits and invoices.
+          </p>
+</div>
+<!-- Action Buttons -->
+<div class="mt-6 flex flex-col space-y-3 pt-1">
+<!-- Primary CTA Button: Lemon Pill with Deep Ink typography -->
+<button class="w-full py-3.5 px-6 rounded-full bg-primary-container hover:bg-accent-pressed active:scale-[0.98] transition-all duration-150 flex items-center justify-center space-x-2 text-ink font-semibold text-[15px] shadow-sm">
+<span>Request a quote</span>
+<span class="material-symbols-outlined text-[19px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<!-- Secondary Button: White Pill with Control Border -->
+<button class="w-full py-3.5 px-6 rounded-full bg-surface border border-control-border/60 hover:bg-surface-alt active:scale-[0.98] transition-all duration-150 flex items-center justify-center space-x-2 text-ink font-semibold text-[15px]">
+<span class="material-symbols-outlined text-[18px] text-text-secondary" data-icon="mail">mail</span>
+<span>Contact Midas</span>
+</button>
+</div>
+</section>
+<!-- Support / Service Status Helper Banner -->
+<section class="bg-surface-alt rounded-2xl p-4 border border-hairline flex items-start space-x-3.5">
+<div class="w-8 h-8 rounded-full bg-accent-tint flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-accent-fill text-[19px]" data-icon="hourglass_top">hourglass_top</span>
+</div>
+<div class="flex-1 text-left">
+<div class="flex items-center justify-between">
+<h3 class="font-label-14 text-label-14 text-ink font-semibold">Service agreement pending</h3>
+<span class="font-caption-13 text-caption-13 text-warning font-semibold bg-warning-bg px-2 py-0.5 rounded-full">In Review</span>
+</div>
+<p class="font-caption-13 text-caption-13 text-text-secondary mt-1 leading-normal font-num-tabular">
+            Ref: <span class="font-semibold text-ink">#AGR-8841-MID</span> • Account representative assigned. You will receive an alert once configured.
+          </p>
+<a class="inline-flex items-center gap-1 font-caption-13 text-caption-13 text-ink font-semibold mt-2.5 hover:underline" href="#support">
+<span>Check onboarding status</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+</section>
+<!-- Fast Access Helper Grid -->
+<section class="grid grid-cols-2 gap-3 pt-1">
+<div class="p-3.5 rounded-2xl bg-surface border border-hairline shadow-soft flex flex-col justify-between">
+<div class="w-7 h-7 rounded-lg bg-surface-alt flex items-center justify-center text-ink">
+<span class="material-symbols-outlined text-[18px]" data-icon="description">description</span>
+</div>
+<div class="mt-3">
+<div class="font-label-14 text-label-14 text-ink font-semibold">Rate Sheet</div>
+<div class="font-caption-13 text-caption-13 text-text-secondary">Commercial 2024</div>
+</div>
+</div>
+<div class="p-3.5 rounded-2xl bg-surface border border-hairline shadow-soft flex flex-col justify-between">
+<div class="w-7 h-7 rounded-lg bg-surface-alt flex items-center justify-center text-ink">
+<span class="material-symbols-outlined text-[18px]" data-icon="support_agent">support_agent</span>
+</div>
+<div class="mt-3">
+<div class="font-label-14 text-label-14 text-ink font-semibold">Dedicated Team</div>
+<div class="font-caption-13 text-caption-13 text-text-secondary">Direct hotline</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Fixed 4 Tabs per Shared Component Contract) -->
+<nav aria-label="Bottom Navigation" class="fixed bottom-0 left-0 right-0 max-w-[393px] mx-auto z-50 flex justify-around items-center px-4 pt-1.5 pb-6 bg-surface border-t border-hairline shadow-[0_-4px_12px_rgba(0,0,0,0.03)]">
+<!-- Tab 1: Home (ACTIVE) -->
+<button aria-current="page" class="flex flex-col items-center justify-center gap-1 text-ink font-semibold active:scale-95 transition-transform duration-100 flex-1 py-1">
+<span class="bg-primary-container text-ink px-3.5 py-1 rounded-full flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+</span>
+<span class="font-caption-13 text-caption-13 text-ink font-semibold tracking-tight">Home</span>
+</button>
+<!-- Tab 2: Requests (INACTIVE) -->
+<button class="flex flex-col items-center justify-center gap-1 text-text-tertiary font-medium active:scale-95 transition-transform duration-100 hover:text-ink flex-1 py-1">
+<span class="px-3.5 py-1 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" data-icon="assignment">assignment</span>
+</span>
+<span class="font-caption-13 text-caption-13 tracking-tight">Requests</span>
+</button>
+<!-- Tab 3: Invoices (INACTIVE) -->
+<button class="flex flex-col items-center justify-center gap-1 text-text-tertiary font-medium active:scale-95 transition-transform duration-100 hover:text-ink flex-1 py-1">
+<span class="px-3.5 py-1 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" data-icon="receipt_long">receipt_long</span>
+</span>
+<span class="font-caption-13 text-caption-13 tracking-tight">Invoices</span>
+</button>
+<!-- Tab 4: Support (INACTIVE) -->
+<button class="flex flex-col items-center justify-center gap-1 text-text-tertiary font-medium active:scale-95 transition-transform duration-100 hover:text-ink flex-1 py-1">
+<span class="px-3.5 py-1 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" data-icon="chat_bubble">chat_bubble</span>
+</span>
+<span class="font-caption-13 text-caption-13 tracking-tight">Support</span>
+</button>
+</nav>
+</div>
+</body></html>

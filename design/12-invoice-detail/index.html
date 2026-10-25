@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Midas Client Portal - Invoice INV-10482</title>
+<!-- Google Fonts: Unbounded & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Unbounded:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-on-surface": "#f9f1d6",
+            "tertiary-fixed": "#70f6ff",
+            "secondary-fixed": "#d2e4ff",
+            "tertiary-container": "#00f0fc",
+            "surface-tint": "#705d00",
+            "background": "#FCFAF4",
+            "on-primary": "#ffffff",
+            "inverse-primary": "#e9c400",
+            "ink": "#1F1C0C",
+            "primary": "#705d00",
+            "on-surface": "#1f1c0c",
+            "on-secondary-fixed-variant": "#00487f",
+            "on-error": "#ffffff",
+            "surface-container-low": "#fbf4d9",
+            "danger-bg": "#FBE5E5",
+            "tertiary": "#00696f",
+            "success": "#0E7C3A",
+            "support-data": "#4194FF",
+            "tertiary-fixed-dim": "#00dce7",
+            "surface-dim": "#e1dac0",
+            "on-primary-container": "#705d00",
+            "on-secondary-container": "#00477d",
+            "surface-container-lowest": "#ffffff",
+            "secondary": "#1661a2",
+            "on-primary-fixed": "#221b00",
+            "control-border": "#9B9556",
+            "info": "#1F4F8A",
+            "surface-variant": "#eae2c8",
+            "hairline": "#ECE6D2",
+            "on-error-container": "#93000a",
+            "secondary-container": "#7cb7fe",
+            "surface-container": "#f6eed3",
+            "secondary-fixed-dim": "#a1c9ff",
+            "error": "#ba1a1a",
+            "surface-container-high": "#f0e8ce",
+            "on-secondary": "#ffffff",
+            "on-tertiary-fixed": "#002022",
+            "success-bg": "#E3F4E9",
+            "accent-tint": "#FFF6C7",
+            "surface-container-highest": "#eae2c8",
+            "primary-fixed-dim": "#e9c400",
+            "on-surface-variant": "#4d4632",
+            "on-tertiary-container": "#00696f",
+            "surface": "#FFFFFF",
+            "danger": "#CE2020",
+            "accent-pressed": "#E6C000",
+            "text-tertiary": "#6B6650",
+            "outline": "#7f775f",
+            "warning-bg": "#FAEFE1",
+            "text-secondary": "#575238",
+            "on-primary-fixed-variant": "#554600",
+            "surface-alt": "#F6F2E4",
+            "info-bg": "#E3F0FF",
+            "on-tertiary-fixed-variant": "#004f53",
+            "on-secondary-fixed": "#001c37",
+            "on-tertiary": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-background": "#1f1c0c",
+            "warning": "#A75906",
+            "outline-variant": "#d0c6ab",
+            "accent-fill": "#826D05",
+            "primary-fixed": "#ffe171",
+            "primary-container": "#ffd60a",
+            "surface-bright": "#fff9eb",
+            "inverse-surface": "#34311f"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "20": "1.25rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "gutter": "1rem",
+            "space-lg": "1rem",
+            "margin": "1.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "0.75rem",
+            "space-2xl": "2rem",
+            "space-xl": "1.5rem",
+            "safe": "2.125rem"
+          },
+          "fontFamily": {
+            "label-14": [
+              "Plus Jakarta Sans"
+            ],
+            "title-20": [
+              "Unbounded"
+            ],
+            "display-32": [
+              "Unbounded"
+            ],
+            "caption-13": [
+              "Plus Jakarta Sans"
+            ],
+            "body-16": [
+              "Plus Jakarta Sans"
+            ]
+          },
+          "fontSize": {
+            "label-14": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "fontWeight": "500"
+              }
+            ],
+            "title-20": [
+              "20px",
+              {
+                "lineHeight": "28px",
+                "fontWeight": "600"
+              }
+            ],
+            "display-32": [
+              "32px",
+              {
+                "lineHeight": "40px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "700"
+              }
+            ],
+            "caption-13": [
+              "13px",
+              {
+                "lineHeight": "18px",
+                "fontWeight": "500"
+              }
+            ],
+            "body-16": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "400"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-card-shadow {
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.05);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-ink antialiased min-h-screen flex justify-center selection:bg-primary-container selection:text-ink">
+<!-- Mobile Frame Container (393px width constraint) -->
+<div class="w-full max-w-[393px] min-h-screen bg-background relative flex flex-col pb-28">
+<!-- Top Safe Area Buffer -->
+<div class="h-11 w-full flex-shrink-0"></div>
+<!-- Interior Top App Bar -->
+<header class="flex justify-between items-center w-full px-margin h-14 sticky top-0 bg-background/95 backdrop-blur-sm z-30 transition-all">
+<div class="flex items-center gap-2.5">
+<!-- Back Chevron Button -->
+<button aria-label="Go back to invoices" class="w-9 h-9 -ml-1 rounded-full flex items-center justify-center text-ink hover:bg-surface-alt active:scale-95 transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]">arrow_back</span>
+</button>
+<!-- Invoice Identifier Headline -->
+<h1 class="font-title-20 text-title-20 text-ink tracking-tight">INV-10482</h1>
+</div>
+<div class="flex items-center gap-2">
+<!-- Status Indicator Chip: Open (Warning Semantics) -->
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-warning-bg border border-warning/20">
+<span class="w-1.5 h-1.5 rounded-full bg-warning"></span>
+<span class="font-caption-13 text-caption-13 font-semibold text-warning">Open</span>
+</div>
+<!-- Share / Export Icon Button -->
+<button aria-label="Share invoice" class="w-9 h-9 rounded-full flex items-center justify-center text-text-secondary hover:bg-surface-alt active:scale-95 transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]">ios_share</span>
+</button>
+</div>
+</header>
+<!-- Main Content Stream -->
+<main class="px-margin pt-2 flex flex-col gap-4">
+<!-- QuickBooks Sync Status Badge -->
+<div class="flex items-center justify-between px-3.5 py-2 rounded-xl bg-surface-alt border border-hairline">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[17px] text-text-secondary">sync</span>
+<span class="font-caption-13 text-caption-13 text-text-secondary font-medium">Synced from QuickBooks Online • Nov 1</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-success">check_circle</span>
+</div>
+<!-- Card 1: Billing Metadata Card -->
+<section class="bg-surface rounded-20 p-5 custom-card-shadow border border-hairline/60 flex flex-col gap-4">
+<!-- Primary recipient info -->
+<div class="border-b border-hairline pb-3.5">
+<span class="font-caption-13 text-caption-13 text-text-secondary block mb-1">Bill to</span>
+<p class="font-body-16 text-body-16 font-semibold text-ink leading-snug">Northgate Office Park LLC</p>
+<p class="font-caption-13 text-caption-13 text-text-tertiary mt-0.5">Commercial Facilities Management</p>
+</div>
+<!-- Metadata Grid -->
+<div class="grid grid-cols-3 gap-2 pt-0.5">
+<div>
+<span class="font-caption-13 text-caption-13 text-text-secondary block mb-1">Issued</span>
+<span class="font-label-14 text-label-14 font-semibold text-ink block">Oct 31, 2026</span>
+</div>
+<div>
+<span class="font-caption-13 text-caption-13 text-text-secondary block mb-1">Due date</span>
+<span class="font-label-14 text-label-14 font-semibold text-ink block">Nov 30, 2026</span>
+</div>
+<div>
+<span class="font-caption-13 text-caption-13 text-text-secondary block mb-1">Terms</span>
+<span class="font-label-14 text-label-14 font-semibold text-ink block">Net 30</span>
+</div>
+</div>
+</section>
+<!-- Card 2: Line Items Card -->
+<section class="bg-surface rounded-20 p-5 custom-card-shadow border border-hairline/60 flex flex-col">
+<!-- Section Header -->
+<div class="flex items-center justify-between pb-3.5 border-b border-hairline">
+<h2 class="font-title-20 text-[17px] text-ink font-semibold">Line items</h2>
+<span class="font-caption-13 text-caption-13 text-text-secondary">3 services</span>
+</div>
+<!-- Services Breakdown -->
+<div class="divide-y divide-hairline/70">
+<!-- Item 1 -->
+<div class="py-3.5 flex justify-between items-start gap-3">
+<div class="flex flex-col">
+<span class="font-label-14 text-label-14 font-semibold text-ink leading-snug">Nightly janitorial - October</span>
+<span class="font-caption-13 text-caption-13 text-text-secondary mt-0.5">22 scheduled visits</span>
+</div>
+<span class="font-label-14 text-label-14 font-semibold text-ink tabular-nums text-right whitespace-nowrap">$1,540.00</span>
+</div>
+<!-- Item 2 -->
+<div class="py-3.5 flex justify-between items-start gap-3">
+<div class="flex flex-col">
+<span class="font-label-14 text-label-14 font-semibold text-ink leading-snug">Day porter add-on</span>
+<span class="font-caption-13 text-caption-13 text-text-secondary mt-0.5">Oct 20-24 coverage</span>
+</div>
+<span class="font-label-14 text-label-14 font-semibold text-ink tabular-nums text-right whitespace-nowrap">$280.00</span>
+</div>
+<!-- Item 3 -->
+<div class="py-3.5 flex justify-between items-start gap-3">
+<div class="flex flex-col">
+<span class="font-label-14 text-label-14 font-semibold text-ink leading-snug">Supplies restock</span>
+<span class="font-caption-13 text-caption-13 text-text-secondary mt-0.5">Restroom &amp; pantry inventory</span>
+</div>
+<span class="font-label-14 text-label-14 font-semibold text-ink tabular-nums text-right whitespace-nowrap">$100.00</span>
+</div>
+</div>
+<!-- Summary & Subtotals Section -->
+<div class="pt-3 border-t border-hairline flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<span class="font-caption-13 text-caption-13 text-text-secondary">Subtotal</span>
+<span class="font-label-14 text-label-14 font-medium text-ink tabular-nums">$1,920.00</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-caption-13 text-caption-13 text-text-secondary">Tax (0%)</span>
+<span class="font-label-14 text-label-14 font-medium text-ink tabular-nums">$0.00</span>
+</div>
+<!-- Prominent Unbounded Total -->
+<div class="pt-3.5 mt-1 border-t border-hairline flex justify-between items-baseline">
+<span class="font-caption-13 text-caption-13 uppercase tracking-wider font-semibold text-text-secondary">Total Due</span>
+<span class="font-display-32 text-[26px] text-ink font-bold tabular-nums tracking-tight">$1,920.00</span>
+</div>
+</div>
+</section>
+<!-- View-only Disclaimer Note -->
+<div class="px-2 text-center">
+<p class="font-caption-13 text-caption-13 text-text-tertiary leading-relaxed">
+          Invoices are view-only in portal. Remittance processed automatically via scheduled ACH agreement.
+        </p>
+</div>
+<!-- Action Buttons Section -->
+<section class="flex flex-col gap-2.5 pt-1">
+<!-- Secondary Button: Download PDF -->
+<button class="w-full h-12 rounded-full bg-surface border border-control-border text-ink font-label-14 text-label-14 font-semibold flex items-center justify-center gap-2 hover:bg-surface-alt active:scale-[0.98] transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[19px] text-ink">description</span>
+<span>Download PDF</span>
+</button>
+<!-- Primary Button: Question about invoice -->
+<button class="w-full h-12 rounded-full bg-primary-container text-ink font-label-14 text-label-14 font-semibold flex items-center justify-center gap-2 hover:bg-accent-pressed active:scale-[0.98] transition-all duration-150 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[19px] text-ink">chat_bubble</span>
+<span>Question about this invoice</span>
+</button>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Docked Mobile Shell) -->
+<!-- Destination: Invoices is strictly active -->
+<nav aria-label="Main Navigation" class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[393px] z-50 flex justify-around items-center px-gutter pt-space-xs pb-safe h-16 bg-surface dark:bg-inverse-surface border-t border-hairline dark:border-outline-variant shadow-[0_-2px_12px_rgba(0,0,0,0.03)]">
+<!-- Tab 1: Home (Inactive) -->
+<button class="flex flex-col items-center justify-center gap-1 text-text-tertiary dark:text-outline-variant font-medium hover:text-ink dark:hover:text-inverse-on-surface transition-colors duration-150 active:scale-95 w-16" type="button">
+<span class="material-symbols-outlined text-[22px]">home</span>
+<span class="font-caption-13 text-caption-13">Home</span>
+</button>
+<!-- Tab 2: Requests (Inactive) -->
+<button class="flex flex-col items-center justify-center gap-1 text-text-tertiary dark:text-outline-variant font-medium hover:text-ink dark:hover:text-inverse-on-surface transition-colors duration-150 active:scale-95 w-16" type="button">
+<span class="material-symbols-outlined text-[22px]">assignment</span>
+<span class="font-caption-13 text-caption-13">Requests</span>
+</button>
+<!-- Tab 3: Invoices (Active with lemon pill indicator) -->
+<button aria-current="page" class="flex flex-col items-center justify-center gap-1 text-ink dark:text-inverse-on-surface font-semibold [&amp;_span:first-child]:bg-primary-container dark:[&amp;_span:first-child]:bg-accent-fill [&amp;_span:first-child]:text-ink dark:[&amp;_span:first-child]:text-surface [&amp;_span:first-child]:px-3 [&amp;_span:first-child]:py-0.5 [&amp;_span:first-child]:rounded-full active:scale-95 w-16" type="button">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+<span class="font-caption-13 text-caption-13">Invoices</span>
+</button>
+<!-- Tab 4: Support (Inactive) -->
+<button class="flex flex-col items-center justify-center gap-1 text-text-tertiary dark:text-outline-variant font-medium hover:text-ink dark:hover:text-inverse-on-surface transition-colors duration-150 active:scale-95 w-16" type="button">
+<span class="material-symbols-outlined text-[22px]">chat_bubble</span>
+<span class="font-caption-13 text-caption-13">Support</span>
+</button>
+</nav>
+</div>
+</body></html>

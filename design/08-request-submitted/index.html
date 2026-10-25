@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=393, height=852, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Midas Client Portal - Request Submitted</title>
+<!-- Typography Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Unbounded:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-fixed-dim": "#a1c9ff",
+            "accent-pressed": "#E6C000",
+            "surface-tint": "#705d00",
+            "info-bg": "#E3F0FF",
+            "on-secondary": "#ffffff",
+            "surface-dim": "#e1dac0",
+            "on-surface": "#1f1c0c",
+            "support-data": "#4194FF",
+            "primary-fixed-dim": "#e9c400",
+            "on-secondary-fixed-variant": "#00487f",
+            "secondary-container": "#7cb7fe",
+            "outline": "#7f775f",
+            "on-background": "#1f1c0c",
+            "outline-variant": "#d0c6ab",
+            "surface-container-highest": "#eae2c8",
+            "surface-container-high": "#f0e8ce",
+            "on-primary-fixed-variant": "#554600",
+            "tertiary": "#00696f",
+            "accent-tint": "#FFF6C7",
+            "surface-container-lowest": "#ffffff",
+            "danger": "#CE2020",
+            "text-tertiary": "#6B6650",
+            "primary-container": "#ffd60a",
+            "info": "#1F4F8A",
+            "background": "#FCFAF4",
+            "on-tertiary-fixed-variant": "#004f53",
+            "surface-alt": "#F6F2E4",
+            "on-primary-fixed": "#221b00",
+            "secondary-fixed": "#d2e4ff",
+            "on-surface-variant": "#4d4632",
+            "ink": "#1F1C0C",
+            "inverse-primary": "#e9c400",
+            "on-primary": "#ffffff",
+            "tertiary-fixed-dim": "#00dce7",
+            "on-tertiary-fixed": "#002022",
+            "control-border": "#9B9556",
+            "surface-container": "#f6eed3",
+            "inverse-surface": "#34311f",
+            "on-primary-container": "#705d00",
+            "success-bg": "#E3F4E9",
+            "on-secondary-fixed": "#001c37",
+            "inverse-on-surface": "#f9f1d6",
+            "warning": "#A75906",
+            "surface-bright": "#fff9eb",
+            "tertiary-container": "#00f0fc",
+            "primary": "#705d00",
+            "surface-variant": "#eae2c8",
+            "on-tertiary": "#ffffff",
+            "on-secondary-container": "#00477d",
+            "accent-fill": "#826D05",
+            "success": "#0E7C3A",
+            "secondary": "#1661a2",
+            "warning-bg": "#FAEFE1",
+            "on-error-container": "#93000a",
+            "error": "#ba1a1a",
+            "on-tertiary-container": "#00696f",
+            "text-secondary": "#575238",
+            "error-container": "#ffdad6",
+            "tertiary-fixed": "#70f6ff",
+            "surface-container-low": "#fbf4d9",
+            "surface": "#FFFFFF",
+            "on-error": "#ffffff",
+            "hairline": "#ECE6D2",
+            "danger-bg": "#FBE5E5",
+            "primary-fixed": "#ffe171"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "20": "1.25rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-2xl": "2rem",
+            "space-md": "0.75rem",
+            "space-lg": "1rem",
+            "space-xl": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "margin": "1.25rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "caption-13": ["Plus Jakarta Sans"],
+            "label-14": ["Plus Jakarta Sans"],
+            "title-20": ["Plus Jakarta Sans"],
+            "body-16": ["Plus Jakarta Sans"],
+            "display-32": ["Unbounded"]
+          },
+          "fontSize": {
+            "caption-13": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "label-14": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "title-20": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-16": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "display-32": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #FCFAF4;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .font-unbounded {
+      font-family: 'Unbounded', sans-serif;
+    }
+    .shadow-soft {
+      box-shadow: 0 1px 2px rgba(31, 28, 12, 0.03), 0 8px 24px rgba(31, 28, 12, 0.05);
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-ink antialiased min-h-screen flex justify-center selection:bg-primary-container selection:text-ink">
+<!-- Mobile Frame Container (393px width lock) -->
+<main class="w-full max-w-[393px] min-h-screen bg-background flex flex-col justify-between relative px-margin pt-4 pb-8">
+<!-- Top Bar: Minimal Header with Close Action -->
+<header class="w-full flex items-center justify-between h-12">
+<div class="flex items-center gap-2">
+<span class="font-unbounded text-title-20 font-bold tracking-tight text-ink">Midas</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-accent-tint text-text-secondary font-caption-13 text-[12px] font-semibold tracking-wide">
+          PORTAL
+        </span>
+</div>
+<button aria-label="Close" class="w-9 h-9 flex items-center justify-center rounded-full bg-surface border border-hairline text-ink hover:bg-surface-alt active:scale-95 transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="close">close</span>
+</button>
+</header>
+<!-- Main Content Flow -->
+<div class="flex-1 flex flex-col pt-3 pb-6">
+<!-- Hero Focal Section: Success State -->
+<section class="flex flex-col items-center text-center mt-2 mb-6">
+<!-- Success Badge Indicator -->
+<div class="w-20 h-20 rounded-full bg-success-bg flex items-center justify-center mb-4 transition-transform duration-300">
+<div class="w-12 h-12 rounded-full bg-success flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[28px] font-bold" data-icon="check">check</span>
+</div>
+</div>
+<h1 class="font-unbounded font-bold text-[26px] leading-[34px] tracking-tight text-ink">
+          Request received
+        </h1>
+<p class="font-body-16 text-body-16 text-text-secondary max-w-[310px] mx-auto mt-2 leading-relaxed">
+          Request <span class="font-semibold text-ink">#R-3304</span> for Northgate Office Park. Our team will confirm a time within 2 business hours.
+        </p>
+</section>
+<!-- Horizontal Progress Tracker -->
+<section aria-label="Progress Tracker" class="bg-surface rounded-20 p-4 border border-hairline shadow-soft mb-4">
+<div class="flex items-center justify-between relative px-2">
+<!-- Connector Lines -->
+<div class="absolute left-6 right-6 top-3 h-[2px] bg-hairline -z-0">
+<div class="h-full bg-primary-container w-[16%]"></div>
+</div>
+<!-- Step 1: Requested (Active / Confirmed) -->
+<div class="flex flex-col items-center relative z-10">
+<div class="w-6 h-6 rounded-full bg-primary-container border-2 border-primary-container flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-ink text-[14px] font-bold" data-icon="check">check</span>
+</div>
+<span class="font-caption-13 text-[12px] font-semibold text-ink mt-1.5">Requested</span>
+</div>
+<!-- Step 2: Scheduled -->
+<div class="flex flex-col items-center relative z-10">
+<div class="w-6 h-6 rounded-full bg-surface border-2 border-hairline flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+</div>
+<span class="font-caption-13 text-[12px] text-text-tertiary mt-1.5">Scheduled</span>
+</div>
+<!-- Step 3: In Progress -->
+<div class="flex flex-col items-center relative z-10">
+<div class="w-6 h-6 rounded-full bg-surface border-2 border-hairline flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+</div>
+<span class="font-caption-13 text-[12px] text-text-tertiary mt-1.5">In progress</span>
+</div>
+<!-- Step 4: Completed -->
+<div class="flex flex-col items-center relative z-10">
+<div class="w-6 h-6 rounded-full bg-surface border-2 border-hairline flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+</div>
+<span class="font-caption-13 text-[12px] text-text-tertiary mt-1.5">Completed</span>
+</div>
+</div>
+</section>
+<!-- Request Summary Bento Card -->
+<section class="bg-surface rounded-20 p-5 border border-hairline shadow-soft mb-4">
+<!-- Card Header with Reference Chips -->
+<div class="flex items-center justify-between border-b border-hairline pb-3.5 mb-3.5">
+<div>
+<span class="font-caption-13 text-caption-13 text-text-tertiary block">Location target</span>
+<p class="font-title-20 text-[15px] leading-snug font-semibold text-ink">Northgate Office Park • Bldg A</p>
+</div>
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-surface-alt border border-hairline font-label-14 text-label-14 text-ink font-semibold tracking-tight">
+            #R-3304
+          </span>
+</div>
+<!-- Detail Meta Grid -->
+<div class="space-y-3">
+<!-- Service Line -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-lg bg-surface-alt flex items-center justify-center text-text-secondary">
+<span class="material-symbols-outlined text-[18px]" data-icon="cleaning_services">cleaning_services</span>
+</span>
+<span class="font-label-14 text-label-14 text-text-secondary">Service</span>
+</div>
+<span class="font-label-14 text-label-14 font-semibold text-ink">Floor care</span>
+</div>
+<!-- Photo Attachments -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-lg bg-surface-alt flex items-center justify-center text-text-secondary">
+<span class="material-symbols-outlined text-[18px]" data-icon="photo_camera">photo_camera</span>
+</span>
+<span class="font-label-14 text-label-14 text-text-secondary">Photos</span>
+</div>
+<div class="flex items-center gap-1.5">
+<div class="w-7 h-7 rounded-md overflow-hidden border border-hairline bg-surface-alt flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close up architectural detail of commercial hallway quartz composite floor surface in a modern daylight office setting with polished industrial reflection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCANwW0hybis9CRUTDRisEf4PQ7M5b56sL2khLAKD23me4CGcpN3FvDhKbXmu_JQOmiDB2eb24MI1Zfag3rGHa9poptMY0Ib97Ztp82U8tX1bJDRoZFmGC32mnfCTkk6cqcCsCm8dKX-oonSdmlrrJ5p2RboVHg_nVs4mmssffM0fP78oCaU46DyXFID2UrTA9juIr_AAypciGdsaXvCKKJ6Q6UJE2Gp9-twww1PtRZwfkQ-yMLGHWDSyYjT8PnKZRMp_loGGF3j4U"/>
+</div>
+<div class="w-7 h-7 rounded-md overflow-hidden border border-hairline bg-surface-alt flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Wide shot of spacious commercial building reception entrance tile flooring requiring buffing and waxing under crisp architectural warm LED track lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLE9PMkAGQt9a8TEdERhK9r8Foj08aAlbPsmYcGpnFjhhh_bg1WVzFwYwcYzsA99SrY_33SzhgSsXXrB4eIWUvlD8VAuAIUw-pYlAR78d50UlEHLgYYope1keAjzINdDobbD3fdLI3ytNWPxSPn4MR0gma4QwvFEmabx3ots4AweFJh0hf2Lam1i582hP9sC1hcUntYXm7fgOia6bUPuTMqSHkZ1XGEnOEuD9H4AFy48TcgC7toz6LOYBAzAmy-DafpuosHCwwyks"/>
+</div>
+<span class="font-caption-13 text-caption-13 font-semibold text-ink ml-1">2 attached</span>
+</div>
+</div>
+<!-- Desired Timing -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-lg bg-surface-alt flex items-center justify-center text-text-secondary">
+<span class="material-symbols-outlined text-[18px]" data-icon="calendar_month">calendar_month</span>
+</span>
+<span class="font-label-14 text-label-14 text-text-secondary">Timing</span>
+</div>
+<span class="font-label-14 text-label-14 font-semibold text-ink">This week</span>
+</div>
+<!-- Submitter Info -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-lg bg-surface-alt flex items-center justify-center text-text-secondary">
+<span class="material-symbols-outlined text-[18px]" data-icon="person">person</span>
+</span>
+<span class="font-label-14 text-label-14 text-text-secondary">Submitted by</span>
+</div>
+<span class="font-caption-13 text-caption-13 text-text-secondary">
+              Just now • <strong class="font-semibold text-ink">Dana Whitfield</strong>
+</span>
+</div>
+</div>
+</section>
+<!-- Next Steps Callout Banner -->
+<aside aria-label="Notification details" class="bg-surface-alt rounded-20 p-3.5 border border-hairline flex items-start gap-3 mb-2">
+<div class="w-8 h-8 rounded-full bg-accent-tint flex items-center justify-center text-ink flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]" data-icon="sms">sms</span>
+</div>
+<p class="font-caption-13 text-caption-13 text-text-secondary leading-snug">
+          We sent a confirmation SMS to <span class="font-semibold text-ink">(512) 555–0192</span>. You will receive real-time updates when a crew is assigned.
+        </p>
+</aside>
+</div>
+<!-- Anchored Action Buttons -->
+<div class="w-full flex flex-col gap-2.5 pt-2">
+<!-- Primary CTA: Lemon Fill, Dark Ink Text -->
+<a class="w-full h-13 py-3.5 px-6 rounded-full bg-primary-container text-ink font-label-14 font-bold flex items-center justify-center gap-2 shadow-sm hover:brightness-95 active:bg-accent-pressed active:scale-[0.99] transition-all duration-150 text-center" href="#">
+<span>Track request</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<!-- Secondary CTA: White Pill, Bordered -->
+<a class="w-full py-3.5 px-6 rounded-full bg-surface border border-control-border text-ink font-label-14 font-semibold flex items-center justify-center hover:bg-surface-alt active:scale-[0.99] transition-all duration-150 text-center" href="#">
+        Back to home
+      </a>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Completed Work Photo Gallery - Midas</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Plus Jakarta Sans & Unbounded -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Unbounded:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed-variant": "#004f53",
+            "text-secondary": "#575238",
+            "on-tertiary": "#ffffff",
+            "ink": "#1F1C0C",
+            "on-tertiary-container": "#00696f",
+            "inverse-primary": "#e9c400",
+            "info": "#1F4F8A",
+            "danger-bg": "#FBE5E5",
+            "danger": "#CE2020",
+            "warning": "#A75906",
+            "tertiary-fixed-dim": "#00dce7",
+            "on-surface-variant": "#4d4632",
+            "surface-alt": "#F6F2E4",
+            "outline-variant": "#d0c6ab",
+            "on-tertiary-fixed": "#002022",
+            "on-secondary-container": "#00477d",
+            "info-bg": "#E3F0FF",
+            "support-data": "#4194FF",
+            "on-primary-fixed": "#221b00",
+            "surface-variant": "#eae2c8",
+            "success": "#0E7C3A",
+            "warning-bg": "#FAEFE1",
+            "surface-container-high": "#f0e8ce",
+            "error-container": "#ffdad6",
+            "surface-bright": "#fff9eb",
+            "on-secondary": "#ffffff",
+            "surface": "#FFFFFF",
+            "surface-container-low": "#fbf4d9",
+            "on-primary": "#ffffff",
+            "success-bg": "#E3F4E9",
+            "tertiary-container": "#00f0fc",
+            "primary-container": "#ffd60a",
+            "primary-fixed": "#ffe171",
+            "on-surface": "#1f1c0c",
+            "surface-container": "#f6eed3",
+            "accent-pressed": "#E6C000",
+            "background": "#FCFAF4",
+            "accent-tint": "#FFF6C7",
+            "secondary-fixed-dim": "#a1c9ff",
+            "outline": "#7f775f",
+            "tertiary-fixed": "#70f6ff",
+            "error": "#ba1a1a",
+            "primary": "#705d00",
+            "on-error": "#ffffff",
+            "accent-fill": "#826D05",
+            "on-background": "#1f1c0c",
+            "tertiary": "#00696f",
+            "inverse-surface": "#34311f",
+            "secondary-container": "#7cb7fe",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed-dim": "#e9c400",
+            "control-border": "#9B9556",
+            "on-error-container": "#93000a",
+            "surface-tint": "#705d00",
+            "secondary": "#1661a2",
+            "on-primary-container": "#705d00",
+            "on-primary-fixed-variant": "#554600",
+            "on-secondary-fixed": "#001c37",
+            "inverse-on-surface": "#f9f1d6",
+            "hairline": "#ECE6D2",
+            "surface-dim": "#e1dac0",
+            "on-secondary-fixed-variant": "#00487f",
+            "text-tertiary": "#6B6650",
+            "surface-container-highest": "#eae2c8",
+            "secondary-fixed": "#d2e4ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "1.5rem",
+            "space-sm": "0.5rem",
+            "gutter": "1rem",
+            "space-md": "0.75rem",
+            "space-2xl": "2rem",
+            "margin": "1.25rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1rem"
+          },
+          "fontFamily": {
+            "body-16": [
+              "Plus Jakarta Sans"
+            ],
+            "label-14": [
+              "Plus Jakarta Sans"
+            ],
+            "title-20": [
+              "Unbounded",
+              "Plus Jakarta Sans"
+            ],
+            "display-32": [
+              "Unbounded"
+            ],
+            "caption-13": [
+              "Plus Jakarta Sans"
+            ]
+          },
+          "fontSize": {
+            "body-16": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "400"
+              }
+            ],
+            "label-14": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "fontWeight": "500"
+              }
+            ],
+            "title-20": [
+              "20px",
+              {
+                "lineHeight": "28px",
+                "fontWeight": "600"
+              }
+            ],
+            "display-32": [
+              "32px",
+              {
+                "lineHeight": "40px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "700"
+              }
+            ],
+            "caption-13": [
+              "13px",
+              {
+                "lineHeight": "18px",
+                "fontWeight": "500"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-shadow {
+      box-shadow: 0 1px 2px rgba(31, 28, 12, 0.04), 0 8px 24px rgba(31, 28, 12, 0.06);
+    }
+  </style>
+</head>
+<body class="bg-background text-ink antialiased selection:bg-primary-container selection:text-ink min-h-screen flex justify-center items-start">
+<!-- Mobile Frame Container (393px width constraint) -->
+<div class="w-full max-w-[393px] bg-background min-h-screen relative flex flex-col pb-28 border-x border-hairline shadow-sm">
+<!-- Top Safe Area / Status Bar -->
+<header class="w-full pt-3 px-6 flex justify-between items-center text-ink select-none">
+<span class="font-label-14 text-label-14 font-semibold tracking-tight">9:41</span>
+<div class="flex items-center gap-1.5 text-ink">
+<span class="material-symbols-outlined text-[17px]">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[17px]">wifi</span>
+<span class="material-symbols-outlined text-[19px]">battery_full</span>
+</div>
+</header>
+<!-- Top Navigation Header -->
+<div class="px-5 pt-3 pb-2 flex items-center justify-between">
+<button aria-label="Back" class="w-9 h-9 rounded-full flex items-center justify-center -ml-1 text-ink hover:bg-surface-alt active:scale-95 transition-all duration-150">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<div class="flex items-center gap-2">
+<!-- Status Chip: Completed -->
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-success-bg text-success font-caption-13 text-caption-13 font-semibold">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+          Completed
+        </span>
+<button aria-label="Share" class="w-9 h-9 rounded-full flex items-center justify-center text-text-tertiary hover:bg-surface-alt active:scale-95 transition-all duration-150">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+</div>
+</div>
+<!-- Screen Title Block -->
+<div class="px-5 pb-4">
+<h1 class="font-title-20 text-title-20 text-ink tracking-tight font-semibold">Carpet extraction - 3rd floor</h1>
+<p class="font-label-14 text-label-14 text-text-secondary mt-1 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-text-tertiary">location_on</span>
+        Riverside Medical Plaza • Completed Oct 24
+      </p>
+</div>
+<!-- Main Content Flow -->
+<main class="px-5 flex flex-col gap-5">
+<!-- Interactive Before / After Comparison Card -->
+<section class="bg-surface rounded-[20px] p-3.5 custom-shadow border border-hairline/60">
+<div class="flex items-center justify-between pb-2.5 px-1">
+<span class="font-caption-13 text-caption-13 font-semibold text-ink uppercase tracking-wider">Before &amp; After Verification</span>
+<span class="font-caption-13 text-caption-13 text-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">touch_app</span> Drag slider
+          </span>
+</div>
+<!-- Split comparison container -->
+<div class="relative w-full h-[220px] rounded-xl overflow-hidden select-none bg-surface-alt cursor-ew-resize" id="comparison-container">
+<!-- "After" Image Layer (Full base) -->
+<img alt="After cleaning view" class="absolute inset-0 w-full h-full object-cover pointer-events-none" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6d2LFN5rJBRi752iRCF8Verq5MoBI5uYkOwvSwlG-eUtZDfBpJfLJoeCtoXWIdnEmnzEi8I18Tsk8459Purr_JH0Ei9xR5qogon1ERs71-sYOx_NrV9hTkOrYKiLgllY35UVvnaVyp5e_VV9BgDZeDgv3KuxxErFTw_qXiQR7L9VGgtkfrrRQWRnqgssXt2PAPT-2e7V-ivjnPIBMT70fbDEshHIca1PfCrGLz21eezEQiaXPkW13nhhOHcczSe6KveVZPpedupA"/>
+<div class="absolute top-2.5 right-2.5 bg-ink/75 text-surface font-caption-13 text-[12px] font-semibold px-2 py-0.5 rounded-full backdrop-blur-sm shadow-sm pointer-events-none z-10">
+            After
+          </div>
+<!-- "Before" Image Layer (Clipped left side) -->
+<div class="absolute inset-0 w-1/2 overflow-hidden pointer-events-none border-r border-surface/90" id="before-clip-layer">
+<img alt="Before cleaning stain" class="absolute inset-0 w-[353px] max-w-none h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XSSX5bp80DQ_sQV2RYCjvEh7iincVAhDZA6IIFWnJB0edDzpZBiimUuG-oREvPOfxOHto2GNHeOGuISM-9WBmuvaQbZEgUaRbn9sZKrT84Kz0ntU8kzH_4BT6LwiS9nCGntVZ4M5qW83GAD0LO1jHkUDx3YSUFUQHv9hbhKUTBVQrVXPY2xCEuTl3flzDmjYhRPj_oMda0QxtnkEA2URomD-oKMLk7FNuJ435bxp8Pei39G2nlbgT0tkw"/>
+<div class="absolute top-2.5 left-2.5 bg-ink/75 text-surface font-caption-13 text-[12px] font-semibold px-2 py-0.5 rounded-full backdrop-blur-sm shadow-sm pointer-events-none z-10">
+              Before
+            </div>
+</div>
+<!-- Draggable Separator Handle -->
+<div class="absolute top-0 bottom-0 left-1/2 -ml-[14px] w-7 flex items-center justify-center z-20 pointer-events-none" id="slider-handle">
+<div class="w-7 h-7 rounded-full bg-surface text-ink flex items-center justify-center shadow-md border border-hairline">
+<span class="material-symbols-outlined text-[18px]">drag_indicator</span>
+</div>
+</div>
+</div>
+<!-- Caption Below Comparison -->
+<div class="pt-3 px-1 flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-accent-fill shrink-0 mt-0.5">verified</span>
+<p class="font-label-14 text-label-14 text-text-secondary leading-snug">
+            Stain treated &amp; hot-water extracted • Elevator landing area
+          </p>
+</div>
+</section>
+<!-- Photo Gallery Section -->
+<section class="bg-surface rounded-[20px] p-4 custom-shadow border border-hairline/60">
+<div class="flex items-center justify-between pb-3">
+<div class="flex items-center gap-1.5">
+<h2 class="font-title-20 text-[17px] font-semibold text-ink">Photos</h2>
+<span class="px-2 py-0.5 rounded-full bg-surface-alt text-ink font-caption-13 text-[12px] font-semibold">8</span>
+</div>
+<button class="font-label-14 text-label-14 font-semibold text-ink hover:text-text-secondary flex items-center gap-0.5 active:scale-95 transition-transform duration-100">
+            View full screen
+            <span class="material-symbols-outlined text-[18px]">fullscreen</span>
+</button>
+</div>
+<!-- 3-Column Grid of 6 Real Thumbnails -->
+<div class="grid grid-cols-3 gap-2">
+<!-- Photo 1: Carpeted hallway -->
+<div class="relative aspect-square rounded-xl overflow-hidden bg-surface-alt border border-hairline group cursor-pointer">
+<img alt="Executive corridor cleaned carpet" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6d2LFN5rJBRi752iRCF8Verq5MoBI5uYkOwvSwlG-eUtZDfBpJfLJoeCtoXWIdnEmnzEi8I18Tsk8459Purr_JH0Ei9xR5qogon1ERs71-sYOx_NrV9hTkOrYKiLgllY35UVvnaVyp5e_VV9BgDZeDgv3KuxxErFTw_qXiQR7L9VGgtkfrrRQWRnqgssXt2PAPT-2e7V-ivjnPIBMT70fbDEshHIca1PfCrGLz21eezEQiaXPkW13nhhOHcczSe6KveVZPpedupA"/>
+</div>
+<!-- Photo 2: Medical clinic waiting room -->
+<div class="relative aspect-square rounded-xl overflow-hidden bg-surface-alt border border-hairline group cursor-pointer">
+<img alt="Medical clinic waiting room" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7gjZ6NfH4IQNOw3xe4UW4v6bmQLqBcOmCOlZx1ty55TQHd4c6DOGjbCYJi5IdDXSS5I3K0RWRXJ1h-l-gdC-V1yRCEUIWyZojU31EEhFR7NmknzgTRq3STBNI5-NngqvJYPPBMNPRanarITNECAyZDox1yzj7A1Gwa-ZBK9xkbFeujU07bAkrrDjlPsHo2RZzGOdr1K7kCCWTM4F_fqm7q4DpVa1amb3rByPO0ocfCufvY1OTddVrgyIsYClX1cU7KzybdYQgFRU"/>
+</div>
+<!-- Photo 3: Conference room -->
+<div class="relative aspect-square rounded-xl overflow-hidden bg-surface-alt border border-hairline group cursor-pointer">
+<img alt="Bright conference room" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" src="https://lh3.googleusercontent.com/aida/AEtjO1VwPyzSNxAb_DnH_MH1I-3zNvvWlwEXbTMDaHFO7zX1vGmqCY3GUU4IKMu-y9FiGcylIy6mpzPghh-5MVFp_C9uPG17DSIl49-9dWypvaGCq5SMvkWWhWSR8fU8mDs89iNWMgrkiKAnA3WCWQn_mJEaeywr_YKVsrlUXAi_Lmf163XEm0KIRspuo4xq9A57FCwmjgVX9sJ2bgLXWoOtngyGNE-9uC3Kl5JHOsb6cEiExV5YckxoZ-4REMA"/>
+</div>
+<!-- Photo 4: Restroom deep clean fixture -->
+<div class="relative aspect-square rounded-xl overflow-hidden bg-surface-alt border border-hairline group cursor-pointer">
+<img alt="Restroom fixtures detail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" src="https://lh3.googleusercontent.com/aida/AEtjO1X1nn87tmblX-gKdbP1_AHtr7OECiSx60-ZB4XAX4I4pHavvzwvqZ9ioTPRbBr_vFK8um9tJwYezwyMuBEuRnCQxWWISOUIlw1N1DhgmXwLLs1dzVbs9tfHAhvMHTuHOo7rN1yHALNcYvymDLbAltU-tzDGZaMrXGMUnWPN2joIRspfef2Gn3tEABS7GOPd7_zsv0WaRS7xou2Yl0RVy7JFWVgv9mz89b5UsKb7yI-NwM1cdUg9pfD1UDQ"/>
+</div>
+<!-- Photo 5: Restroom full view -->
+<div class="relative aspect-square rounded-xl overflow-hidden bg-surface-alt border border-hairline group cursor-pointer">
+<img alt="Restroom clean view" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" src="https://lh3.googleusercontent.com/aida/AEtjO1W5peSeEFpqIFJZDVsiYovOaJPLjK5UNouvO98j-0mIRvDUKj_dRWPsG5nSleGTHS-uvb8Mv09zFfdsug89FVKjfzy8v8uIZ9-l75_Av78kJvcpethf2YqYo5Wddy6jPo8zhmRQ_0j7F5Nrkk4TkZ1TySgJck2sf42kAssArQYEMKtB9A-fzl_jM_G_AsMirazysMraFIRKSa5H1RT5XS_HroqVyRFTOYaiQwS1OWsXwo3QilTAMXXuHw"/>
+</div>
+<!-- Photo 6: Additional space with +2 overlay -->
+<div class="relative aspect-square rounded-xl overflow-hidden bg-surface-alt border border-hairline group cursor-pointer">
+<img alt="Additional site area" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200 filter blur-[0.5px]" src="https://lh3.googleusercontent.com/aida/AEtjO1XSSX5bp80DQ_sQV2RYCjvEh7iincVAhDZA6IIFWnJB0edDzpZBiimUuG-oREvPOfxOHto2GNHeOGuISM-9WBmuvaQbZEgUaRbn9sZKrT84Kz0ntU8kzH_4BT6LwiS9nCGntVZ4M5qW83GAD0LO1jHkUDx3YSUFUQHv9hbhKUTBVQrVXPY2xCEuTl3flzDmjYhRPj_oMda0QxtnkEA2URomD-oKMLk7FNuJ435bxp8Pei39G2nlbgT0tkw"/>
+<div class="absolute inset-0 bg-ink/55 flex flex-col items-center justify-center text-surface font-label-14 text-label-14 font-bold backdrop-blur-[1px]">
+              +2
+              <span class="font-caption-13 text-[12px] font-medium text-surface/90">more</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Crew Notes Card -->
+<section class="bg-surface rounded-[20px] p-4 custom-shadow border border-hairline/60">
+<div class="flex items-center gap-2 pb-2">
+<span class="material-symbols-outlined text-[20px] text-text-tertiary">notes</span>
+<h2 class="font-title-20 text-[17px] font-semibold text-ink">Crew notes</h2>
+</div>
+<p class="font-body-16 text-body-16 text-text-secondary leading-relaxed bg-surface-alt p-3 rounded-xl border border-hairline/60">
+          "Extracted 4,200 sq ft, pre-treated 6 high-traffic spots. Dry in 4 hours."
+        </p>
+<!-- Sign-off Row -->
+<div class="flex items-center gap-3 pt-3 mt-1 border-t border-hairline">
+<div class="w-10 h-10 rounded-full overflow-hidden shrink-0 border border-control-border/30">
+<img alt="Maria Gonzalez portrait" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XN-qDB5K4EbWW_QBTJCv3X5P3NcjCfugIf3-gyzPPGRSg8VOQMGmlpm2Xh9bcbNFjMmqLdkWLBwHyY-oNL3XFuqzvgPxx-yOr7OaxSDJw2dd_2wOvYNy1H3IacZ7EejnuSVWc0wvbK08EAP_E-g8EKN9rfmVMQWq9eSFVC1sq4FXILbC_UE3wYZXdGC-rsHukbtJJXTs2dYENHmDhZCKCPqIqr8O5UKAKN1nCF5OJiMS6aVGzSx_zw4Qo"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-14 text-label-14 font-semibold text-ink leading-snug">Maria Gonzalez</span>
+<span class="font-caption-13 text-caption-13 text-text-tertiary leading-none">Crew Lead • Signed off Oct 24, 4:15 PM</span>
+</div>
+<span class="material-symbols-outlined text-success text-[20px] ml-auto" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</section>
+<!-- Customer Feedback & Action Section -->
+<section class="bg-surface rounded-[20px] p-4 custom-shadow border border-hairline/60 flex flex-col gap-3.5">
+<div class="flex items-center justify-between">
+<span class="font-label-14 text-label-14 font-semibold text-ink">Rate this visit</span>
+<!-- 5 Star Rating: 4 filled lemon (#FFD60A), 1 unfilled (#ECE6D2) -->
+<div class="flex items-center gap-1 text-primary-container">
+<span class="material-symbols-outlined text-[22px] cursor-pointer" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[22px] cursor-pointer" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[22px] cursor-pointer" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[22px] cursor-pointer" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[22px] text-hairline cursor-pointer" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<!-- Action Button: White pill button with #9B9556 border and ink text -->
+<button class="w-full py-2.5 px-4 rounded-full bg-surface border border-control-border text-ink font-label-14 text-label-14 font-semibold flex items-center justify-center gap-2 hover:bg-surface-alt active:scale-[0.98] transition-all duration-150">
+<span class="material-symbols-outlined text-[18px] text-text-secondary">flag</span>
+          Report an issue
+        </button>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Semantic Shell from Shared Components JSON) -->
+<!-- Destination count: 4 | Tabs: Home, Requests, Invoices, Support -->
+<!-- Active State Logic: 'Requests' active for facility work order detail -->
+<nav aria-label="Bottom Navigation" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter pt-space-xs pb-safe h-16 bg-surface dark:bg-inverse-surface border-t border-hairline dark:border-outline-variant max-w-[393px] mx-auto right-0">
+<!-- Tab 1: Home (Inactive) -->
+<a class="flex flex-col items-center justify-center gap-1 text-text-tertiary dark:text-outline-variant font-medium hover:text-ink dark:hover:text-inverse-on-surface transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]">home</span>
+<span class="font-caption-13 text-[12px]">Home</span>
+</a>
+<!-- Tab 2: Requests (Active: Lemon pill container with ink icon & label) -->
+<a class="flex flex-col items-center justify-center gap-1 text-ink dark:text-inverse-on-surface font-semibold [&amp;_span:first-child]:bg-primary-container dark:[&amp;_span:first-child]:bg-accent-fill [&amp;_span:first-child]:text-ink dark:[&amp;_span:first-child]:text-surface [&amp;_span:first-child]:px-3 [&amp;_span:first-child]:py-0.5 [&amp;_span:first-child]:rounded-full active:scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="font-caption-13 text-[12px]">Requests</span>
+</a>
+<!-- Tab 3: Invoices (Inactive) -->
+<a class="flex flex-col items-center justify-center gap-1 text-text-tertiary dark:text-outline-variant font-medium hover:text-ink dark:hover:text-inverse-on-surface transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]">receipt_long</span>
+<span class="font-caption-13 text-[12px]">Invoices</span>
+</a>
+<!-- Tab 4: Support (Inactive) -->
+<a class="flex flex-col items-center justify-center gap-1 text-text-tertiary dark:text-outline-variant font-medium hover:text-ink dark:hover:text-inverse-on-surface transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]">chat_bubble</span>
+<span class="font-caption-13 text-[12px]">Support</span>
+</a>
+</nav>
+</div>
+<!-- Interactive script for Before/After draggable comparison -->
+<script>
+    (function initComparisonSlider() {
+      const container = document.getElementById('comparison-container');
+      const clipLayer = document.getElementById('before-clip-layer');
+      const handle = document.getElementById('slider-handle');
+
+      if (!container || !clipLayer || !handle) return;
+
+      let isDragging = false;
+
+      function updatePosition(clientX) {
+        const rect = container.getBoundingClientRect();
+        let offsetX = clientX - rect.left;
+        let percentage = (offsetX / rect.width) * 100;
+        
+        // Clamp between 8% and 92% to preserve visual labels
+        percentage = Math.max(8, Math.min(percentage, 92));
+
+        clipLayer.style.width = percentage + '%';
+        handle.style.left = percentage + '%';
+      }
+
+      container.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        updatePosition(e.clientX);
+      });
+
+      window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        updatePosition(e.clientX);
+      });
+
+      window.addEventListener('mouseup', () => {
+        isDragging = false;
+      });
+
+      // Touch events for mobile responsiveness
+      container.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        if (e.touches[0]) updatePosition(e.touches[0].clientX);
+      }, { passive: true });
+
+      window.addEventListener('touchmove', (e) => {
+        if (!isDragging || !e.touches[0]) return;
+        updatePosition(e.touches[0].clientX);
+      }, { passive: true });
+
+      window.addEventListener('touchend', () => {
+        isDragging = false;
+      });
+    })();
+  </script>
+</body></html>

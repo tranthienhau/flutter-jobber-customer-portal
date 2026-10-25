@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Midas - Requests</title>
+<!-- Material Symbols Outlined font -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Plus Jakarta Sans & Unbounded -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Unbounded:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-container": "#705d00",
+            "on-tertiary": "#ffffff",
+            "surface-container-low": "#fbf4d9",
+            "success": "#0E7C3A",
+            "outline": "#7f775f",
+            "background": "#FCFAF4",
+            "primary": "#705d00",
+            "on-secondary-fixed": "#001c37",
+            "on-secondary": "#ffffff",
+            "tertiary-container": "#00f0fc",
+            "tertiary-fixed-dim": "#00dce7",
+            "on-surface-variant": "#4d4632",
+            "accent-pressed": "#E6C000",
+            "primary-fixed-dim": "#e9c400",
+            "primary-container": "#ffd60a",
+            "secondary-container": "#7cb7fe",
+            "inverse-surface": "#34311f",
+            "accent-fill": "#826D05",
+            "on-primary-fixed-variant": "#554600",
+            "secondary": "#1661a2",
+            "hairline": "#ECE6D2",
+            "surface-bright": "#fff9eb",
+            "secondary-fixed": "#d2e4ff",
+            "surface-dim": "#e1dac0",
+            "danger-bg": "#FBE5E5",
+            "on-surface": "#1f1c0c",
+            "surface-container": "#f6eed3",
+            "surface-variant": "#eae2c8",
+            "tertiary-fixed": "#70f6ff",
+            "on-primary": "#ffffff",
+            "on-secondary-fixed-variant": "#00487f",
+            "error-container": "#ffdad6",
+            "surface-alt": "#F6F2E4",
+            "ink": "#1F1C0C",
+            "control-border": "#9B9556",
+            "on-primary-fixed": "#221b00",
+            "warning-bg": "#FAEFE1",
+            "support-data": "#4194FF",
+            "surface-tint": "#705d00",
+            "error": "#ba1a1a",
+            "surface-container-lowest": "#ffffff",
+            "on-error": "#ffffff",
+            "surface": "#FFFFFF",
+            "warning": "#A75906",
+            "tertiary": "#00696f",
+            "inverse-on-surface": "#f9f1d6",
+            "success-bg": "#E3F4E9",
+            "inverse-primary": "#e9c400",
+            "accent-tint": "#FFF6C7",
+            "secondary-fixed-dim": "#a1c9ff",
+            "danger": "#CE2020",
+            "text-secondary": "#575238",
+            "on-tertiary-fixed-variant": "#004f53",
+            "primary-fixed": "#ffe171",
+            "on-error-container": "#93000a",
+            "on-background": "#1f1c0c",
+            "on-tertiary-container": "#00696f",
+            "info-bg": "#E3F0FF",
+            "surface-container-high": "#f0e8ce",
+            "outline-variant": "#d0c6ab",
+            "surface-container-highest": "#eae2c8",
+            "on-secondary-container": "#00477d",
+            "info": "#1F4F8A",
+            "text-tertiary": "#6B6650",
+            "on-tertiary-fixed": "#002022"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1.25rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-xl": "1.5rem",
+            "margin": "1.25rem",
+            "space-2xl": "2rem",
+            "gutter": "1rem",
+            "space-md": "0.75rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1rem",
+            "safe": "2.125rem"
+          },
+          "fontFamily": {
+            "caption-13": [
+              "Plus Jakarta Sans"
+            ],
+            "body-16": [
+              "Plus Jakarta Sans"
+            ],
+            "title-20": [
+              "Plus Jakarta Sans"
+            ],
+            "label-14": [
+              "Plus Jakarta Sans"
+            ],
+            "display-32": [
+              "Unbounded"
+            ]
+          },
+          "fontSize": {
+            "caption-13": [
+              "13px",
+              {
+                "lineHeight": "18px",
+                "fontWeight": "500"
+              }
+            ],
+            "body-16": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "400"
+              }
+            ],
+            "title-20": [
+              "20px",
+              {
+                "lineHeight": "28px",
+                "fontWeight": "600"
+              }
+            ],
+            "label-14": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "fontWeight": "500"
+              }
+            ],
+            "display-32": [
+              "32px",
+              {
+                "lineHeight": "40px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "700"
+              }
+            ]
+          },
+          "boxShadow": {
+            "soft-card": "0 1px 2px rgba(31, 28, 12, 0.04), 0 8px 24px rgba(31, 28, 12, 0.06)",
+            "fab": "0 4px 14px rgba(255, 214, 10, 0.45), 0 1px 3px rgba(31, 28, 12, 0.08)"
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Hide scrollbar for clean horizontal filter carousel */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-ink font-body-16 text-body-16 antialiased min-h-screen flex justify-center selection:bg-primary-container selection:text-ink">
+<!-- Mobile Simulator Frame (393px typical viewport width) -->
+<div class="w-full max-w-[393px] bg-background min-h-screen relative flex flex-col pb-28">
+<!-- Top App Header Area -->
+<header class="sticky top-0 z-40 bg-surface/95 backdrop-blur-md px-margin pt-4 pb-3 border-b border-hairline flex items-center justify-between">
+<div class="flex items-center gap-2">
+<h1 class="font-display-32 text-title-20 text-ink tracking-tight font-bold">Requests</h1>
+</div>
+<div class="flex items-center gap-1.5">
+<button aria-label="Search and filter requests" class="w-9 h-9 rounded-full flex items-center justify-center text-text-secondary hover:bg-surface-alt active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button aria-label="Filter settings" class="w-9 h-9 rounded-full flex items-center justify-center text-text-secondary hover:bg-surface-alt active:scale-95 transition-all relative" type="button">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+</header>
+<!-- Main Scrollable Content Canvas -->
+<main class="flex-1 px-margin pt-3">
+<!-- Horizontal Filter Pills Carousel -->
+<section aria-label="Filter status" class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 -mx-1 px-1">
+<!-- Filter: All (Active) -->
+<button class="flex-shrink-0 px-4 py-1.5 rounded-full bg-primary-container text-ink font-label-14 text-label-14 font-semibold active:scale-95 transition-transform shadow-sm">
+          All
+        </button>
+<!-- Filter: Open -->
+<button class="flex-shrink-0 px-4 py-1.5 rounded-full bg-surface border border-hairline text-text-secondary font-label-14 text-label-14 font-medium hover:bg-surface-alt active:scale-95 transition-colors">
+          Open
+        </button>
+<!-- Filter: Scheduled -->
+<button class="flex-shrink-0 px-4 py-1.5 rounded-full bg-surface border border-hairline text-text-secondary font-label-14 text-label-14 font-medium hover:bg-surface-alt active:scale-95 transition-colors">
+          Scheduled
+        </button>
+<!-- Filter: In progress -->
+<button class="flex-shrink-0 px-4 py-1.5 rounded-full bg-surface border border-hairline text-text-secondary font-label-14 text-label-14 font-medium hover:bg-surface-alt active:scale-95 transition-colors">
+          In progress
+        </button>
+<!-- Filter: Completed -->
+<button class="flex-shrink-0 px-4 py-1.5 rounded-full bg-surface border border-hairline text-text-secondary font-label-14 text-label-14 font-medium hover:bg-surface-alt active:scale-95 transition-colors">
+          Completed
+        </button>
+</section>
+<!-- Focal Summary Strip -->
+<section class="mt-3.5 mb-4">
+<div class="bg-surface-alt border border-hairline rounded-xl px-3.5 py-2.5 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent-fill"></span>
+</span>
+<p class="font-caption-13 text-caption-13 text-ink font-semibold tracking-wide">
+              2 open <span class="text-text-tertiary font-normal mx-1">•</span> 1 in progress
+            </p>
+</div>
+<span class="font-caption-13 text-caption-13 text-text-secondary font-medium">5 total</span>
+</div>
+</section>
+<!-- Requests Bento Card Stack -->
+<section aria-label="Requests list" class="space-y-3">
+<!-- Card 1: Restroom deep clean (In progress) -->
+<article class="bg-surface rounded-2xl p-4 shadow-soft-card border border-hairline/60 transition-transform active:scale-[0.99]">
+<div class="flex items-start justify-between gap-2 mb-2">
+<div>
+<h2 class="font-title-20 text-body-16 text-ink font-semibold leading-tight">Restroom deep clean</h2>
+<p class="font-label-14 text-label-14 text-text-secondary mt-0.5">
+                Riverside Medical Plaza <span class="text-text-tertiary mx-1">•</span> Nov 3
+              </p>
+</div>
+<!-- Status chip: In progress -->
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-warning-bg text-warning font-caption-13 text-caption-13 font-semibold flex-shrink-0">
+<span class="material-symbols-outlined text-[15px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">autorenew</span>
+              In progress
+            </span>
+</div>
+<!-- Thumbnail & Attachment Preview -->
+<div class="mt-3 pt-2.5 border-t border-hairline flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="relative w-12 h-12 rounded-lg overflow-hidden border border-hairline flex-shrink-0 bg-surface-variant">
+<img class="w-full h-full object-cover" data-alt="A pristine, professionally sanitized commercial corporate restroom featuring immaculate stainless steel fixtures, clean white subway tile walls, and polished dark terrazzo flooring reflecting soft overhead architectural lighting. The environment is calm, sanitary, and pristine in a modern warm palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhKAHFWuo8vmP2JhAtOwirBD1avol5Gsah-4qYwG7eSEZ6O7PB_V_aUb-RUu0blSQy-PfPNHK2AwlKwdbFijM-oaVQaMMjQnwf4brRz1hxcOLV05Bs5X0om7CovP8XdC4HpdgJGIYnapiXMCWNlkO69owi2JdAG2QY9QS-EMOj1jgLKA4vMcikDAWHZL6_utF7cVkY_is6z2lv8lszZ6rrDZlzgRDrV-2ghDk2OpowMeoJSJtXf5gYRWGeAPy_IVEw6PS3ltujs1w"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-14 text-label-14 text-ink font-medium">Restroom 2B &amp; East Wing</span>
+<span class="font-caption-13 text-caption-13 text-text-secondary">Deep disinfectant protocol</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 font-caption-13 text-caption-13 text-text-secondary bg-surface-alt px-2 py-1 rounded-md">
+<span class="material-symbols-outlined text-[14px]">attachment</span>
+              2 attachments
+            </span>
+</div>
+</article>
+<!-- Card 2: Lobby floor strip and wax (Scheduled) -->
+<article class="bg-surface rounded-2xl p-4 shadow-soft-card border border-hairline/60 transition-transform active:scale-[0.99]">
+<div class="flex items-start justify-between gap-2 mb-2">
+<div>
+<h2 class="font-title-20 text-body-16 text-ink font-semibold leading-tight">Lobby floor strip and wax</h2>
+<p class="font-label-14 text-label-14 text-text-secondary mt-0.5">
+                Northgate Office Park <span class="text-text-tertiary mx-1">•</span> Sun, Nov 9
+              </p>
+</div>
+<!-- Status chip: Scheduled -->
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-accent-tint text-[#5E4F00] font-caption-13 text-caption-13 font-semibold flex-shrink-0">
+<span class="material-symbols-outlined text-[15px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+              Scheduled
+            </span>
+</div>
+<!-- Crew note metadata -->
+<div class="mt-2.5 pt-2 border-t border-hairline flex items-center gap-2">
+<span class="material-symbols-outlined text-text-secondary text-[16px]">groups</span>
+<p class="font-caption-13 text-caption-13 text-text-secondary font-medium">
+              Crew 3 scheduled for 7:00 PM
+            </p>
+</div>
+</article>
+<!-- Card 3: Spill cleanup, loading dock (Requested) -->
+<article class="bg-surface rounded-2xl p-4 shadow-soft-card border border-hairline/60 transition-transform active:scale-[0.99]">
+<div class="flex items-start justify-between gap-2 mb-2">
+<div>
+<h2 class="font-title-20 text-body-16 text-ink font-semibold leading-tight">Spill cleanup, loading dock</h2>
+<p class="font-label-14 text-label-14 text-text-secondary mt-0.5">
+                Eastgate Distribution Center <span class="text-text-tertiary mx-1">•</span> Nov 2
+              </p>
+</div>
+<!-- Status chip: Requested -->
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-info-bg text-info font-caption-13 text-caption-13 font-semibold flex-shrink-0">
+<span class="material-symbols-outlined text-[15px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">hourglass_top</span>
+              Requested
+            </span>
+</div>
+<!-- Priority indicator -->
+<div class="mt-2.5 pt-2 border-t border-hairline flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="inline-block w-2 h-2 rounded-full bg-info"></span>
+<span class="font-caption-13 text-caption-13 text-info font-semibold">Dispatched for review</span>
+</div>
+<span class="font-caption-13 text-caption-13 text-text-tertiary">Bay 4 • Urgent</span>
+</div>
+</article>
+<!-- Card 4: Carpet extraction, 3rd floor (Completed) -->
+<article class="bg-surface rounded-2xl p-4 shadow-soft-card border border-hairline/60 transition-transform active:scale-[0.99]">
+<div class="flex items-start justify-between gap-2 mb-2">
+<div>
+<h2 class="font-title-20 text-body-16 text-ink font-semibold leading-tight">Carpet extraction, 3rd floor</h2>
+<p class="font-label-14 text-label-14 text-text-secondary mt-0.5">
+                Riverside Medical Plaza <span class="text-text-tertiary mx-1">•</span> Oct 24
+              </p>
+</div>
+<!-- Status chip: Completed -->
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-success-bg text-success font-caption-13 text-caption-13 font-semibold flex-shrink-0">
+<span class="material-symbols-outlined text-[15px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+              Completed
+            </span>
+</div>
+<!-- Visual attachment preview -->
+<div class="mt-3 pt-2.5 border-t border-hairline flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="relative w-12 h-12 rounded-lg overflow-hidden border border-hairline flex-shrink-0 bg-surface-variant">
+<img class="w-full h-full object-cover" data-alt="A clean, professionally extracted commercial corridor carpet showing uniform vacuum groom lines beside contemporary glass office partitions. Natural daylight spills through high windows onto polished architectural wood wall surfaces in a serene modern building setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL03OiHekFc5vMDEdb9oC3SlmixhI5Sqa5SRn5LTdt9bBz9vgBl6OcMgch9ybipZNGR4qSlVV2Zp9_tcavxqziguRCNOIMqph8WNIAH8SQkbdeCWIaomB962w35eWnP3HvQBuz2wfiEFPHdNJN5bV2lr2LSxtxTmKInbElv0tljBWkes_MmIZBTdXtxFTjHbdrN5D4hB_ODjzNuDUOqXQpa_GPx8MXDXujzrt8C_GQNGBEd9mF4WC_N7D3ZOMf9ume73shFVYWy2Y"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-14 text-label-14 text-ink font-medium">Executive Suite corridors</span>
+<span class="font-caption-13 text-caption-13 text-text-secondary">Completed by Crew 1</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 font-caption-13 text-caption-13 text-text-secondary bg-surface-alt px-2.5 py-1 rounded-full font-medium">
+<span class="material-symbols-outlined text-[14px]">photo_library</span>
+              8 photos
+            </span>
+</div>
+</article>
+<!-- Card 5: Window cleaning (Completed) -->
+<article class="bg-surface rounded-2xl p-4 shadow-soft-card border border-hairline/60 transition-transform active:scale-[0.99]">
+<div class="flex items-start justify-between gap-2 mb-2">
+<div>
+<h2 class="font-title-20 text-body-16 text-ink font-semibold leading-tight">Window cleaning</h2>
+<p class="font-label-14 text-label-14 text-text-secondary mt-0.5">
+                Northgate Office Park <span class="text-text-tertiary mx-1">•</span> Oct 15
+              </p>
+</div>
+<!-- Status chip: Completed -->
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-success-bg text-success font-caption-13 text-caption-13 font-semibold flex-shrink-0">
+<span class="material-symbols-outlined text-[15px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+              Completed
+            </span>
+</div>
+<!-- Sign-off note -->
+<div class="mt-2.5 pt-2 border-t border-hairline flex items-center gap-2">
+<span class="material-symbols-outlined text-success text-[16px]">verified</span>
+<p class="font-caption-13 text-caption-13 text-text-secondary font-medium">
+              Signed off by Dana Whitfield
+            </p>
+</div>
+</article>
+</section>
+</main>
+<!-- Floating Action Button (New request) -->
+<!-- Positioned above bottom nav bar (right margin), strictly adhering to lemon pill rule -->
+<aside class="fixed bottom-20 right-4 z-40 max-w-[393px]">
+<button class="flex items-center gap-2 px-5 py-3 rounded-full bg-primary-container text-ink font-label-14 text-label-14 font-semibold shadow-fab hover:bg-accent-pressed active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-ink text-[20px] font-bold">add</span>
+<span>New request</span>
+</button>
+</aside>
+<!-- Bottom Navigation Bar (Docked full-width bottom-0, exactly 4 tabs) -->
+<nav aria-label="Bottom Navigation" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter pt-space-xs pb-safe h-16 bg-surface dark:bg-inverse-surface border-t border-hairline">
+<!-- Tab 1: Home (Inactive) -->
+<a class="flex flex-col items-center justify-center gap-1 text-text-tertiary dark:text-outline-variant font-medium hover:text-ink dark:hover:text-inverse-on-surface transition-colors duration-150 active:scale-95" href="#home">
+<span class="material-symbols-outlined text-[22px]">home</span>
+<span class="font-caption-13 text-caption-13">Home</span>
+</a>
+<!-- Tab 2: Requests (ACTIVE: highlighted with lemon pill container and bold ink text) -->
+<a aria-current="page" class="flex flex-col items-center justify-center gap-1 text-ink dark:text-inverse-on-surface font-semibold [&amp;_span:first-child]:bg-primary-container dark:[&amp;_span:first-child]:bg-accent-fill [&amp;_span:first-child]:text-ink dark:[&amp;_span:first-child]:text-surface [&amp;_span:first-child]:px-3 [&amp;_span:first-child]:py-0.5 [&amp;_span:first-child]:rounded-full active:scale-95" href="#requests">
+<span class="material-symbols-outlined text-[20px]">assignment</span>
+<span class="font-caption-13 text-caption-13">Requests</span>
+</a>
+<!-- Tab 3: Invoices (Inactive) -->
+<a class="flex flex-col items-center justify-center gap-1 text-text-tertiary dark:text-outline-variant font-medium hover:text-ink dark:hover:text-inverse-on-surface transition-colors duration-150 active:scale-95" href="#invoices">
+<span class="material-symbols-outlined text-[22px]">receipt_long</span>
+<span class="font-caption-13 text-caption-13">Invoices</span>
+</a>
+<!-- Tab 4: Support (Inactive) -->
+<a class="flex flex-col items-center justify-center gap-1 text-text-tertiary dark:text-outline-variant font-medium hover:text-ink dark:hover:text-inverse-on-surface transition-colors duration-150 active:scale-95" href="#support">
+<span class="material-symbols-outlined text-[22px]">chat_bubble</span>
+<span class="font-caption-13 text-caption-13">Support</span>
+</a>
+</nav>
+</div>
+</body></html>

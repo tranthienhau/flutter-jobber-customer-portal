@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Midas Client Portal - Northgate Office Park</title>
+<!-- Google Fonts: Unbounded & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Unbounded:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-tint": "#705d00",
+            "on-error-container": "#93000a",
+            "secondary": "#1661a2",
+            "inverse-surface": "#34311f",
+            "info": "#1F4F8A",
+            "on-secondary": "#ffffff",
+            "on-tertiary-container": "#00696f",
+            "support-data": "#4194FF",
+            "on-surface": "#1f1c0c",
+            "secondary-container": "#7cb7fe",
+            "control-border": "#9B9556",
+            "surface-alt": "#F6F2E4",
+            "secondary-fixed": "#d2e4ff",
+            "accent-pressed": "#E6C000",
+            "primary": "#705d00",
+            "text-tertiary": "#6B6650",
+            "secondary-fixed-dim": "#a1c9ff",
+            "primary-fixed-dim": "#e9c400",
+            "on-primary-container": "#705d00",
+            "primary-container": "#ffd60a",
+            "surface": "#FFFFFF",
+            "on-primary": "#ffffff",
+            "surface-container-highest": "#eae2c8",
+            "outline": "#7f775f",
+            "ink": "#1F1C0C",
+            "on-tertiary-fixed": "#002022",
+            "inverse-primary": "#e9c400",
+            "warning": "#A75906",
+            "accent-fill": "#826D05",
+            "text-secondary": "#575238",
+            "on-tertiary-fixed-variant": "#004f53",
+            "inverse-on-surface": "#f9f1d6",
+            "info-bg": "#E3F0FF",
+            "on-surface-variant": "#4d4632",
+            "hairline": "#ECE6D2",
+            "outline-variant": "#d0c6ab",
+            "surface-bright": "#fff9eb",
+            "surface-variant": "#eae2c8",
+            "on-tertiary": "#ffffff",
+            "accent-tint": "#FFF6C7",
+            "error-container": "#ffdad6",
+            "surface-container-low": "#fbf4d9",
+            "on-error": "#ffffff",
+            "on-primary-fixed": "#221b00",
+            "surface-container-lowest": "#ffffff",
+            "danger-bg": "#FBE5E5",
+            "primary-fixed": "#ffe171",
+            "background": "#FCFAF4",
+            "surface-container-high": "#f0e8ce",
+            "tertiary-fixed": "#70f6ff",
+            "tertiary-container": "#00f0fc",
+            "on-background": "#1f1c0c",
+            "on-secondary-container": "#00477d",
+            "error": "#ba1a1a",
+            "success": "#0E7C3A",
+            "warning-bg": "#FAEFE1",
+            "on-secondary-fixed": "#001c37",
+            "surface-container": "#f6eed3",
+            "success-bg": "#E3F4E9",
+            "tertiary-fixed-dim": "#00dce7",
+            "tertiary": "#00696f",
+            "danger": "#CE2020",
+            "on-secondary-fixed-variant": "#00487f",
+            "on-primary-fixed-variant": "#554600",
+            "surface-dim": "#e1dac0"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1.25rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-2xl": "2rem",
+            "margin": "1.25rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1rem",
+            "space-xl": "1.5rem",
+            "gutter": "1rem",
+            "space-md": "0.75rem"
+          },
+          "fontFamily": {
+            "title-20": ["Plus Jakarta Sans", "sans-serif"],
+            "caption-13": ["Plus Jakarta Sans", "sans-serif"],
+            "label-14": ["Plus Jakarta Sans", "sans-serif"],
+            "body-16": ["Plus Jakarta Sans", "sans-serif"],
+            "display-32": ["Unbounded", "sans-serif"]
+          },
+          "fontSize": {
+            "title-20": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "caption-13": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "label-14": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "body-16": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "display-32": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      font-size: 20px;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card-shadow {
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06);
+    }
+    .tabular-nums {
+      font-variant-numeric: tabular-nums;
+    }
+  </style>
+</head>
+<body class="bg-background text-ink antialiased min-h-screen flex justify-center selection:bg-primary-container selection:text-ink">
+<!-- Mobile Viewport Frame (393px width constraint) -->
+<div class="w-full max-w-[393px] min-h-screen bg-background relative flex flex-col pb-36 shadow-2xl">
+<!-- Top Hero Section with Property Imagery -->
+<div class="relative w-full h-[250px] overflow-hidden bg-surface-alt">
+<img alt="Northgate Office Park exterior" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW9EYy0xzQtUph5r26LNxSWBt21fyvAf9taljyfaUBTOMgAVRQlakYNnQcjp24N-md0DpCoF-bifW2VXkhMO9W5WHftZsqrTytPcRtNsLWsBTNpXQr4pdLa6OmKPrlCQLF0poP3rDYCn_6K0mN3yLpEC_DNJDBfVQgnEhHmP6Lmo24qxyUyMTuQfmMJTcxcAqHQDZ7-VIMQKto7urT_T0uHDK_DB4xytBoYb6FrWq4HXNcfRwJRAWCOZ7EsJlD24QOp_6lE-mWdXs"/>
+<!-- Subtle Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-ink/30"></div>
+<!-- Top Pushed Header Navigation Overlaid -->
+<div class="absolute top-0 left-0 right-0 pt-10 px-margin flex items-center justify-between z-10">
+<button aria-label="Back" class="w-10 h-10 rounded-full bg-surface text-ink flex items-center justify-center card-shadow active:scale-95 transition-transform duration-100 border border-hairline" type="button">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<div class="flex items-center gap-2">
+<button aria-label="Property options" class="w-10 h-10 rounded-full bg-surface/90 backdrop-blur-sm text-ink flex items-center justify-center card-shadow active:scale-95 transition-transform duration-100 border border-hairline" type="button">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Overlaid Badge at bottom of hero image -->
+<div class="absolute bottom-4 left-margin">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface/95 backdrop-blur-md text-ink font-caption-13 text-caption-13 font-semibold shadow-sm">
+<span class="w-2 h-2 rounded-full bg-success"></span>
+          Primary Site
+        </span>
+</div>
+</div>
+<!-- Property Identification & Primary Attributes Header -->
+<div class="px-margin pt-4 pb-2">
+<!-- Title & Main Address -->
+<h1 class="font-display-32 text-[24px] leading-tight text-ink font-semibold tracking-tight">
+        Northgate Office Park
+      </h1>
+<div class="flex items-start gap-1.5 mt-2 text-text-secondary">
+<span class="material-symbols-outlined text-[18px] text-text-secondary mt-0.5 shrink-0">location_on</span>
+<p class="font-label-14 text-label-14 leading-snug">
+          2400 Northgate Blvd, Buildings A and B, Austin, TX
+        </p>
+</div>
+<!-- Site Contact Card Row -->
+<div class="mt-4 p-3 rounded-xl bg-surface border border-hairline card-shadow flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-alt border border-hairline flex items-center justify-center text-ink font-semibold text-caption-13">
+            DW
+          </div>
+<div>
+<div class="text-[12px] font-medium uppercase tracking-wider text-text-tertiary">Site Contact</div>
+<div class="font-label-14 text-label-14 font-semibold text-ink">Dana Whitfield</div>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<a aria-label="Call site contact" class="w-8 h-8 rounded-full bg-surface-alt text-ink flex items-center justify-center hover:bg-hairline active:scale-95 transition-all" href="tel:5125550199">
+<span class="material-symbols-outlined text-[18px]">phone</span>
+</a>
+<a aria-label="Message site contact" class="w-8 h-8 rounded-full bg-surface-alt text-ink flex items-center justify-center hover:bg-hairline active:scale-95 transition-all" href="sms:5125550199">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</a>
+</div>
+</div>
+<!-- Quick Summary Stats Row -->
+<div class="grid grid-cols-2 gap-2.5 mt-3">
+<div class="p-3 bg-surface rounded-xl border border-hairline card-shadow flex flex-col justify-center">
+<span class="text-[12px] font-medium text-text-tertiary uppercase tracking-wider">Active Services</span>
+<span class="font-title-20 text-title-20 font-bold text-ink mt-0.5 tabular-nums">4 Programs</span>
+</div>
+<div class="p-3 bg-surface rounded-xl border border-hairline card-shadow flex flex-col justify-center">
+<span class="text-[12px] font-medium text-text-tertiary uppercase tracking-wider">Next Visit</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="font-label-14 text-label-14 font-bold text-ink tabular-nums">Today 6:00 PM</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Segmented Navigation Control -->
+<div class="px-margin mt-4">
+<div class="p-1 bg-surface-alt rounded-full flex items-center border border-hairline">
+<!-- Active Tab: Services -->
+<button class="flex-1 py-1.5 px-4 rounded-full bg-primary-container text-ink font-label-14 text-label-14 font-semibold text-center shadow-sm transition-all duration-150" type="button">
+          Services
+        </button>
+<!-- Inactive Tab: Visits -->
+<button class="flex-1 py-1.5 px-4 rounded-full text-text-tertiary font-label-14 text-label-14 font-medium text-center hover:text-ink transition-colors duration-150" type="button">
+          Visits
+        </button>
+<!-- Inactive Tab: Photos -->
+<button class="flex-1 py-1.5 px-4 rounded-full text-text-tertiary font-label-14 text-label-14 font-medium text-center hover:text-ink transition-colors duration-150" type="button">
+          Photos
+        </button>
+</div>
+</div>
+<!-- Services List Section -->
+<div class="px-margin mt-4 space-y-3">
+<!-- Card 1: Nightly Janitorial -->
+<div class="p-4 bg-surface rounded-2xl border border-hairline card-shadow flex flex-col justify-between">
+<div class="flex items-start justify-between gap-2">
+<div>
+<h2 class="font-title-20 text-[17px] leading-tight font-semibold text-ink">Nightly janitorial</h2>
+<div class="flex items-center gap-1.5 mt-1 text-text-secondary font-label-14 text-label-14">
+<span class="material-symbols-outlined text-[16px] text-text-tertiary">schedule</span>
+<span class="tabular-nums">Mon–Fri, 6:00 PM</span>
+</div>
+</div>
+<!-- Status Chip -->
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-success-bg text-success font-caption-13 text-[12px] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-success"></span>
+            Active
+          </span>
+</div>
+<p class="mt-3 text-text-secondary font-label-14 text-label-14 leading-relaxed bg-surface-alt/70 p-2.5 rounded-lg border border-hairline">
+          Full office sweep, trash removal, restroom sanitation, dusting
+        </p>
+<div class="mt-3 pt-2.5 border-t border-hairline flex items-center justify-between">
+<span class="text-caption-13 text-text-tertiary">Frequency: Daily Nightly</span>
+<button class="font-caption-13 text-caption-13 font-bold text-accent-fill hover:underline flex items-center gap-0.5" type="button">
+            Request change
+            <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Window cleaning (exterior) -->
+<div class="p-4 bg-surface rounded-2xl border border-hairline card-shadow flex flex-col justify-between">
+<div class="flex items-start justify-between gap-2">
+<div>
+<h2 class="font-title-20 text-[17px] leading-tight font-semibold text-ink">Window cleaning (exterior)</h2>
+<div class="flex items-center gap-1.5 mt-1 text-text-secondary font-label-14 text-label-14">
+<span class="material-symbols-outlined text-[16px] text-text-tertiary">event</span>
+<span class="tabular-nums">Next Nov 18</span>
+</div>
+</div>
+<!-- Status Chip -->
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-accent-tint text-ink font-caption-13 text-[12px] font-semibold">
+            Quarterly
+          </span>
+</div>
+<p class="mt-3 text-text-secondary font-label-14 text-label-14 leading-relaxed bg-surface-alt/70 p-2.5 rounded-lg border border-hairline">
+          Exterior glass panels &amp; lobby vestibule high reach
+        </p>
+<div class="mt-3 pt-2.5 border-t border-hairline flex items-center justify-between">
+<span class="text-caption-13 text-text-tertiary">Planned window: Q4 cycle</span>
+<button class="font-caption-13 text-caption-13 font-bold text-accent-fill hover:underline flex items-center gap-0.5" type="button">
+            Request change
+            <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Carpet extraction -->
+<div class="p-4 bg-surface rounded-2xl border border-hairline card-shadow flex flex-col justify-between">
+<div class="flex items-start justify-between gap-2">
+<div>
+<h2 class="font-title-20 text-[17px] leading-tight font-semibold text-ink">Carpet extraction</h2>
+<div class="flex items-center gap-1.5 mt-1 text-text-secondary font-label-14 text-label-14">
+<span class="material-symbols-outlined text-[16px] text-text-tertiary">event</span>
+<span class="tabular-nums">Next Jan 12</span>
+</div>
+</div>
+<!-- Status Chip -->
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-accent-tint text-ink font-caption-13 text-[12px] font-semibold">
+            Every 6 months
+          </span>
+</div>
+<p class="mt-3 text-text-secondary font-label-14 text-label-14 leading-relaxed bg-surface-alt/70 p-2.5 rounded-lg border border-hairline">
+          Deep hot-water steam extraction for all 2nd &amp; 3rd floor corridors
+        </p>
+<div class="mt-3 pt-2.5 border-t border-hairline flex items-center justify-between">
+<span class="text-caption-13 text-text-tertiary">Specialized service</span>
+<button class="font-caption-13 text-caption-13 font-bold text-accent-fill hover:underline flex items-center gap-0.5" type="button">
+            Request change
+            <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Card 4: Day porter -->
+<div class="p-4 bg-surface rounded-2xl border border-hairline card-shadow flex flex-col justify-between">
+<div class="flex items-start justify-between gap-2">
+<div>
+<h2 class="font-title-20 text-[17px] leading-tight font-semibold text-ink">Day porter</h2>
+<div class="flex items-center gap-1.5 mt-1 text-text-secondary font-label-14 text-label-14">
+<span class="material-symbols-outlined text-[16px] text-text-tertiary">schedule</span>
+<span class="tabular-nums">Mon–Fri, 8:00 AM – 4:00 PM</span>
+</div>
+</div>
+<!-- Status Chip -->
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-success-bg text-success font-caption-13 text-[12px] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-success"></span>
+            Active
+          </span>
+</div>
+<p class="mt-3 text-text-secondary font-label-14 text-label-14 leading-relaxed bg-surface-alt/70 p-2.5 rounded-lg border border-hairline">
+          Continuous lobby upkeep, restocking, high-touch sanitization
+        </p>
+<div class="mt-3 pt-2.5 border-t border-hairline flex items-center justify-between">
+<span class="text-caption-13 text-text-tertiary">Dedicated on-site staff</span>
+<button class="font-caption-13 text-caption-13 font-bold text-accent-fill hover:underline flex items-center gap-0.5" type="button">
+            Request change
+            <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Floating Action Button: New request for this site -->
+<div class="fixed bottom-20 left-0 right-0 max-w-[393px] mx-auto px-margin z-40 pointer-events-none">
+<button class="pointer-events-auto w-full py-3.5 px-6 rounded-full bg-primary-container text-ink font-label-14 text-label-14 font-bold shadow-lg flex items-center justify-center gap-2 hover:bg-accent-pressed active:scale-98 transition-all duration-150 border border-control-border/30" type="button">
+<span class="material-symbols-outlined font-bold text-[20px]">add</span>
+<span>New request for this site</span>
+</button>
+</div>
+<!-- Docked Standard Bottom Navigation Bar (4 Destinations) -->
+<!-- Exactly 4 tabs: Home (Active), Requests, Invoices, Support -->
+<nav class="fixed bottom-0 left-0 right-0 max-w-[393px] mx-auto z-50 flex justify-around items-center px-gutter pt-space-xs pb-safe h-16 bg-surface border-t border-hairline">
+<!-- Destination 1: Home (Active) -->
+<a class="flex flex-col items-center justify-center gap-1 text-ink font-semibold [&amp;_span:first-child]:bg-primary-container [&amp;_span:first-child]:text-ink [&amp;_span:first-child]:px-3 [&amp;_span:first-child]:py-0.5 [&amp;_span:first-child]:rounded-full active:scale-95 transition-transform duration-100" href="#home">
+<span class="material-symbols-outlined text-[20px]">home</span>
+<span class="font-caption-13 text-caption-13">Home</span>
+</a>
+<!-- Destination 2: Requests -->
+<a class="flex flex-col items-center justify-center gap-1 text-text-tertiary font-medium hover:text-ink transition-colors duration-150 active:scale-95 transition-transform duration-100" href="#requests">
+<span class="material-symbols-outlined text-[20px]">assignment</span>
+<span class="font-caption-13 text-caption-13">Requests</span>
+</a>
+<!-- Destination 3: Invoices -->
+<a class="flex flex-col items-center justify-center gap-1 text-text-tertiary font-medium hover:text-ink transition-colors duration-150 active:scale-95 transition-transform duration-100" href="#invoices">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+<span class="font-caption-13 text-caption-13">Invoices</span>
+</a>
+<!-- Destination 4: Support -->
+<a class="flex flex-col items-center justify-center gap-1 text-text-tertiary font-medium hover:text-ink transition-colors duration-150 active:scale-95 transition-transform duration-100" href="#support">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+<span class="font-caption-13 text-caption-13">Support</span>
+</a>
+</nav>
+</div>
+</body></html>

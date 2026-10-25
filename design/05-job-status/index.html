@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Job Status Tracking - Midas</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts: Unbounded & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Unbounded:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "success-bg": "#E3F4E9",
+            "control-border": "#9B9556",
+            "secondary-fixed-dim": "#a1c9ff",
+            "info-bg": "#E3F0FF",
+            "primary-fixed-dim": "#e9c400",
+            "on-error-container": "#93000a",
+            "secondary-fixed": "#d2e4ff",
+            "outline-variant": "#d0c6ab",
+            "on-secondary-container": "#00477d",
+            "tertiary-fixed-dim": "#00dce7",
+            "surface-container-low": "#fbf4d9",
+            "on-primary-container": "#705d00",
+            "on-tertiary-fixed-variant": "#004f53",
+            "on-secondary-fixed-variant": "#00487f",
+            "error": "#ba1a1a",
+            "surface": "#FFFFFF",
+            "on-surface-variant": "#4d4632",
+            "on-background": "#1f1c0c",
+            "surface-bright": "#fff9eb",
+            "accent-tint": "#FFF6C7",
+            "inverse-primary": "#e9c400",
+            "ink": "#1F1C0C",
+            "tertiary-container": "#00f0fc",
+            "danger-bg": "#FBE5E5",
+            "surface-alt": "#F6F2E4",
+            "text-secondary": "#575238",
+            "surface-container-lowest": "#ffffff",
+            "error-container": "#ffdad6",
+            "surface-container-highest": "#eae2c8",
+            "support-data": "#4194FF",
+            "on-tertiary-container": "#00696f",
+            "surface-container-high": "#f0e8ce",
+            "outline": "#7f775f",
+            "on-error": "#ffffff",
+            "primary-container": "#ffd60a",
+            "on-secondary-fixed": "#001c37",
+            "warning-bg": "#FAEFE1",
+            "tertiary-fixed": "#70f6ff",
+            "secondary": "#1661a2",
+            "danger": "#CE2020",
+            "primary": "#705d00",
+            "secondary-container": "#7cb7fe",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-fixed": "#002022",
+            "hairline": "#ECE6D2",
+            "info": "#1F4F8A",
+            "warning": "#A75906",
+            "surface-variant": "#eae2c8",
+            "on-secondary": "#ffffff",
+            "on-surface": "#1f1c0c",
+            "inverse-on-surface": "#f9f1d6",
+            "inverse-surface": "#34311f",
+            "tertiary": "#00696f",
+            "text-tertiary": "#6B6650",
+            "surface-container": "#f6eed3",
+            "success": "#0E7C3A",
+            "surface-dim": "#e1dac0",
+            "on-primary-fixed": "#221b00",
+            "accent-fill": "#826D05",
+            "surface-tint": "#705d00",
+            "on-primary": "#ffffff",
+            "accent-pressed": "#E6C000",
+            "background": "#FCFAF4",
+            "on-primary-fixed-variant": "#554600",
+            "primary-fixed": "#ffe171"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1.25rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "0.75rem",
+            "space-lg": "1rem",
+            "space-xs": "0.25rem",
+            "space-xl": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-2xl": "2rem",
+            "margin": "1.25rem",
+            "gutter": "1rem",
+            "safe": "2.125rem"
+          },
+          "fontFamily": {
+            "display-32": ["Unbounded", "sans-serif"],
+            "label-14": ["Plus Jakarta Sans", "sans-serif"],
+            "body-16": ["Plus Jakarta Sans", "sans-serif"],
+            "title-20": ["Unbounded", "sans-serif"],
+            "caption-13": ["Plus Jakarta Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "display-32": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-14": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "body-16": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "title-20": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "caption-13": ["13px", { "lineHeight": "18px", "fontWeight": "500" }]
+          },
+          "boxShadow": {
+            "soft-card": "0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.06)"
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    body {
+      -webkit-tap-highlight-color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-background text-ink font-body-16 text-body-16 min-h-screen flex justify-center selection:bg-primary-container selection:text-ink">
+<!-- Mobile Viewport Frame (393px width constraint) -->
+<div class="w-full max-w-[393px] bg-background min-h-screen flex flex-col relative pb-24 shadow-2xl border-x border-hairline/60">
+<!-- Header / Top Bar -->
+<header class="sticky top-0 z-40 bg-surface/90 backdrop-blur-md border-b border-hairline px-margin pt-4 pb-3">
+<div class="flex items-center justify-between">
+<button aria-label="Go back" class="w-10 h-10 -ml-2 rounded-full flex items-center justify-center text-ink hover:bg-surface-alt active:scale-95 transition-transform duration-100" type="button">
+<span class="material-symbols-outlined text-[24px]">chevron_left</span>
+</button>
+<div class="flex items-center gap-1.5">
+<span class="font-caption-13 text-caption-13 text-text-tertiary">Midas ID</span>
+<span class="font-caption-13 text-caption-13 px-2 py-0.5 rounded-full bg-surface-alt font-medium text-ink">#J-2187</span>
+</div>
+<button aria-label="More options" class="w-10 h-10 -mr-2 rounded-full flex items-center justify-center text-ink hover:bg-surface-alt active:scale-95 transition-transform duration-100" type="button">
+<span class="material-symbols-outlined text-[22px]">more_horiz</span>
+</button>
+</div>
+<!-- Screen Title & Metadata Context -->
+<div class="mt-3">
+<div class="flex items-center justify-between gap-2">
+<h1 class="font-title-20 text-title-20 text-ink tracking-tight font-semibold truncate">Restroom deep clean</h1>
+<!-- Status Chip -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-warning-bg text-warning font-caption-13 text-caption-13 font-semibold shrink-0">
+<span class="w-2 h-2 rounded-full bg-warning animate-pulse"></span>
+<span>In progress</span>
+</div>
+</div>
+<p class="font-label-14 text-label-14 text-text-secondary mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-text-tertiary">location_on</span>
+          Riverside Medical Plaza • Bldg B, Fl 2
+        </p>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 px-margin pt-4 space-y-4">
+<!-- Focal Card: Service Timeline -->
+<section class="bg-surface rounded-2xl p-space-lg shadow-soft-card border border-hairline">
+<div class="flex items-center justify-between mb-4">
+<h2 class="font-label-14 text-label-14 font-semibold text-ink uppercase tracking-wider">Service timeline</h2>
+<span class="font-caption-13 text-caption-13 text-text-tertiary">Step 3 of 4</span>
+</div>
+<div class="relative pl-7 space-y-5">
+<!-- Continuous Vertical Background Line -->
+<div class="absolute left-2.5 top-2.5 bottom-2.5 w-0.5 bg-hairline -translate-x-1/2"></div>
+<!-- Step 1: Requested (Done) -->
+<div class="relative group">
+<span class="absolute -left-7 top-0.5 w-5 h-5 rounded-full bg-ink text-surface flex items-center justify-center ring-4 ring-surface z-10">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+<div class="flex flex-col">
+<div class="flex items-baseline justify-between">
+<span class="font-label-14 text-label-14 font-medium text-ink">Requested</span>
+<span class="font-caption-13 text-caption-13 text-text-tertiary">Oct 28, 9:12 AM</span>
+</div>
+<p class="font-caption-13 text-caption-13 text-text-secondary mt-0.5">Submitted via Facility Portal</p>
+</div>
+</div>
+<!-- Step 2: Scheduled (Done) -->
+<div class="relative group">
+<span class="absolute -left-7 top-0.5 w-5 h-5 rounded-full bg-ink text-surface flex items-center justify-center ring-4 ring-surface z-10">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+<div class="flex flex-col">
+<div class="flex items-baseline justify-between">
+<span class="font-label-14 text-label-14 font-medium text-ink">Scheduled</span>
+<span class="font-caption-13 text-caption-13 text-text-tertiary">Oct 30, 2:40 PM</span>
+</div>
+<p class="font-caption-13 text-caption-13 text-text-secondary mt-0.5">Confirmed for Nov 3 at 7:00 AM</p>
+</div>
+</div>
+<!-- Step 3: In Progress (Active Focal) -->
+<div class="relative">
+<!-- Pulsing active indicator -->
+<span class="absolute -left-7 top-1 w-5 h-5 rounded-full bg-primary-container text-ink flex items-center justify-center ring-4 ring-surface z-10">
+<span class="w-2.5 h-2.5 rounded-full bg-ink"></span>
+</span>
+<div class="bg-surface-alt/70 border border-hairline rounded-xl p-3 -mt-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-label-14 text-label-14 font-bold text-ink">In progress</span>
+<span class="inline-block px-1.5 py-0.2 rounded bg-primary-container text-ink font-caption-13 text-[12px] font-bold">LIVE</span>
+</div>
+<span class="font-caption-13 text-caption-13 text-ink font-semibold">Nov 3, 7:04 AM</span>
+</div>
+<div class="flex items-center gap-1.5 text-text-secondary font-caption-13 text-caption-13 mt-1.5">
+<span class="material-symbols-outlined text-[15px] text-accent-fill">badge</span>
+<span>Crew 2 checked in on site &amp; setup stations</span>
+</div>
+</div>
+</div>
+<!-- Step 4: Completed (Pending) -->
+<div class="relative opacity-60">
+<span class="absolute -left-7 top-1 w-5 h-5 rounded-full bg-surface border-2 border-hairline ring-4 ring-surface z-10"></span>
+<div class="flex flex-col">
+<div class="flex items-baseline justify-between">
+<span class="font-label-14 text-label-14 font-medium text-text-tertiary">Completed</span>
+<span class="font-caption-13 text-caption-13 text-text-tertiary">Est. 10:30 AM</span>
+</div>
+<p class="font-caption-13 text-caption-13 text-text-tertiary mt-0.5">Digital sign-off &amp; sanitation report</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Crew Lead Card -->
+<section class="bg-surface rounded-2xl p-space-lg shadow-soft-card border border-hairline flex items-center justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<div class="relative shrink-0">
+<img alt="Maria Gonzalez" class="w-[52px] h-[52px] rounded-full object-cover border border-hairline ring-2 ring-primary-container/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHajWjuEVjTze5-DAko5o2IoTJUM2V4m4sxqb-YHhbeqo4ea99ynpGVthydefUeHvlZDTZbpwQbwAzKaq0RoZshd-_avz1Gvfswe8Y86TZxSt87l0wP4TFZveaaq1zQI0mrTzTCGLnNYgbGB-4-FliE_tU8AeESKcJoebh5Ty-VgKnDI-7mHrXiUlVuSLJvUSxr-0VlgT9k23leWI23Uk68JERIR6RhtD20xDfsO0CAYWCTqB65DNO6UnC_0y3Gide1Jqux4PH9cM"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-success rounded-full border-2 border-surface" title="Active on site"></span>
+</div>
+<div class="min-w-0">
+<h3 class="font-label-14 text-label-14 font-bold text-ink truncate">Maria Gonzalez</h3>
+<p class="font-caption-13 text-caption-13 text-text-secondary truncate mt-0.5">Crew lead • Crew 2 (4 tech)</p>
+<div class="flex items-center gap-1 mt-1 text-[12px] text-text-tertiary font-medium">
+<span class="material-symbols-outlined text-[14px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.9 (184 completed jobs)</span>
+</div>
+</div>
+</div>
+<!-- Quick Contact Actions -->
+<div class="flex items-center gap-2 shrink-0">
+<a aria-label="Call crew lead" class="w-10 h-10 rounded-full bg-surface-alt flex items-center justify-center text-ink hover:bg-hairline active:scale-95 transition-all" href="tel:5550192834">
+<span class="material-symbols-outlined text-[20px]">call</span>
+</a>
+<button aria-label="Message crew lead" class="w-10 h-10 rounded-full bg-primary-container text-ink flex items-center justify-center hover:bg-accent-pressed active:scale-95 transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+</button>
+</div>
+</section>
+<!-- Scope of Work & Photo Thumbnails Card -->
+<section class="bg-surface rounded-2xl p-space-lg shadow-soft-card border border-hairline space-y-3.5">
+<div class="flex items-center justify-between">
+<h2 class="font-label-14 text-label-14 font-semibold text-ink uppercase tracking-wider">Scope of work</h2>
+<span class="font-caption-13 text-caption-13 px-2 py-0.5 rounded-full bg-accent-tint text-ink font-semibold">Tier 1 Sanitization</span>
+</div>
+<div>
+<h4 class="font-label-14 text-label-14 font-semibold text-ink">Second floor restrooms - grout &amp; fixture deep clean</h4>
+<p class="font-caption-13 text-caption-13 text-text-secondary mt-1.5 leading-relaxed">
+            Comprehensive chemical descaling of 6 porcelain fixtures, high-pressure steam tile grout scrubbing, antimicrobial surface seal, and touchless dispenser refill.
+          </p>
+</div>
+<!-- Before/Inspection Photo Thumbnails -->
+<div class="pt-1">
+<p class="font-caption-13 text-caption-13 font-medium text-text-tertiary mb-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">photo_camera</span>
+            Site reference attachments (2)
+          </p>
+<div class="grid grid-cols-2 gap-2.5">
+<div class="relative group rounded-xl overflow-hidden border border-hairline bg-surface-alt aspect-[4/3]">
+<img alt="Restroom B-204" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArC1ShNg68iWEAhx-Kv_Z3TtvQw-8_I0AeYYQUSWHeDZYrMC_QWDTkc5pzaua0ilSSewCncSPWvcf4scRcAmPtA_rOts2Z8rbwy3tAjzoJ3OFmKvFLxNADy0-7lNg_MxzU02Nq09b0Zjqolavxk5yfr1LfDpo2q8R-QNizTLDU1s9FIw8wg-SBrPgpOv5mYT0HzaT4CFsiR4QCy5sHAvgu43DMJgkGv9dyqwQZuO2AP8dHXPhRZOHXtQNGA6e9yCCNQ-drIK9dc2A"/>
+<div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/80 to-transparent p-2 pt-4">
+<span class="text-surface font-caption-13 text-[12px] font-semibold block leading-tight">Restroom B-204</span>
+<span class="text-surface/80 text-[12px]">South Corridor</span>
+</div>
+</div>
+<div class="relative group rounded-xl overflow-hidden border border-hairline bg-surface-alt aspect-[4/3]">
+<img alt="Fixture inspection" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNCw5LSl0uk7eNLgXA8reSCLcYyM2Slz4eMuhCMvoQmQ5G2i7BfO__EswiNxVD-2eUf5eXNe7Auzr2gQM7sQn5usgmziTJ08bUCa8_PV_4lI9cXZ_jiYICXsLNzCCqKe4T0w9OMesjZkWjwyBCxVbQCjTCTKAz1jKk6-O038Q9FC_E9RHLF0eaAI9aoKBWyvt6JCvM4FrtHGkm6kFCRwECVhqcNBoZZJE1xzPT9PXBp0x7aWhEC3W6KBZlh8C7KKBrlHzFjkGm6kg"/>
+<div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/80 to-transparent p-2 pt-4">
+<span class="text-surface font-caption-13 text-[12px] font-semibold block leading-tight">Fixture inspection</span>
+<span class="text-surface/80 text-[12px]">Sensor faucets</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Checklist Summary -->
+<div class="border-t border-hairline pt-3 grid grid-cols-2 gap-2 text-[12px] font-medium text-text-secondary">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-success">check_circle</span>
+<span>6 Fixtures scrubbed</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-success">check_circle</span>
+<span>Floor steam treated</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-warning animate-spin">sync</span>
+<span>Touchless dispenser check</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-text-tertiary">radio_button_unchecked</span>
+<span>EPA surface seal spray</span>
+</div>
+</div>
+</section>
+<!-- Real-time Sync & Integration Footer Indicator -->
+<div class="py-2 flex items-center justify-center gap-1.5 text-text-tertiary font-caption-13 text-caption-13">
+<span class="material-symbols-outlined text-[16px] text-control-border">sync</span>
+<span>Synced with Jobber 2 min ago</span>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mandatory Shared Component Blueprint) -->
+<!-- Destination 4 items: Home, Requests (Active), Invoices, Support -->
+<nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[393px] z-50 flex justify-around items-center px-gutter pt-space-xs pb-6 h-16 bg-surface border-t border-hairline shadow-lg">
+<!-- Tab 1: Home -->
+<a class="flex flex-col items-center justify-center gap-1 text-text-tertiary font-medium hover:text-ink transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]">home</span>
+<span class="font-caption-13 text-[12px]">Home</span>
+</a>
+<!-- Tab 2: Requests (Active State with Lemon Pill behind Icon) -->
+<a class="flex flex-col items-center justify-center gap-1 text-ink font-semibold hover:text-ink transition-colors duration-150 active:scale-95 [&amp;_span:first-child]:bg-primary-container [&amp;_span:first-child]:text-ink [&amp;_span:first-child]:px-3 [&amp;_span:first-child]:py-0.5 [&amp;_span:first-child]:rounded-full" href="#">
+<span class="material-symbols-outlined text-[20px]">assignment</span>
+<span class="font-caption-13 text-[12px]">Requests</span>
+</a>
+<!-- Tab 3: Invoices -->
+<a class="flex flex-col items-center justify-center gap-1 text-text-tertiary font-medium hover:text-ink transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]">receipt_long</span>
+<span class="font-caption-13 text-[12px]">Invoices</span>
+</a>
+<!-- Tab 4: Support -->
+<a class="flex flex-col items-center justify-center gap-1 text-text-tertiary font-medium hover:text-ink transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]">chat_bubble</span>
+<span class="font-caption-13 text-[12px]">Support</span>
+</a>
+</nav>
+</div>
+</body></html>

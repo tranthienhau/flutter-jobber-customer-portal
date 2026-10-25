@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Midas Client Portal - Home Dashboard</title>
+<!-- Google Fonts: Plus Jakarta Sans & Unbounded -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Unbounded:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined (Exact link & class) -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration (VERBATIM from tokens) -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "danger-bg": "#FBE5E5",
+            "background": "#FCFAF4",
+            "surface-container": "#f6eed3",
+            "surface-dim": "#e1dac0",
+            "outline-variant": "#d0c6ab",
+            "on-primary": "#ffffff",
+            "danger": "#CE2020",
+            "on-error-container": "#93000a",
+            "accent-tint": "#FFF6C7",
+            "on-secondary-fixed": "#001c37",
+            "surface-container-high": "#f0e8ce",
+            "surface-bright": "#fff9eb",
+            "surface-alt": "#F6F2E4",
+            "on-tertiary-container": "#00696f",
+            "info": "#1F4F8A",
+            "surface-variant": "#eae2c8",
+            "on-secondary-container": "#00477d",
+            "text-secondary": "#575238",
+            "support-data": "#4194FF",
+            "hairline": "#ECE6D2",
+            "surface-container-highest": "#eae2c8",
+            "secondary-fixed-dim": "#a1c9ff",
+            "on-background": "#1f1c0c",
+            "on-primary-fixed": "#221b00",
+            "inverse-primary": "#e9c400",
+            "primary-container": "#ffd60a",
+            "tertiary-fixed-dim": "#00dce7",
+            "on-tertiary-fixed": "#002022",
+            "secondary-container": "#7cb7fe",
+            "inverse-on-surface": "#f9f1d6",
+            "on-tertiary-fixed-variant": "#004f53",
+            "warning-bg": "#FAEFE1",
+            "primary-fixed": "#ffe171",
+            "primary": "#705d00",
+            "text-tertiary": "#6B6650",
+            "surface-container-low": "#fbf4d9",
+            "accent-fill": "#826D05",
+            "secondary": "#1661a2",
+            "control-border": "#9B9556",
+            "info-bg": "#E3F0FF",
+            "on-tertiary": "#ffffff",
+            "on-error": "#ffffff",
+            "on-surface": "#1f1c0c",
+            "warning": "#A75906",
+            "success": "#0E7C3A",
+            "tertiary": "#00696f",
+            "tertiary-container": "#00f0fc",
+            "on-surface-variant": "#4d4632",
+            "success-bg": "#E3F4E9",
+            "surface-container-lowest": "#ffffff",
+            "surface": "#FFFFFF",
+            "accent-pressed": "#E6C000",
+            "ink": "#1F1C0C",
+            "surface-tint": "#705d00",
+            "primary-fixed-dim": "#e9c400",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed-variant": "#00487f",
+            "secondary-fixed": "#d2e4ff",
+            "on-primary-container": "#705d00",
+            "error-container": "#ffdad6",
+            "error": "#ba1a1a",
+            "on-primary-fixed-variant": "#554600",
+            "outline": "#7f775f",
+            "tertiary-fixed": "#70f6ff",
+            "inverse-surface": "#34311f"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "20": "1.25rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "1.5rem",
+            "space-lg": "1rem",
+            "space-sm": "0.5rem",
+            "space-md": "0.75rem",
+            "space-xs": "0.25rem",
+            "space-2xl": "2rem",
+            "margin": "1.25rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "title-20": ["Plus Jakarta Sans"],
+            "label-14": ["Plus Jakarta Sans"],
+            "body-16": ["Plus Jakarta Sans"],
+            "caption-13": ["Plus Jakarta Sans"],
+            "display-32": ["Unbounded"]
+          },
+          "fontSize": {
+            "title-20": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-14": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "body-16": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "caption-13": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "display-32": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .soft-shadow {
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06);
+    }
+    .hero-shadow {
+      box-shadow: 0 4px 20px rgba(31, 28, 12, 0.16);
+    }
+    .tabular {
+      font-variant-numeric: tabular-nums;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-ink antialiased min-h-screen flex justify-center selection:bg-primary-container selection:text-ink">
+<!-- Mobile Frame (393px width constraint, standard modern viewport) -->
+<div class="w-full max-w-[393px] bg-background min-h-screen flex flex-col relative pb-32">
+<!-- Top Safe Area Padding & App Header -->
+<header class="w-full pt-12 px-margin pb-3 flex justify-between items-center bg-background">
+<div>
+<h1 class="font-display-32 text-[22px] leading-tight font-bold text-ink tracking-tight">Good morning, Dana</h1>
+<p class="font-caption-13 text-caption-13 text-text-secondary mt-0.5">Tuesday, November 4</p>
+</div>
+<!-- User Profile & Notification Cluster -->
+<div class="flex items-center gap-3">
+<button aria-label="Notifications" class="relative w-10 h-10 rounded-full flex items-center justify-center bg-surface hover:bg-surface-alt transition-colors duration-150 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-ink text-[22px]">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary-container ring-2 ring-background"></span>
+</button>
+<div class="relative w-10 h-10 rounded-full overflow-hidden ring-2 ring-hairline flex-shrink-0">
+<img alt="Customer profile photo" class="w-full h-full object-cover" data-alt="Close up photographic corporate portrait of Dana Whitfield, an experienced 40s African American woman facilities manager smiling warmly with soft office lighting, wearing a stylish navy tailored collar against a clean bright architectural glass backdrop in high key natural light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPK8CHFfe1tsCWd252j_yzzs6PKKkbwHw6gUO0z23bHtYFDfb4do2IY7AlhxlSgnHmkaUalp8D8YYD08Q1AP51MPdgShq_kQ28kFKZqd-IYftaOx9Jg0DoFpuJXK0G1JiADrAcVldj3dad1Vzr0lFr0-sG195LwKnD-vzj7ilT0o63Pd5nAvRNOcohFc590mdrUz8VmTo9C4-KK4du2u6WRA_9vBmTW0jXVa6tjSej8EIxgE2zdt7-5yBX1Bl9GpNCP0BwBBtYx9M"/>
+</div>
+</div>
+</header>
+<!-- Main Content Stream -->
+<main class="px-margin flex flex-col gap-5 mt-2">
+<!-- FOCAL HERO CARD: Next Scheduled Janitorial Visit -->
+<section class="bg-ink text-surface rounded-20 p-5 hero-shadow flex flex-col relative overflow-hidden">
+<!-- Background architectural texture element for depth -->
+<div class="absolute -right-10 -bottom-10 w-44 h-44 rounded-full bg-surface-alt/5 pointer-events-none blur-xl"></div>
+<!-- Header row inside hero -->
+<div class="flex items-center justify-between">
+<span class="font-caption-13 text-[12px] font-bold tracking-wider uppercase text-outline-variant">Next Visit</span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-accent-tint text-[#5E4F00] font-caption-13 text-caption-13 font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+            Scheduled
+          </span>
+</div>
+<!-- Big visit time -->
+<div class="mt-3">
+<h2 class="font-display-32 text-[22px] leading-tight font-bold text-surface tracking-tight">Tue, Nov 4 · 6:00 PM</h2>
+<p class="font-body-16 text-body-16 font-semibold text-surface mt-1">Nightly janitorial</p>
+<p class="font-label-14 text-label-14 text-outline-variant">Northgate Office Park, Building A</p>
+</div>
+<!-- Subtle separator -->
+<div class="w-full h-px bg-surface/10 my-4"></div>
+<!-- Crew information & Action Link -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-surface/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] text-surface">badge</span>
+</div>
+<div>
+<span class="font-label-14 text-label-14 font-medium text-surface block leading-tight">Crew 3 · Luis M.</span>
+<span class="font-caption-13 text-[12px] text-outline-variant flex items-center gap-1">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Dispatched on route
+              </span>
+</div>
+</div>
+<button aria-label="View checklist for upcoming visit" class="inline-flex items-center gap-1 text-primary-container font-label-14 text-label-14 font-semibold hover:underline active:scale-95 transition-transform">
+<span>View checklist</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</section>
+<!-- STAT TILES: 3-column Bento Summary -->
+<section class="grid grid-cols-3 gap-2.5">
+<!-- Open Requests -->
+<div class="bg-surface rounded-20 p-3.5 soft-shadow flex flex-col justify-between">
+<span class="font-caption-13 text-[12px] text-text-tertiary leading-tight">Open requests</span>
+<p class="font-display-32 text-[26px] font-bold text-ink mt-2 tabular">2</p>
+<span class="inline-flex items-center text-[12px] font-medium text-warning mt-1">
+<span class="material-symbols-outlined text-[13px] mr-0.5">pending_actions</span> 1 urgent
+          </span>
+</div>
+<!-- Visits This Month -->
+<div class="bg-surface rounded-20 p-3.5 soft-shadow flex flex-col justify-between">
+<span class="font-caption-13 text-[12px] text-text-tertiary leading-tight">Visits this month</span>
+<p class="font-display-32 text-[26px] font-bold text-ink mt-2 tabular">18</p>
+<span class="inline-flex items-center text-[12px] font-medium text-success mt-1">
+<span class="material-symbols-outlined text-[13px] mr-0.5">trending_up</span> On schedule
+          </span>
+</div>
+<!-- Balance Due -->
+<div class="bg-surface rounded-20 p-3.5 soft-shadow flex flex-col justify-between">
+<span class="font-caption-13 text-[12px] text-text-tertiary leading-tight">Balance due</span>
+<p class="font-title-20 text-[18px] font-bold text-ink mt-2.5 tabular tracking-tight">$4,280</p>
+<span class="inline-flex items-center text-[12px] font-medium text-text-secondary mt-1">
+            Net 30 terms
+          </span>
+</div>
+</section>
+<!-- SECTION: YOUR SITES -->
+<section class="flex flex-col gap-3 mt-1">
+<div class="flex items-center justify-between">
+<h2 class="font-title-20 text-title-20 font-bold text-ink tracking-tight">Your sites</h2>
+<button class="font-label-14 text-label-14 text-text-secondary hover:text-ink font-semibold flex items-center gap-0.5">
+            View all (3)
+            <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+<!-- Horizontal scroll carousel of properties -->
+<div class="flex overflow-x-auto snap-x snap-mandatory no-scrollbar pb-1 gap-3.5 -mx-margin px-margin">
+<!-- Card 1: Northgate Office Park -->
+<article class="w-[230px] flex-shrink-0 bg-surface rounded-20 overflow-hidden soft-shadow snap-start group border border-hairline/60">
+<div class="h-28 w-full relative overflow-hidden bg-surface-alt">
+<img alt="Northgate Office Park exterior" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Modern architectural photography of Northgate Office Park corporate glass and steel commercial building with manicured emerald green lawns, neat shrubbery, clear blue daylight, clean structural lines, professional facility environment under bright sun." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_tlGFlnvUwGKNYncihDi8V6DfIgJ2S9YZfnHizlIN2dKnWcrLFgkqJ7XbBUj2OIY3DRw_XzpqfZIOGAg1RJl1sqzRSX9X0oJ4qATZ6g9mlM6swYOS6P1V9C21a6l5Zs79mKrG3Cwjx8gTrZH7Edg67CtG23TeOOjdY0wAHJ_7Ns3NMcVvwB3ID21NAcQz5BiiL2jpk0clKg5AryIz5qfAzxA4HSXFTSF3Wb8uOOHbC5DhZzjcR8P37HPOMpgXoAGuWyXjXUhjr70"/>
+<div class="absolute top-2.5 right-2.5 bg-ink/80 backdrop-blur-md px-2 py-0.5 rounded-full text-surface text-[12px] font-bold">
+                HQ SITE
+              </div>
+</div>
+<div class="p-3.5">
+<h3 class="font-title-20 text-[15px] font-bold text-ink truncate leading-snug">Northgate Office Park</h3>
+<p class="font-caption-13 text-caption-13 text-text-secondary mt-0.5">Building A &amp; B Campus</p>
+<div class="mt-3 flex items-center justify-between pt-2 border-t border-hairline">
+<span class="inline-flex items-center gap-1 font-caption-13 text-[12px] font-semibold text-text-secondary">
+<span class="w-2 h-2 rounded-full bg-primary-container ring-1 ring-control-border"></span>
+                  4 services active
+                </span>
+<span class="material-symbols-outlined text-[18px] text-text-tertiary">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Card 2: Riverside Medical Plaza -->
+<article class="w-[230px] flex-shrink-0 bg-surface rounded-20 overflow-hidden soft-shadow snap-start group border border-hairline/60">
+<div class="h-28 w-full relative overflow-hidden bg-surface-alt">
+<img alt="Riverside Medical Plaza exterior" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Bright exterior photograph of Riverside Medical Plaza contemporary multi-story clinical healthcare facility with architectural white facades, large windows, welcoming paved drive, and pristine pristine landscaping under clear morning skies." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDXxSEiV2-rk_3l335nxFfgw026ygumA6ttn2GnRQC2LNPLgcSXgMe5wsT6C1Q29NZyzEvBbP9LjDV8iffoyhIAxQdmcHFOtxMoFeBWUusRCC4AmyKjsV6vL2wUAAFmLIDGO3-UhbZV0yXVBELotB5h5DQArLBt40trcy8rc6-FvXDCk-ac7l8nlrxNFz3tPIz1Q-LSbXwlXJAlgRZbgxDrUxhIGxysJNsIrQAVPQ8xxNPMkBg-MI5coaMF6BoGDLQyRrSkSixMGw"/>
+<div class="absolute top-2.5 right-2.5 bg-ink/80 backdrop-blur-md px-2 py-0.5 rounded-full text-surface text-[12px] font-bold">
+                CLINICAL
+              </div>
+</div>
+<div class="p-3.5">
+<h3 class="font-title-20 text-[15px] font-bold text-ink truncate leading-snug">Riverside Medical Plaza</h3>
+<p class="font-caption-13 text-caption-13 text-text-secondary mt-0.5">Suites 100 - 450</p>
+<div class="mt-3 flex items-center justify-between pt-2 border-t border-hairline">
+<span class="inline-flex items-center gap-1 font-caption-13 text-[12px] font-semibold text-text-secondary">
+<span class="w-2 h-2 rounded-full bg-primary-container ring-1 ring-control-border"></span>
+                  3 services active
+                </span>
+<span class="material-symbols-outlined text-[18px] text-text-tertiary">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Card 3: Eastgate Distribution Center -->
+<article class="w-[230px] flex-shrink-0 bg-surface rounded-20 overflow-hidden soft-shadow snap-start group border border-hairline/60">
+<div class="h-28 w-full relative overflow-hidden bg-surface-alt">
+<img alt="Eastgate Distribution Center exterior" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Professional exterior architectural photo of Eastgate Distribution Center modern high-end commercial logistics warehouse building with organized docking bays, crisp concrete paving, spotless perimeter, and daylight blue sky." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY6ygHUo8p6F4bRYgsLDks6QxEr-0734yqhiYuPGhavWhXqb__X8Bz3Z9kAPoFSWWQfr4Huxu0zfPbHwwIVjDl_z9TPDU-0dMINKXT4jq0HoN-r0IqfYOw3591mQhBaSYUs0NeoGS4HTHdzRAMQPozsVGNNFAYfg5TQlIf_tkH__so0h835zKxHefqFiK5R7pXowhZjVeSQBRuEOAuyUk6us7goPCOsyTp3_O9Ei1afxqE-a--2UGgOEjw_RjA3ukrWik8V-PSf4o"/>
+<div class="absolute top-2.5 right-2.5 bg-ink/80 backdrop-blur-md px-2 py-0.5 rounded-full text-surface text-[12px] font-bold">
+                INDUSTRIAL
+              </div>
+</div>
+<div class="p-3.5">
+<h3 class="font-title-20 text-[15px] font-bold text-ink truncate leading-snug">Eastgate Distribution Center</h3>
+<p class="font-caption-13 text-caption-13 text-text-secondary mt-0.5">Facility Bay 4</p>
+<div class="mt-3 flex items-center justify-between pt-2 border-t border-hairline">
+<span class="inline-flex items-center gap-1 font-caption-13 text-[12px] font-semibold text-text-secondary">
+<span class="w-2 h-2 rounded-full bg-primary-container ring-1 ring-control-border"></span>
+                  2 services active
+                </span>
+<span class="material-symbols-outlined text-[18px] text-text-tertiary">arrow_forward</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- SECTION: RECENT ACTIVITY -->
+<section class="flex flex-col gap-3 mt-1">
+<h2 class="font-title-20 text-title-20 font-bold text-ink tracking-tight">Recent activity</h2>
+<div class="bg-surface rounded-20 soft-shadow divide-y divide-hairline overflow-hidden">
+<!-- Activity Row 1: Carpet Extraction Completed -->
+<div class="p-4 flex items-start gap-3 hover:bg-surface-alt/40 transition-colors">
+<div class="w-10 h-10 rounded-full bg-success-bg flex items-center justify-center flex-shrink-0 text-success mt-0.5">
+<span class="material-symbols-outlined text-[20px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">cleaning_services</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h3 class="font-label-14 text-label-14 font-semibold text-ink truncate">Carpet extraction completed</h3>
+<span class="font-caption-13 text-[12px] text-text-tertiary tabular flex-shrink-0">Today, 9:30 AM</span>
+</div>
+<p class="font-caption-13 text-caption-13 text-text-secondary mt-0.5 flex items-center gap-1.5">
+<span>Riverside Medical Plaza</span>
+<span class="text-hairline">•</span>
+<span class="inline-flex items-center gap-0.5 text-text-tertiary">
+<span class="material-symbols-outlined text-[13px]">photo_library</span> 8 photos attached
+                </span>
+</p>
+<div class="mt-2">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-success-bg text-success font-caption-13 text-[12px] font-medium">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Completed
+                </span>
+</div>
+</div>
+</div>
+<!-- Activity Row 2: Invoice Issued -->
+<div class="p-4 flex items-start gap-3 hover:bg-surface-alt/40 transition-colors">
+<div class="w-10 h-10 rounded-full bg-info-bg flex items-center justify-center flex-shrink-0 text-info mt-0.5">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h3 class="font-label-14 text-label-14 font-semibold text-ink truncate">Invoice INV-10482 issued</h3>
+<span class="font-caption-13 text-[12px] text-text-tertiary tabular flex-shrink-0">Yesterday</span>
+</div>
+<p class="font-caption-13 text-caption-13 text-text-secondary mt-0.5">Due Nov 15 · Northgate Office Park</p>
+<div class="mt-2 flex items-center justify-between">
+<span class="font-label-14 text-label-14 font-bold text-ink tabular">$1,920.00</span>
+<button class="font-caption-13 text-caption-13 font-semibold text-info hover:underline flex items-center gap-0.5">
+                  Review invoice
+                  <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Contextual Floating Action Button: 'New request' (Strict Ink text on Lemon) -->
+<div class="fixed bottom-20 right-4 z-40">
+<button aria-label="Create a new service request" class="bg-primary-container text-ink hover:bg-accent-pressed active:scale-95 transition-all shadow-lg flex items-center gap-2 px-5 py-3.5 rounded-full font-label-14 text-label-14 font-bold">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>New request</span>
+</button>
+</div>
+<!-- SHARED COMPONENT: BottomNavBar (Fixed Shell Execution) -->
+<!-- Destination 1: Home (ACTIVE matching current screen intent), 2: Requests, 3: Invoices, 4: Support -->
+<nav aria-label="Primary Navigation" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter pt-space-xs pb-safe h-16 bg-surface dark:bg-inverse-surface border-t border-hairline dark:border-outline-variant">
+<!-- Tab 1: Home (ACTIVE STATE from JSON: styled with lemon pill behind/under icon and bold ink text) -->
+<a class="flex flex-col items-center justify-center gap-1 text-ink dark:text-inverse-on-surface font-semibold [&amp;_span:first-child]:bg-primary-container dark:[&amp;_span:first-child]:bg-accent-fill [&amp;_span:first-child]:text-ink dark:[&amp;_span:first-child]:text-surface [&amp;_span:first-child]:px-3 [&amp;_span:first-child]:py-0.5 [&amp;_span:first-child]:rounded-full active:scale-95 transition-transform duration-100" href="#home">
+<span class="material-symbols-outlined text-[20px]">home</span>
+<span class="font-caption-13 text-caption-13">Home</span>
+</a>
+<!-- Tab 2: Requests (INACTIVE STATE) -->
+<a class="flex flex-col items-center justify-center gap-1 text-text-tertiary dark:text-outline-variant font-medium hover:text-ink dark:hover:text-inverse-on-surface transition-colors duration-150 active:scale-95 transition-transform duration-100" href="#requests">
+<span class="material-symbols-outlined text-[20px]">assignment</span>
+<span class="font-caption-13 text-caption-13">Requests</span>
+</a>
+<!-- Tab 3: Invoices (INACTIVE STATE) -->
+<a class="flex flex-col items-center justify-center gap-1 text-text-tertiary dark:text-outline-variant font-medium hover:text-ink dark:hover:text-inverse-on-surface transition-colors duration-150 active:scale-95 transition-transform duration-100" href="#invoices">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+<span class="font-caption-13 text-caption-13">Invoices</span>
+</a>
+<!-- Tab 4: Support (INACTIVE STATE) -->
+<a class="flex flex-col items-center justify-center gap-1 text-text-tertiary dark:text-outline-variant font-medium hover:text-ink dark:hover:text-inverse-on-surface transition-colors duration-150 active:scale-95 transition-transform duration-100" href="#support">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+<span class="font-caption-13 text-caption-13">Support</span>
+</a>
+</nav>
+</div>
+</body></html>
